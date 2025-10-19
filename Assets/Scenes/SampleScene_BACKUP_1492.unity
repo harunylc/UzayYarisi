@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Yedek
 --- !u!1 &82434292
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,7 +282,23 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 155361260}
   m_OnClick:
     m_PersistentCalls:
+<<<<<<< HEAD
       m_Calls: []
+=======
+      m_Calls:
+      - m_Target: {fileID: 256923901}
+        m_TargetAssemblyTypeName: UI_Controller, Assembly-CSharp
+        m_MethodName: LoadSceneWithFade
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: UpgradeLobbyScene
+          m_BoolArgument: 0
+        m_CallState: 2
+>>>>>>> Yedek
 --- !u!114 &155361260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -645,8 +666,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 0
+=======
   m_IsActive: 1
+>>>>>>> Yedek
 --- !u!114 &256923897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,8 +1206,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 0
+=======
   m_IsActive: 1
+>>>>>>> Yedek
 --- !u!114 &393598227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,6 +1373,10 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440007854}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
+>>>>>>> Yedek
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

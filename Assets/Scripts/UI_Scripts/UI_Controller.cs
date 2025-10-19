@@ -46,4 +46,17 @@ public class UI_Controller : MonoBehaviour
         // 4. Fade geri aç
         yield return StartCoroutine(fadeManager.FadeIn());
     }
+<<<<<<< HEAD
+=======
+    public void LoadSceneWithFade(string sceneName)
+    {
+        StartCoroutine(LoadSceneRoutine(sceneName));
+    }
+
+    private IEnumerator LoadSceneRoutine(string sceneName)
+    {
+        yield return StartCoroutine(fadeManager.FadeOut());
+
+        SceneManager.LoadScene(sceneName);
+    }
 }

@@ -10,6 +10,24 @@ public class Fade_Manager : MonoBehaviour
 
     private void Awake()
     {
+    [Header("Fade Settings")]
+    public Image fadeImage;           // FadePanel'deki Image component
+    public float fadeDuration = 0.4f; // Geçiş hızı (saniye)
+    
+    private static Fade_Manager instance;
+
+    private void Awake()
+    {
+        // Tek bir Fade_Manager kalsın (çift kopya olursa bozuyor)
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
         // Başta tamamen görünmez hale getir
         if (fadeImage != null)
         {
