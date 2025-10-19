@@ -1,0 +1,45 @@
+{
+    "name": "CarController",
+    "maps": [
+        {
+            "name": "Move",
+            "id": "a2b1c12d-9610-4f98-bd93-a9be13978336",
+            "actions": [
+                {
+                    "name": "Throtle",
+                    "type": "Value",
+                    "id": "d1b895e6-2af6-4b67-a8e3-af446318e590",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9533885e-bfe7-49da-b707-5cabcaf68af9",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throtle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0df42f50-383d-43c0-86f5-8bc51998a694",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "Throtle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
