@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 public class UI_Controller : MonoBehaviour
 {
     public GameObject MainMenu,SettingsMenu,CreatersMenu,HowToPlayMenu,ExitMenu;
@@ -46,8 +47,6 @@ public class UI_Controller : MonoBehaviour
         // 4. Fade geri aç
         yield return StartCoroutine(fadeManager.FadeIn());
     }
-<<<<<<< HEAD
-=======
     public void LoadSceneWithFade(string sceneName)
     {
         StartCoroutine(LoadSceneRoutine(sceneName));

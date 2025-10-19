@@ -8,11 +8,6 @@ public class Fade_Manager : MonoBehaviour
     public Image fadeImage;           // FadePanel'deki Image component
     public float fadeDuration = 1f; // Geçiş hızı (saniye)
 
-    private void Awake()
-    {
-    [Header("Fade Settings")]
-    public Image fadeImage;           // FadePanel'deki Image component
-    public float fadeDuration = 0.4f; // Geçiş hızı (saniye)
     
     private static Fade_Manager instance;
 
