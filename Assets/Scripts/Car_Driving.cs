@@ -9,36 +9,41 @@ public class Car_Driving : MonoBehaviour
     [SerializeField] private float carRotation = 300f;  
     [SerializeField] private float speed = 150f;
 
-    // Otomatik oluşturulan C# Class'ına referans
-    private CarController controls;
+    [SerializeField] private GameObject settingsPanel;
     
-    // FixedUpdate'te kullanmak üzere hareket değerini tutacak değişken
+    private CarController controls;
     private float moveInput;
 
     private void Awake()
     {
-        // Otomatik oluşturulan Input Actions class'ının örneğini oluştur
         controls = new CarController();
 
-        // Hareket Action'ına abone ol (RT/LT'ye basıldığında/değeri değiştiğinde)
-        // Value Action'ları için genellikle .performed event'ini kullanırız.
         controls.Move.Throtle.performed += OnMove;
-        
-        // Tetikleyiciler bırakıldığında (hız 0'a düştüğünde)
         controls.Move.Throtle.canceled += OnMove;
+        
+        controls.Move.Options.performed += OnOptions;
     }
     
-    // Input Action'ın geri çağırma metodu
     private void OnMove(InputAction.CallbackContext context)
     {
-        // Tetikleyici değeri okundu. (RT: 0..1, LT: 0..-1)
-        // Değer değiştiği anda (performed) veya bırakıldığı anda (canceled) çalışır.
         moveInput = context.ReadValue<float>();
+    }
+
+    private void OnOptions(InputAction.CallbackContext context)
+    {
+        if (settingsPanel.activeSelf)
+        {
+            settingsPanel.SetActive(false);
+        }
+        else
+        {
+            settingsPanel.SetActive(true);
+        }
+        Debug.Log("Ayarlar Açıldı");
     }
 
     private void OnEnable()
     {
-        // Action Map'i etkinleştir
         controls.Move.Enable();
     }
 
@@ -49,13 +54,9 @@ public class Car_Driving : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // moveInput değeri RT/LT durumuna göre -1 ile 1 arasında bir değer tutar.
-        
-        // Tekerleklere tork uygulama
         tireFrontRb.AddTorque(-moveInput * speed * Time.fixedDeltaTime);
         tireBackRb.AddTorque(-moveInput * speed * Time.fixedDeltaTime);
         
-        // Arabanın havada dengelenmesi için tork uygulama
         carRb.AddTorque(moveInput * carRotation * Time.fixedDeltaTime);
     }
 }

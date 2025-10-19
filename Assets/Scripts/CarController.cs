@@ -35,6 +35,24 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Options"",
+                    ""type"": ""Button"",
+                    ""id"": ""aa69d619-d9a1-4a71-a7a1-5b2a318be981"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""759a5c7b-15f9-4f07-ab70-4ef4a0a01fab"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -59,6 +77,28 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""action"": ""Throtle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""54e7483c-8d16-4621-8076-d6ec051fed82"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Options"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b585d90-d5f3-4284-93f7-23f3d4fcf5a1"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -68,6 +108,8 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         // Move
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_Throtle = m_Move.FindAction("Throtle", throwIfNotFound: true);
+        m_Move_Options = m_Move.FindAction("Options", throwIfNotFound: true);
+        m_Move_Back = m_Move.FindAction("Back", throwIfNotFound: true);
     }
 
     ~@CarController()
@@ -135,11 +177,15 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Move;
     private List<IMoveActions> m_MoveActionsCallbackInterfaces = new List<IMoveActions>();
     private readonly InputAction m_Move_Throtle;
+    private readonly InputAction m_Move_Options;
+    private readonly InputAction m_Move_Back;
     public struct MoveActions
     {
         private @CarController m_Wrapper;
         public MoveActions(@CarController wrapper) { m_Wrapper = wrapper; }
         public InputAction @Throtle => m_Wrapper.m_Move_Throtle;
+        public InputAction @Options => m_Wrapper.m_Move_Options;
+        public InputAction @Back => m_Wrapper.m_Move_Back;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -152,6 +198,12 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @Throtle.started += instance.OnThrotle;
             @Throtle.performed += instance.OnThrotle;
             @Throtle.canceled += instance.OnThrotle;
+            @Options.started += instance.OnOptions;
+            @Options.performed += instance.OnOptions;
+            @Options.canceled += instance.OnOptions;
+            @Back.started += instance.OnBack;
+            @Back.performed += instance.OnBack;
+            @Back.canceled += instance.OnBack;
         }
 
         private void UnregisterCallbacks(IMoveActions instance)
@@ -159,6 +211,12 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @Throtle.started -= instance.OnThrotle;
             @Throtle.performed -= instance.OnThrotle;
             @Throtle.canceled -= instance.OnThrotle;
+            @Options.started -= instance.OnOptions;
+            @Options.performed -= instance.OnOptions;
+            @Options.canceled -= instance.OnOptions;
+            @Back.started -= instance.OnBack;
+            @Back.performed -= instance.OnBack;
+            @Back.canceled -= instance.OnBack;
         }
 
         public void RemoveCallbacks(IMoveActions instance)
@@ -179,5 +237,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     public interface IMoveActions
     {
         void OnThrotle(InputAction.CallbackContext context);
+        void OnOptions(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
 }
