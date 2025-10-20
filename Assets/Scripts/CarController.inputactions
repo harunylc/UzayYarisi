@@ -3,22 +3,31 @@
     "maps": [
         {
             "name": "Move",
-            "id": "a2b1c12d-9610-4f98-bd93-a9be13978336",
+            "id": "f42a3b05-d49d-429e-8d44-93aa57732e2d",
             "actions": [
                 {
                     "name": "Throtle",
                     "type": "Value",
-                    "id": "d1b895e6-2af6-4b67-a8e3-af446318e590",
-                    "expectedControlType": "Axis",
+                    "id": "d2605af7-e573-49ba-9cd1-873505956530",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Options",
+                    "type": "Button",
+                    "id": "cc5d258a-f40b-4220-8ace-f485b3ca74a8",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "9533885e-bfe7-49da-b707-5cabcaf68af9",
+                    "id": "45f44813-f68b-456f-ab9f-7ce9946da0c6",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
@@ -29,7 +38,7 @@
                 },
                 {
                     "name": "",
-                    "id": "0df42f50-383d-43c0-86f5-8bc51998a694",
+                    "id": "c650cad7-92f9-437b-9390-230b6515e6ba",
                     "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "Invert",
@@ -37,52 +46,15 @@
                     "action": "Throtle",
                     "isComposite": false,
                     "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "UI",
-            "id": "d253027b-7c8c-493d-adc3-91d713a8c2f1",
-            "actions": [
-                {
-                    "name": "New action",
-                    "type": "Button",
-                    "id": "45073ca6-b2ab-44cf-b445-3b088256290a",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Cancel",
-                    "type": "Button",
-                    "id": "18def732-2db4-457f-bca5-89efd5512d0c",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "8bd8d37c-5563-4f0f-9524-93095205256d",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "New action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "a043ca42-fe5f-4b90-bb63-b2cf24bdbca4",
-                    "path": "<Gamepad>/buttonSouth",
+                    "id": "61898237-25ee-4baf-8515-2ca4ea641ea3",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Cancel",
+                    "action": "Options",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

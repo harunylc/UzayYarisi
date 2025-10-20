@@ -22,6 +22,7 @@ public class UI_Controller : MonoBehaviour
             panel.SetActive(false);
         }
 
+        // MainMenu Ac
         MainMenu.SetActive(true);
     }
     public void OpenPanel(GameObject targetPanel)

@@ -4,9 +4,10 @@ using UnityEngine.UI;
 
 public class Fade_Manager : MonoBehaviour
 {
-    [Header("Fade Settings")]
+    [Header("Fade Ayarları")]
     public Image fadeImage;           // FadePanel'deki Image component
-    public float fadeDuration = 0.4f; // Geçiş hızı (saniye)
+    public float fadeDuration = 1f; // Geçiş hızı (saniye)
+
     
     private static Fade_Manager instance;
 
