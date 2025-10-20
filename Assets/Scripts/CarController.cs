@@ -25,13 +25,13 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     ""maps"": [
         {
             ""name"": ""Move"",
-            ""id"": ""a2b1c12d-9610-4f98-bd93-a9be13978336"",
+            ""id"": ""f42a3b05-d49d-429e-8d44-93aa57732e2d"",
             ""actions"": [
                 {
                     ""name"": ""Throtle"",
                     ""type"": ""Value"",
-                    ""id"": ""d1b895e6-2af6-4b67-a8e3-af446318e590"",
-                    ""expectedControlType"": ""Axis"",
+                    ""id"": ""d2605af7-e573-49ba-9cd1-873505956530"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -39,16 +39,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                 {
                     ""name"": ""Options"",
                     ""type"": ""Button"",
-                    ""id"": ""aa69d619-d9a1-4a71-a7a1-5b2a318be981"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Back"",
-                    ""type"": ""Button"",
-                    ""id"": ""759a5c7b-15f9-4f07-ab70-4ef4a0a01fab"",
+                    ""id"": ""cc5d258a-f40b-4220-8ace-f485b3ca74a8"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -58,7 +49,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""9533885e-bfe7-49da-b707-5cabcaf68af9"",
+                    ""id"": ""45f44813-f68b-456f-ab9f-7ce9946da0c6"",
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
@@ -69,10 +60,10 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0df42f50-383d-43c0-86f5-8bc51998a694"",
+                    ""id"": ""c650cad7-92f9-437b-9390-230b6515e6ba"",
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
-                    ""processors"": ""Invert"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Throtle"",
                     ""isComposite"": false,
@@ -80,58 +71,12 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""54e7483c-8d16-4621-8076-d6ec051fed82"",
+                    ""id"": ""61898237-25ee-4baf-8515-2ca4ea641ea3"",
                     ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Options"",
-                }
-            ]
-        },
-        {
-            ""name"": ""UI"",
-            ""id"": ""d253027b-7c8c-493d-adc3-91d713a8c2f1"",
-            ""actions"": [
-                {
-                    ""name"": ""New action"",
-                    ""type"": ""Button"",
-                    ""id"": ""45073ca6-b2ab-44cf-b445-3b088256290a"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Cancel"",
-                    ""type"": ""Button"",
-                    ""id"": ""18def732-2db4-457f-bca5-89efd5512d0c"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""8bd8d37c-5563-4f0f-9524-93095205256d"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""New action"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8b585d90-d5f3-4284-93f7-23f3d4fcf5a1"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -144,7 +89,6 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_Throtle = m_Move.FindAction("Throtle", throwIfNotFound: true);
         m_Move_Options = m_Move.FindAction("Options", throwIfNotFound: true);
-        m_Move_Back = m_Move.FindAction("Back", throwIfNotFound: true);
     }
 
     ~@CarController()
@@ -213,14 +157,12 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     private List<IMoveActions> m_MoveActionsCallbackInterfaces = new List<IMoveActions>();
     private readonly InputAction m_Move_Throtle;
     private readonly InputAction m_Move_Options;
-    private readonly InputAction m_Move_Back;
     public struct MoveActions
     {
         private @CarController m_Wrapper;
         public MoveActions(@CarController wrapper) { m_Wrapper = wrapper; }
         public InputAction @Throtle => m_Wrapper.m_Move_Throtle;
         public InputAction @Options => m_Wrapper.m_Move_Options;
-        public InputAction @Back => m_Wrapper.m_Move_Back;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -236,9 +178,6 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @Options.started += instance.OnOptions;
             @Options.performed += instance.OnOptions;
             @Options.canceled += instance.OnOptions;
-            @Back.started += instance.OnBack;
-            @Back.performed += instance.OnBack;
-            @Back.canceled += instance.OnBack;
         }
 
         private void UnregisterCallbacks(IMoveActions instance)
@@ -249,9 +188,6 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @Options.started -= instance.OnOptions;
             @Options.performed -= instance.OnOptions;
             @Options.canceled -= instance.OnOptions;
-            @Back.started -= instance.OnBack;
-            @Back.performed -= instance.OnBack;
-            @Back.canceled -= instance.OnBack;
         }
 
         public void RemoveCallbacks(IMoveActions instance)
@@ -273,6 +209,5 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     {
         void OnThrotle(InputAction.CallbackContext context);
         void OnOptions(InputAction.CallbackContext context);
-        void OnBack(InputAction.CallbackContext context);
     }
 }
