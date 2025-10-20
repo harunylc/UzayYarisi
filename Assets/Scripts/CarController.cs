@@ -63,7 +63,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""id"": ""c650cad7-92f9-437b-9390-230b6515e6ba"",
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""Invert"",
                     ""groups"": """",
                     ""action"": ""Throtle"",
                     ""isComposite"": false,
