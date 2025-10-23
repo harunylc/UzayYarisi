@@ -6,9 +6,18 @@
             "id": "f42a3b05-d49d-429e-8d44-93aa57732e2d",
             "actions": [
                 {
-                    "name": "Throtle",
+                    "name": "P1_Throtle",
                     "type": "Value",
                     "id": "d2605af7-e573-49ba-9cd1-873505956530",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "P2_Throtle",
+                    "type": "Value",
+                    "id": "dade1f50-283e-44c1-873c-b51e41e64366",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -32,7 +41,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Throtle",
+                    "action": "P1_Throtle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -43,7 +52,29 @@
                     "interactions": "",
                     "processors": "Invert",
                     "groups": "",
-                    "action": "Throtle",
+                    "action": "P1_Throtle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7e0dcb35-0f11-4829-9151-6c72a8fb9448",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "P2_Throtle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e97ff5e1-0495-4ae9-a6ca-e58314c78b7c",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "P2_Throtle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

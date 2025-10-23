@@ -18,8 +18,11 @@ public class Car_Driving : MonoBehaviour
     {
         controls = new CarController();
 
-        controls.Move.Throtle.performed += OnMove;
-        controls.Move.Throtle.canceled += OnMove;
+        controls.Move.P1_Throtle.performed += OnMove;
+        controls.Move.P1_Throtle.canceled += OnMove;
+        
+        controls.Move.P2_Throtle.performed += OnMove;
+        controls.Move.P2_Throtle.canceled += OnMove;
         
         controls.Move.Options.performed += OnOptions;
     }

@@ -28,9 +28,18 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             ""id"": ""f42a3b05-d49d-429e-8d44-93aa57732e2d"",
             ""actions"": [
                 {
-                    ""name"": ""Throtle"",
+                    ""name"": ""P1_Throtle"",
                     ""type"": ""Value"",
                     ""id"": ""d2605af7-e573-49ba-9cd1-873505956530"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""P2_Throtle"",
+                    ""type"": ""Value"",
+                    ""id"": ""dade1f50-283e-44c1-873c-b51e41e64366"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -54,7 +63,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Throtle"",
+                    ""action"": ""P1_Throtle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -65,7 +74,29 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": ""Invert"",
                     ""groups"": """",
-                    ""action"": ""Throtle"",
+                    ""action"": ""P1_Throtle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e0dcb35-0f11-4829-9151-6c72a8fb9448"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": ""Invert"",
+                    ""groups"": """",
+                    ""action"": ""P2_Throtle"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e97ff5e1-0495-4ae9-a6ca-e58314c78b7c"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2_Throtle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -87,7 +118,8 @@ public partial class @CarController: IInputActionCollection2, IDisposable
 }");
         // Move
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
-        m_Move_Throtle = m_Move.FindAction("Throtle", throwIfNotFound: true);
+        m_Move_P1_Throtle = m_Move.FindAction("P1_Throtle", throwIfNotFound: true);
+        m_Move_P2_Throtle = m_Move.FindAction("P2_Throtle", throwIfNotFound: true);
         m_Move_Options = m_Move.FindAction("Options", throwIfNotFound: true);
     }
 
@@ -155,13 +187,15 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     // Move
     private readonly InputActionMap m_Move;
     private List<IMoveActions> m_MoveActionsCallbackInterfaces = new List<IMoveActions>();
-    private readonly InputAction m_Move_Throtle;
+    private readonly InputAction m_Move_P1_Throtle;
+    private readonly InputAction m_Move_P2_Throtle;
     private readonly InputAction m_Move_Options;
     public struct MoveActions
     {
         private @CarController m_Wrapper;
         public MoveActions(@CarController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Throtle => m_Wrapper.m_Move_Throtle;
+        public InputAction @P1_Throtle => m_Wrapper.m_Move_P1_Throtle;
+        public InputAction @P2_Throtle => m_Wrapper.m_Move_P2_Throtle;
         public InputAction @Options => m_Wrapper.m_Move_Options;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
@@ -172,9 +206,12 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_MoveActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_MoveActionsCallbackInterfaces.Add(instance);
-            @Throtle.started += instance.OnThrotle;
-            @Throtle.performed += instance.OnThrotle;
-            @Throtle.canceled += instance.OnThrotle;
+            @P1_Throtle.started += instance.OnP1_Throtle;
+            @P1_Throtle.performed += instance.OnP1_Throtle;
+            @P1_Throtle.canceled += instance.OnP1_Throtle;
+            @P2_Throtle.started += instance.OnP2_Throtle;
+            @P2_Throtle.performed += instance.OnP2_Throtle;
+            @P2_Throtle.canceled += instance.OnP2_Throtle;
             @Options.started += instance.OnOptions;
             @Options.performed += instance.OnOptions;
             @Options.canceled += instance.OnOptions;
@@ -182,9 +219,12 @@ public partial class @CarController: IInputActionCollection2, IDisposable
 
         private void UnregisterCallbacks(IMoveActions instance)
         {
-            @Throtle.started -= instance.OnThrotle;
-            @Throtle.performed -= instance.OnThrotle;
-            @Throtle.canceled -= instance.OnThrotle;
+            @P1_Throtle.started -= instance.OnP1_Throtle;
+            @P1_Throtle.performed -= instance.OnP1_Throtle;
+            @P1_Throtle.canceled -= instance.OnP1_Throtle;
+            @P2_Throtle.started -= instance.OnP2_Throtle;
+            @P2_Throtle.performed -= instance.OnP2_Throtle;
+            @P2_Throtle.canceled -= instance.OnP2_Throtle;
             @Options.started -= instance.OnOptions;
             @Options.performed -= instance.OnOptions;
             @Options.canceled -= instance.OnOptions;
@@ -207,7 +247,8 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     public MoveActions @Move => new MoveActions(this);
     public interface IMoveActions
     {
-        void OnThrotle(InputAction.CallbackContext context);
+        void OnP1_Throtle(InputAction.CallbackContext context);
+        void OnP2_Throtle(InputAction.CallbackContext context);
         void OnOptions(InputAction.CallbackContext context);
     }
 }
