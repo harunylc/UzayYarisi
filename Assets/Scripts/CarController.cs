@@ -46,6 +46,15 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
+                    ""name"": ""P1_Nitro"",
+                    ""type"": ""Button"",
+                    ""id"": ""72f28330-256e-4dfa-8f83-0aa8770fa43f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Options"",
                     ""type"": ""Button"",
                     ""id"": ""cc5d258a-f40b-4220-8ace-f485b3ca74a8"",
@@ -110,6 +119,17 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""action"": ""Options"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78388d59-bc96-462e-abb7-f2fd6b9b2133"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1_Nitro"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -120,6 +140,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_P1_Throtle = m_Move.FindAction("P1_Throtle", throwIfNotFound: true);
         m_Move_P2_Throtle = m_Move.FindAction("P2_Throtle", throwIfNotFound: true);
+        m_Move_P1_Nitro = m_Move.FindAction("P1_Nitro", throwIfNotFound: true);
         m_Move_Options = m_Move.FindAction("Options", throwIfNotFound: true);
     }
 
@@ -189,6 +210,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     private List<IMoveActions> m_MoveActionsCallbackInterfaces = new List<IMoveActions>();
     private readonly InputAction m_Move_P1_Throtle;
     private readonly InputAction m_Move_P2_Throtle;
+    private readonly InputAction m_Move_P1_Nitro;
     private readonly InputAction m_Move_Options;
     public struct MoveActions
     {
@@ -196,6 +218,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         public MoveActions(@CarController wrapper) { m_Wrapper = wrapper; }
         public InputAction @P1_Throtle => m_Wrapper.m_Move_P1_Throtle;
         public InputAction @P2_Throtle => m_Wrapper.m_Move_P2_Throtle;
+        public InputAction @P1_Nitro => m_Wrapper.m_Move_P1_Nitro;
         public InputAction @Options => m_Wrapper.m_Move_Options;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
@@ -212,6 +235,9 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @P2_Throtle.started += instance.OnP2_Throtle;
             @P2_Throtle.performed += instance.OnP2_Throtle;
             @P2_Throtle.canceled += instance.OnP2_Throtle;
+            @P1_Nitro.started += instance.OnP1_Nitro;
+            @P1_Nitro.performed += instance.OnP1_Nitro;
+            @P1_Nitro.canceled += instance.OnP1_Nitro;
             @Options.started += instance.OnOptions;
             @Options.performed += instance.OnOptions;
             @Options.canceled += instance.OnOptions;
@@ -225,6 +251,9 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @P2_Throtle.started -= instance.OnP2_Throtle;
             @P2_Throtle.performed -= instance.OnP2_Throtle;
             @P2_Throtle.canceled -= instance.OnP2_Throtle;
+            @P1_Nitro.started -= instance.OnP1_Nitro;
+            @P1_Nitro.performed -= instance.OnP1_Nitro;
+            @P1_Nitro.canceled -= instance.OnP1_Nitro;
             @Options.started -= instance.OnOptions;
             @Options.performed -= instance.OnOptions;
             @Options.canceled -= instance.OnOptions;
@@ -249,6 +278,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     {
         void OnP1_Throtle(InputAction.CallbackContext context);
         void OnP2_Throtle(InputAction.CallbackContext context);
+        void OnP1_Nitro(InputAction.CallbackContext context);
         void OnOptions(InputAction.CallbackContext context);
     }
 }
