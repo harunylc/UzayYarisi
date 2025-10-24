@@ -32,4 +32,24 @@ public class LobbySystemTest : MonoBehaviour
     {
         Debug.Log("P2 Ready");
     }
+    
+    public void RightButtonP1()
+    {
+        Debug.Log("P1 Right");
+    }
+    
+    public void LeftButtonP1()
+    {
+        Debug.Log("P1 Left");
+    }
+    
+    public void RightButtonP2()
+    {
+        Debug.Log("P2 Right");
+    }
+    
+    public void LeftButtonP2()
+    {
+        Debug.Log("P2 Left");
+    }
 }
