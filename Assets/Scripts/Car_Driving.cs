@@ -1,5 +1,6 @@
+using System;
 using UnityEngine;
-using UnityEngine.InputSystem; // Yeni Input System için gerekli
+using UnityEngine.InputSystem; 
 
 public class Car_Driving : MonoBehaviour
 {
@@ -13,18 +14,30 @@ public class Car_Driving : MonoBehaviour
     
     private CarController controls;
     private float moveInput;
+    
+    private bool isNewInputSystemActive = false; 
 
     private void Awake()
     {
-        controls = new CarController();
+        try
+        {
+            controls = new CarController();
+            isNewInputSystemActive = true;
 
-        controls.Move.P1_Throtle.performed += OnMove;
-        controls.Move.P1_Throtle.canceled += OnMove;
-        
-        controls.Move.P2_Throtle.performed += OnMove;
-        controls.Move.P2_Throtle.canceled += OnMove;
-        
-        controls.Move.Options.performed += OnOptions;
+            controls.Move.P1_Throtle.performed += OnMove;
+            controls.Move.P1_Throtle.canceled += OnMove;
+            
+            controls.Move.P2_Throtle.performed += OnMove;
+            controls.Move.P2_Throtle.canceled += OnMove;
+            
+            controls.Move.Options.performed += OnOptions;
+
+        }
+        catch (Exception e)
+        {
+            isNewInputSystemActive = false;
+            controls = null;
+        }
     }
     
     private void OnMove(InputAction.CallbackContext context)
@@ -34,32 +47,49 @@ public class Car_Driving : MonoBehaviour
 
     private void OnOptions(InputAction.CallbackContext context)
     {
-        if (settingsPanel.activeSelf)
+        if (settingsPanel == null)
         {
-            settingsPanel.SetActive(false);
+            Debug.LogWarning("Ayarlar paneli atanmamış!");
+            return;
         }
-        else
-        {
-            settingsPanel.SetActive(true);
-        }
-        Debug.Log("Ayarlar Açıldı");
+
+        settingsPanel.SetActive(!settingsPanel.activeSelf);
+        Debug.Log("Ayarlar Açıldı/Kapandı");
     }
 
     private void OnEnable()
     {
-        controls.Move.Enable();
+        if (isNewInputSystemActive)
+        {
+            controls.Move.Enable();
+        }
     }
 
     private void OnDisable()
     {
-        controls.Move.Disable();
+        if (isNewInputSystemActive)
+        {
+            controls.Move.Disable();
+        }
     }
 
     private void FixedUpdate()
     {
-        tireFrontRb.AddTorque(-moveInput * speed * Time.fixedDeltaTime);
-        tireBackRb.AddTorque(-moveInput * speed * Time.fixedDeltaTime);
+        float currentMoveInput = 0f;
+
+        if (isNewInputSystemActive)
+        {
+            currentMoveInput = moveInput;
+        }
+
+        if (!isNewInputSystemActive || Mathf.Approximately(currentMoveInput, 0f))
+        {
+            currentMoveInput = Input.GetAxis("Horizontal");
+        }
         
-        carRb.AddTorque(moveInput * carRotation * Time.fixedDeltaTime);
+        tireFrontRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
+        tireBackRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
+        
+        carRb.AddTorque(currentMoveInput * carRotation * Time.fixedDeltaTime);
     }
 }
