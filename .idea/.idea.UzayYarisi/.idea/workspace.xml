@@ -6,18 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Physics_Material/Tire_Friction.physicsMaterial2D" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Physics_Material/Tire_Friction.physicsMaterial2D" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UpgradeLobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UpgradeLobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CarController.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CarController.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/Fade_Manager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/Fade_Manager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/SpriteShape/Sprites/lowres-highway-ground.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/SpriteShape/Sprites/lowres-highway-ground.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/SpriteShape/Sprites/lowres-highway-surface.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/SpriteShape/Sprites/lowres-highway-surface.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +24,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyInputLinker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbySceneManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyUIHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WheelFriction2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.spriteshape/Runtime/SpriteShapeController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem/InputSystem/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/UGUI/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -47,7 +41,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Yedek&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;YTest&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -112,6 +106,9 @@
       <workItem from="1760818756639" duration="3945000" />
       <workItem from="1761003938773" duration="8616000" />
       <workItem from="1761041324164" duration="13949000" />
+      <workItem from="1761430830526" duration="3000" />
+      <workItem from="1761430835745" duration="5000" />
+      <workItem from="1761456650672" duration="1492000" />
     </task>
     <servers />
   </component>
