@@ -13,6 +13,7 @@ private CanvasGroup canvasGroup;
 
 private void Awake()
 {
+    Debug.Log("Fade_Manager::Awake");
     if (Instance != null && Instance != this)
     {
         Destroy(gameObject);

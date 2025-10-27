@@ -1,21 +1,21 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem; 
+using UnityEngine.InputSystem;
 
 public class Car_Driving : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D tireBackRb;
     [SerializeField] private Rigidbody2D tireFrontRb;
     [SerializeField] private Rigidbody2D carRb;
-    [SerializeField] private float carRotation = 300f;  
-    [SerializeField] private float speed = 150f;
+    private float carRotation = 300f;
+    private float speed = 90f;
 
     [SerializeField] private GameObject settingsPanel;
-    
+
     private CarController controls;
     private float moveInput;
-    
-    private bool isNewInputSystemActive = false; 
+
+    private bool isNewInputSystemActive = false;
 
     private void Awake()
     {
@@ -26,12 +26,11 @@ public class Car_Driving : MonoBehaviour
 
             controls.Move.P1_Throtle.performed += OnMove;
             controls.Move.P1_Throtle.canceled += OnMove;
-            
+
             controls.Move.P2_Throtle.performed += OnMove;
             controls.Move.P2_Throtle.canceled += OnMove;
-            
-            controls.Move.Options.performed += OnOptions;
 
+            controls.Move.Options.performed += OnOptions;
         }
         catch (Exception e)
         {
@@ -39,7 +38,7 @@ public class Car_Driving : MonoBehaviour
             controls = null;
         }
     }
-    
+
     private void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<float>();
@@ -79,17 +78,20 @@ public class Car_Driving : MonoBehaviour
 
         if (isNewInputSystemActive)
         {
-            currentMoveInput = moveInput;
+            currentMoveInput = -moveInput;
         }
 
         if (!isNewInputSystemActive || Mathf.Approximately(currentMoveInput, 0f))
         {
             currentMoveInput = Input.GetAxis("Horizontal");
         }
-        
-        tireFrontRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
-        tireBackRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
-        
-        carRb.AddTorque(currentMoveInput * carRotation * Time.fixedDeltaTime);
+
+        // tireFrontRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
+        // tireBackRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
+        float torquePower = speed * 3.5f; // hız çarpanı, 3–5 arasında oynayabilirsin
+        tireFrontRb.AddTorque(-currentMoveInput * torquePower * Time.fixedDeltaTime, ForceMode2D.Force);
+        tireBackRb.AddTorque(-currentMoveInput * torquePower * Time.fixedDeltaTime, ForceMode2D.Force);
+
+        carRb.AddTorque(currentMoveInput * -carRotation * Time.fixedDeltaTime);
     }
 }

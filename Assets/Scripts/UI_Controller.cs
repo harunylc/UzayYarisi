@@ -24,6 +24,7 @@ public GameObject firstCreatersButton;
 
 private void Awake()
 {
+    Debug.Log("UI_Controller::Awake");
     // Panelleri kolayca yönetmek için bir listeye doldur
     allPanels = new List<GameObject> { mainMenu, settingsPanel, howToPlayPanel, creatersPanel, exitPanel };
 }
@@ -50,11 +51,11 @@ void Start()
     }
     mainMenu.SetActive(true);
 
-    // Oyuncuların kontrol şemasının "UI" olduğundan emin ol
-    if (GameManager.Instance != null)
-    {
-        GameManager.Instance.SwitchAllPlayersToActionMap("UI");
-    }
+    // // Oyuncuların kontrol şemasının "UI" olduğundan emin ol
+    // if (GameManager.Instance != null)
+    // {
+    //     GameManager.Instance.SwitchAllPlayersToActionMap("UI");
+    // }
 
     // Gamepad navigasyonunu başlatmak için ilk butonu seç
     EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
