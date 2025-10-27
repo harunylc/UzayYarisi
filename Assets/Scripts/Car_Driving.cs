@@ -86,11 +86,16 @@ public class Car_Driving : MonoBehaviour
             currentMoveInput = Input.GetAxis("Horizontal");
         }
 
+<<<<<<< Updated upstream
         // tireFrontRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
         // tireBackRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
         float torquePower = speed * 3.5f; // hız çarpanı, 3–5 arasında oynayabilirsin
         tireFrontRb.AddTorque(-currentMoveInput * torquePower * Time.fixedDeltaTime, ForceMode2D.Force);
         tireBackRb.AddTorque(-currentMoveInput * torquePower * Time.fixedDeltaTime, ForceMode2D.Force);
+=======
+        tireFrontRb.AddTorque(-currentMoveInput * speed);
+        tireBackRb.AddTorque(-currentMoveInput * speed );
+>>>>>>> Stashed changes
 
         carRb.AddTorque(currentMoveInput * -carRotation * Time.fixedDeltaTime);
     }
