@@ -83,8 +83,8 @@ public class Car_Driving : MonoBehaviour
             currentMoveInput = Input.GetAxis("Horizontal");
         }
 
-        tireFrontRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
-        tireBackRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
+        tireFrontRb.AddTorque(-currentMoveInput * speed );
+        tireBackRb.AddTorque(-currentMoveInput * speed);
 
         carRb.AddTorque(-currentMoveInput * carRotation * Time.fixedDeltaTime);
     }
