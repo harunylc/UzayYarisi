@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
-<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Physics_Material/Planetsmaterials/WorldMaterial.physicsMaterial2D" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Physics_Material/Planetsmaterials/WorldMaterial.physicsMaterial2D" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Physics_Material/Tire_Friction.physicsMaterial2D" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Physics_Material/Tire_Friction.physicsMaterial2D" afterDir="false" />
@@ -21,9 +20,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Controller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WheelFriction2D.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WheelFriction2D.cs.meta" beforeDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/Arabalar/Body/araba2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/Arabalar/Body/araba2.png.meta" afterDir="false" />
->>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,11 +52,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-<<<<<<< Updated upstream
     &quot;git-widget-placeholder&quot;: &quot;YTest&quot;,
-=======
-    &quot;git-widget-placeholder&quot;: &quot;Test&quot;,
->>>>>>> Stashed changes
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
