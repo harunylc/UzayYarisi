@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d2e5dd6eb60c0a442892a2f6084b6e4a
+guid: 541e020ace70d924db35a25b7b30c288
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7921649188387484213
-    second: Car_0
+      213: -676705488414979569
+    second: "sat\xFCrn zemin alt_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,9 +40,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Car_0
+      name: "sat\xFCrn zemin alt_0"
       rect:
         serializedVersion: 2
-        x: 3
-        y: 5
-        width: 253
-        height: 102
+        x: 0
+        y: 0
+        width: 1418
+        height: 1418
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bcd07eaa806a01290800000000000000
-      internalID: -7921649188387484213
+      spriteID: f0ac77191fbdb96f0800000000000000
+      internalID: -676705488414979569
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Car_0: -7921649188387484213
+      "sat\xFCrn zemin alt_0": -676705488414979569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

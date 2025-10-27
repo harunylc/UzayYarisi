@@ -7,8 +7,8 @@ public class Car_Driving : MonoBehaviour
     [SerializeField] private Rigidbody2D tireBackRb;
     [SerializeField] private Rigidbody2D tireFrontRb;
     [SerializeField] private Rigidbody2D carRb;
-    private float carRotation = 300f;
-    private float speed = 90f;
+    [SerializeField] private float carRotation = 300f;
+    [SerializeField] private float speed = 150f;
 
     [SerializeField] private GameObject settingsPanel;
 

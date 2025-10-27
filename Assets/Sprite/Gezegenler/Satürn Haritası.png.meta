@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6d77fc15999c02d4a8caaf9eb9b3c147
+guid: 3641a269ff234a1419e8ffa851a71fb3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8891840023226956746
-    second: "mars \xFCst_0"
+      213: 6053381926731852252
+    second: "Sat\xFCrn Haritas\u0131_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,18 +37,18 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "mars \xFCst_0"
+      name: "Sat\xFCrn Haritas\u0131_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 240
-        height: 145
+        width: 5443
+        height: 3062
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 634c4ff1c96d99480800000000000000
-      internalID: -8891840023226956746
+      spriteID: cd92f984acee10450800000000000000
+      internalID: 6053381926731852252
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "mars \xFCst_0": -8891840023226956746
+      "Sat\xFCrn Haritas\u0131_0": 6053381926731852252
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

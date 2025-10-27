@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a3497516221e0574caf27a376663f447
+guid: f880cfc6aa9f96f4ea3e668d49eafecd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4498412671379269
-    second: mars alt_0
+      213: 454614866027014211
+    second: "d\xFCnya zemin alt_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mars alt_0
+      name: "d\xFCnya zemin alt_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 242
-        height: 241
+        width: 1418
+        height: 1418
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 547a451584bff0000800000000000000
-      internalID: 4498412671379269
+      spriteID: 348e62fdfcd1f4600800000000000000
+      internalID: 454614866027014211
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mars alt_0: 4498412671379269
+      "d\xFCnya zemin alt_0": 454614866027014211
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

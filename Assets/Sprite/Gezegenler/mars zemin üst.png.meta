@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b3475165baec47640aefdc716f2dcf9c
+guid: af38d73b1d7910d4e9ae365fce56cae9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2646730934537058998
-    second: "d\xFCnya arka plan_0"
+      213: 4851948344177668797
+    second: "mars zemin \xFCst_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,21 +37,21 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 800
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "d\xFCnya arka plan_0"
+      name: "mars zemin \xFCst_0"
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 5827
-        height: 3060
+        width: 1418
+        height: 851
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ba7e1113c31bb420800000000000000
-      internalID: 2646730934537058998
+      spriteID: db23143ff45955340800000000000000
+      internalID: 4851948344177668797
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "d\xFCnya arka plan_0": 2646730934537058998
+      "mars zemin \xFCst_0": 4851948344177668797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
