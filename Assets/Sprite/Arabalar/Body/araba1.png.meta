@@ -116,10 +116,10 @@ TextureImporter:
       name: araba1_0
       rect:
         serializedVersion: 2
-        x: 198
-        y: 340
-        width: 1502
-        height: 356
+        x: 336
+        y: 347
+        width: 1024
+        height: 320
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -27,9 +27,6 @@ public class Car_Driving : MonoBehaviour
             controls.Move.P1_Throtle.performed += OnMove;
             controls.Move.P1_Throtle.canceled += OnMove;
 
-            controls.Move.P2_Throtle.performed += OnMove;
-            controls.Move.P2_Throtle.canceled += OnMove;
-
             controls.Move.Options.performed += OnOptions;
         }
         catch (Exception e)
@@ -89,6 +86,6 @@ public class Car_Driving : MonoBehaviour
         tireFrontRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
         tireBackRb.AddTorque(-currentMoveInput * speed * Time.fixedDeltaTime);
 
-        carRb.AddTorque(currentMoveInput * carRotation * Time.fixedDeltaTime);
+        carRb.AddTorque(-currentMoveInput * carRotation * Time.fixedDeltaTime);
     }
 }
