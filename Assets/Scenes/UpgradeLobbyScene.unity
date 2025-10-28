@@ -744,6 +744,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  readyButtonP1: {fileID: 1471995679}
+  readyButtonP2: {fileID: 930478817}
 --- !u!1 &593102270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1341,7 @@ GameObject:
   - component: {fileID: 1264158267}
   - component: {fileID: 1264158266}
   m_Layer: 0
-  m_Name: MultiplayerEventSystemP1 (1)
+  m_Name: MultiplayerEventSystemP2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1685,6 +1687,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  readyButtonP1: {fileID: 1471995679}
+  readyButtonP2: {fileID: 930478817}
 --- !u!1 &1382377978
 GameObject:
   m_ObjectHideFlags: 0

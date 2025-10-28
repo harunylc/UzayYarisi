@@ -50,13 +50,7 @@ void Start()
         }
     }
     mainMenu.SetActive(true);
-
-    // // Oyuncuların kontrol şemasının "UI" olduğundan emin ol
-    // if (GameManager.Instance != null)
-    // {
-    //     GameManager.Instance.SwitchAllPlayersToActionMap("UI");
-    // }
-
+    
     // Gamepad navigasyonunu başlatmak için ilk butonu seç
     EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
 }

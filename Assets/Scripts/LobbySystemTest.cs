@@ -1,8 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LobbySystemTest : MonoBehaviour
 {
+    public Button readyButtonP1, readyButtonP2;
+    
     public void BuffButtonP1()
     {
         Debug.Log("P1 Buff");
@@ -25,12 +29,12 @@ public class LobbySystemTest : MonoBehaviour
     
     public void ReadyButtonP1()
     {
-        Debug.Log("P1 Ready");
+        readyButtonP1.interactable = false;
     }
     
     public void ReadyButtonP2()
     {
-        Debug.Log("P2 Ready");
+        readyButtonP2.interactable = false;
     }
     
     public void RightButtonP1()
@@ -45,11 +49,19 @@ public class LobbySystemTest : MonoBehaviour
     
     public void RightButtonP2()
     {
-        Debug.Log("P2 Right");
+        Debug.Log("P2 rİGHT");
     }
     
     public void LeftButtonP2()
     {
         Debug.Log("P2 Left");
+    }
+
+    private void Update()
+    {
+        if (readyButtonP1.interactable == false && readyButtonP2.interactable == false)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
 }
