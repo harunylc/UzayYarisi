@@ -11,6 +11,10 @@ public class Car_Driving : MonoBehaviour
     [SerializeField] private float speed = 150f;
 
     [SerializeField] private GameObject settingsPanel;
+    
+    private float totalRotation = 0f;
+    private float lastRotation = 0f;
+    private int flipCount = 0;
 
     private CarController controls;
     private float moveInput;
@@ -86,6 +90,19 @@ public class Car_Driving : MonoBehaviour
         tireFrontRb.AddTorque(-currentMoveInput * speed );
         tireBackRb.AddTorque(-currentMoveInput * speed);
 
-        carRb.AddTorque(-currentMoveInput * carRotation * Time.fixedDeltaTime);
+        carRb.AddTorque(currentMoveInput * carRotation * Time.fixedDeltaTime);
+        
+        float rotation = carRb.rotation;
+        float deltaRotation = Mathf.DeltaAngle(lastRotation, rotation);
+        totalRotation += deltaRotation;
+        lastRotation = rotation;
+
+        if (Mathf.Abs(totalRotation) >= 360f)
+        {
+            flipCount++;
+            totalRotation = 0f;
+            Debug.Log($"🔥 Takla sayısı: {flipCount}");
+        }
+
     }
 }
