@@ -31,7 +31,7 @@ public class Car_Driving : MonoBehaviour
             controls.Move.P1_Throtle.performed += OnMove;
             controls.Move.P1_Throtle.canceled += OnMove;
 
-            controls.Move.Options.performed += OnOptions;
+            // controls.Move.Options.performed += OnOptions;
         }
         catch (Exception e)
         {
@@ -45,17 +45,17 @@ public class Car_Driving : MonoBehaviour
         moveInput = context.ReadValue<float>();
     }
 
-    private void OnOptions(InputAction.CallbackContext context)
-    {
-        if (settingsPanel == null)
-        {
-            Debug.LogWarning("Ayarlar paneli atanmamış!");
-            return;
-        }
-
-        settingsPanel.SetActive(!settingsPanel.activeSelf);
-        Debug.Log("Ayarlar Açıldı/Kapandı");
-    }
+    // private void OnOptions(InputAction.CallbackContext context)
+    // {
+    //     if (settingsPanel == null)
+    //     {
+    //         Debug.LogWarning("Ayarlar paneli atanmamış!");
+    //         return;
+    //     }
+    //
+    //     settingsPanel.SetActive(!settingsPanel.activeSelf);
+    //     Debug.Log("Ayarlar Açıldı/Kapandı");
+    // }
 
     private void OnEnable()
     {
