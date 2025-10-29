@@ -78,6 +78,7 @@ public class PauseManager : MonoBehaviour
 
         // ✅ Ayarlarda seçili buton kalmasın (aksi halde UI karışır)
         EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(GameObject.Find("SoundSlider"));
     }
 
     public void ExitGame()

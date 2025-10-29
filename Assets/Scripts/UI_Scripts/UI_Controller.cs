@@ -66,25 +66,26 @@ public class UI_Controller : MonoBehaviour
     public void OpenPanel(GameObject targetPanel)
     {
         StartCoroutine(SwitchPanelRoutine(targetPanel));
+        
     }
 
     private IEnumerator SwitchPanelRoutine(GameObject targetPanel)
     {
         yield return StartCoroutine(Fade_Manager.Instance.FadeOut());
-
+    
         foreach (var panel in allPanels)
         {
             if (panel != null) panel.SetActive(false);
         }
-
+    
         if (targetPanel != null) targetPanel.SetActive(true);
-
+    
         EventSystem.current.SetSelectedGameObject(null);
         if (targetPanel == mainMenu) EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
         if (targetPanel == settingsPanel) EventSystem.current.SetSelectedGameObject(firstSettingsButton);
         if (targetPanel == howToPlayPanel) EventSystem.current.SetSelectedGameObject(firstHowToPlayButton);
         if (targetPanel == creatersPanel) EventSystem.current.SetSelectedGameObject(firstCreatersButton);
-
+    
         yield return StartCoroutine(Fade_Manager.Instance.FadeIn());
     }
 

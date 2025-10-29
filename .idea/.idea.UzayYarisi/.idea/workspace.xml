@@ -6,12 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputActions/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputActions/CarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputActions/CarController.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputActions/CarController.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputActions/PlayerInputActions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputActions/PlayerInputActions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputActions/PlayerInputActions.inputactions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputActions/PlayerInputActions.inputactions.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/CanvasPause.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Default/CanvasPause.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Satürn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Satürn.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/CanvasPause.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Default/CanvasPause.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/PlanetGravity.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/PlanetGravity.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/PauseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/PauseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,10 +31,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI_Scripts/FullScreenManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI_Scripts/PlanetGravityManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.spriteshape/Runtime/SpriteShapeController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem/InputSystem/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/TMP/MaterialReferenceManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui/Runtime/UGUI/EventSystem/EventSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -113,7 +123,8 @@
       <workItem from="1761528355135" duration="2010000" />
       <workItem from="1761574760397" duration="1466000" />
       <workItem from="1761677227227" duration="11520000" />
-      <workItem from="1761731427553" duration="2114000" />
+      <workItem from="1761731427553" duration="6908000" />
+      <workItem from="1761743962005" duration="11704000" />
     </task>
     <servers />
   </component>
