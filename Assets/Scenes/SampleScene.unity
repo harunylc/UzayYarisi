@@ -2638,7 +2638,17 @@ MonoBehaviour:
   carRb: {fileID: 1954005979563307656}
   carRotation: 300
   speed: 150
+  currentSpeed: 0
+  nitroSlider: {fileID: 652910763}
+  maxNitro: 100
+  nitroDrainRate: 30
+  nitroRechargeRate: 15
+  nitroBoost: 300
   settingsPanel: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  rayLength: 45
 --- !u!1001 &3508057463488882347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4699,6 +4709,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Sat\xFCrn"
       objectReference: {fileID: 0}
+    - target: {fileID: 7617285374017328825, guid: f1e38a4cad110db498b675876d64ec87, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8083389472049194405, guid: f1e38a4cad110db498b675876d64ec87, type: 3}
       propertyPath: m_Creator
       value: 
@@ -5344,11 +5358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7705868325483165665, guid: 429e3b030ba2b254e881645a5d24340c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 52.191277
+      value: 52.323383
       objectReference: {fileID: 0}
     - target: {fileID: 7705868325483165665, guid: 429e3b030ba2b254e881645a5d24340c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 62.816833
+      value: 76.4
       objectReference: {fileID: 0}
     - target: {fileID: 7705868325483165665, guid: 429e3b030ba2b254e881645a5d24340c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5396,7 +5410,7 @@ Transform:
   m_GameObject: {fileID: 7778744460788476647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.931278, y: 62.816833, z: 0}
+  m_LocalPosition: {x: 20.063385, y: 76.4, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
