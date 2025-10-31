@@ -33,15 +33,14 @@ public class InputManager : MonoBehaviour
         PauseOpenClose = _pauseOpenClose.WasPressedThisFrame();
     }
 
-    // 🔹 Map değiştirici fonksiyonlar
     public void SwitchToGame()
     {
-        _playerInput.SwitchCurrentActionMap("Move"); // ✅ senin oyun haritan
+        _playerInput.SwitchCurrentActionMap("Move"); 
     }
 
     public void SwitchToUI()
     {
-        _playerInput.SwitchCurrentActionMap("Actions"); // ✅ senin UI haritan
+        _playerInput.SwitchCurrentActionMap("Actions"); 
     }
 }
 

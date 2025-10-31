@@ -744,8 +744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readyButtonP1: {fileID: 1471995679}
-  readyButtonP2: {fileID: 930478817}
 --- !u!1 &593102270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1205,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1803812984}
+        m_TargetAssemblyTypeName: GameFlowConnector, Assembly-CSharp
+        m_MethodName: PlayerReady
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1687,8 +1697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readyButtonP1: {fileID: 1471995679}
-  readyButtonP2: {fileID: 930478817}
 --- !u!1 &1382377978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,6 +2027,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1803812984}
+        m_TargetAssemblyTypeName: GameFlowConnector, Assembly-CSharp
+        m_MethodName: PlayerReady
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2647,6 +2667,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765308320}
   m_CullTransparentMesh: 1
+--- !u!1 &1803812983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1803812985}
+  - component: {fileID: 1803812984}
+  m_Layer: 0
+  m_Name: GameFlowConnector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1803812984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803812983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40c806199855c1489f48b72d435573d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1803812985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803812983}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 757.4539, y: -7.6476417, z: -0.5180533}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824689900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,3 +3198,4 @@ SceneRoots:
   - {fileID: 36648019}
   - {fileID: 1264158269}
   - {fileID: 1824689902}
+  - {fileID: 1803812985}

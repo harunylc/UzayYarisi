@@ -13,7 +13,7 @@ public class UI_Controller : MonoBehaviour
     public GameObject exitPanel;
     private List<GameObject> allPanels;
 
-    [Header("Gamepad Input")] public InputActionReference cancelAction; // Inspector'dan Cancel eylemini sürükle
+    [Header("Gamepad Input")] public InputActionReference cancelAction;
 
     [Header("İlk Seçilecek Butonlar")] public GameObject firstMainMenuButton;
     public GameObject firstSettingsButton;
@@ -47,13 +47,11 @@ public class UI_Controller : MonoBehaviour
 
         mainMenu.SetActive(true);
 
-        // Gamepad navigasyonunu başlatmak için ilk butonu seç
         EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
     }
 
     void Update()
     {
-        // Eğer B tuşuna basıldıysa ve ana menüde değilsek...
         if (cancelAction != null && cancelAction.action.WasPressedThisFrame())
         {
             if (mainMenu != null && !mainMenu.activeInHierarchy)
