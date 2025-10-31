@@ -12,7 +12,7 @@ public class SceneFlowManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
     
-    public List<String> scenes = new List<string>{"Dünya","Mars","Venüs","Satürn","Neptün"};
+    public List<String> scenes = new List<string>{"Dünya","Mars","Merkür","Satürn","Neptün"};
     private List<string> remainingScenes = new List<string>();
     
     private string upgradeScene="UpgradeLobbyScene";
@@ -59,9 +59,6 @@ public class SceneFlowManager : MonoBehaviour
             // Tüm leveller tamamlandı, Ana Menü'ye dön
             Debug.Log("Tüm Leveller Tamamlandı! Ana Menü'ye dönülüyor.");
             SceneManager.LoadScene(mainMenuScene); 
-        
-            // Veya GameFlowManager'ı yok et (isteğe bağlı)
-            Destroy(gameObject); 
         }
     }
     

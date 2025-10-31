@@ -3130,7 +3130,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e135c65d8dc22439322680670eba65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes: []
+  scenes:
+  - "D\xFCnya"
+  - Mars
+  - "Merk\xFCr"
+  - "Nept\xFCn"
+  - "Sat\xFCrn"
 --- !u!4 &1002186421
 Transform:
   m_ObjectHideFlags: 0
