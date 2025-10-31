@@ -6,21 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputActions/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputActions/CarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputActions/CarController.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputActions/CarController.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputActions/PlayerInputActions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputActions/PlayerInputActions.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputActions/PlayerInputActions.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InputActions/PlayerInputActions.inputactions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/CanvasPause.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Default/CanvasPause.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/CanvasPause.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Default/CanvasPause.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/PlanetGravity.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/PlanetGravity.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/PauseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/PauseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UpgradeLobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UpgradeLobbyScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRP.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +117,7 @@
       <workItem from="1761574760397" duration="1466000" />
       <workItem from="1761677227227" duration="11520000" />
       <workItem from="1761731427553" duration="6908000" />
-      <workItem from="1761743962005" duration="11704000" />
+      <workItem from="1761743962005" duration="13495000" />
     </task>
     <servers />
   </component>
