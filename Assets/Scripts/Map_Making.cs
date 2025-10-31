@@ -7,7 +7,7 @@ public class Map_Making_Corrected : MonoBehaviour
 {
     [SerializeField] private SpriteShapeController spriteShapeController;
 
-    [SerializeField, Range(3, 200)] private int levelLength = 50;
+    [SerializeField, Range(3, 500)] private int levelLength = 50;
     [SerializeField, Range(1f, 100f)] private float xMultiplier = 2f;
     [SerializeField, Range(1f, 100f)] private float yMultiplier = 2f;
     [SerializeField, Range(0f, 1f)] private float noiseScale = 0.1f; 

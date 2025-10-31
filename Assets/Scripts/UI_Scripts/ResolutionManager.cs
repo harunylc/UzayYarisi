@@ -56,7 +56,6 @@ public class ResolutionManager : MonoBehaviour
         }
 
         Screen.SetResolution(width, height, fullScreen);
-        Debug.Log($"Uygulandı → {width}x{height} | Tam ekran: {fullScreen}");
     }
 
     private void OnApplicationQuit()
