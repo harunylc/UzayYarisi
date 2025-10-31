@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - NitroSliderP1
+  - NitroSliderP2
+  - Player2
   layers:
   - Default
   - TransparentFX
@@ -12,7 +15,7 @@ TagManager:
   - groundLayer
   - Water
   - UI
-  - 
+  - playerLayer
   - 
   - 
   - 

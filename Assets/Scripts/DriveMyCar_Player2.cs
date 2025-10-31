@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class DriveMyCar : MonoBehaviour
+public class DriveMyCar_Player2 : MonoBehaviour
 {
     [Header("Car Settings")]
     [SerializeField] private Rigidbody2D tireBackRb;
@@ -55,10 +55,10 @@ public class DriveMyCar : MonoBehaviour
             controls = new CarController();
             isNewInputSystemActive = true;
 
-            controls.Move.P1_Throtle.performed += OnMove;
-            controls.Move.P1_Throtle.canceled += OnMove;
-            controls.Move.P1_Nitro.performed += ctx => nitroActive = true;
-            controls.Move.P1_Nitro.canceled += ctx => nitroActive = false;
+            controls.Move.P2_Throtle.performed += OnMove;
+            controls.Move.P2_Throtle.canceled += OnMove;
+            controls.Move.P2_Nitro.performed += ctx => nitroActive = true;
+            controls.Move.P2_Nitro.canceled += ctx => nitroActive = false;
         }
         catch (Exception e)
         {
@@ -72,9 +72,9 @@ public class DriveMyCar : MonoBehaviour
         currentNitro = maxNitro;
         if (nitroSlider != null)
         {
-            if (CompareTag("Player"))
+            if (CompareTag("Player2"))
             {
-                nitroSlider = GameObject.FindGameObjectWithTag("NitroSliderP1")?.GetComponent<Slider>();
+                nitroSlider = GameObject.FindGameObjectWithTag("NitroSliderP2")?.GetComponent<Slider>();
             }
             nitroSlider.maxValue = maxNitro;
             nitroSlider.value = currentNitro;
