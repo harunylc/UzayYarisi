@@ -802,6 +802,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Araba_5
       objectReference: {fileID: 0}
+    - target: {fileID: 3115641294105527016, guid: 2f1366d4e5952fc4598036c76814fe58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3872432016795199006, guid: 2f1366d4e5952fc4598036c76814fe58, type: 3}
+      propertyPath: nitroSlider
+      value: 
+      objectReference: {fileID: 652910763}
+    - target: {fileID: 3872432016795199006, guid: 2f1366d4e5952fc4598036c76814fe58, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8791774085145102879, guid: 2f1366d4e5952fc4598036c76814fe58, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4846,6 +4858,10 @@ PrefabInstance:
     - target: {fileID: 1557006191249633639, guid: 06abf7cd7b02f46469a0a936f06ed489, type: 3}
       propertyPath: m_Name
       value: "D\xFCnya"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1557006191249633639, guid: 06abf7cd7b02f46469a0a936f06ed489, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1557006191249633639, guid: 06abf7cd7b02f46469a0a936f06ed489, type: 3}
       propertyPath: m_IsActive
