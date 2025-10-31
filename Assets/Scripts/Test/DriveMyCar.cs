@@ -35,14 +35,18 @@ public class DriveMyCar : MonoBehaviour
     [Header("Ground Check (TireGrounded Entegrasyonu)")]
     
     [SerializeField] public TireGrounded tireGrounded;
-
+    
+    [Header("Raycast Settings")]
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float rayLength = 45f;
+    private bool hasScoredForFlip = false;
+    
     [Header("Other Settings")]
     private CarController controls;
     private float moveInput;
     [SerializeField] private GameObject settingsPanel;
     private bool isNewInputSystemActive = false;
     
-    // Raycast ayarları kaldırıldı
 
     private void Awake()
     {
@@ -97,6 +101,21 @@ public class DriveMyCar : MonoBehaviour
     private bool isGrounded = false;
     private void FixedUpdate()
     {
+        Vector2 rayOrigin = (Vector2)transform.position + Vector2.up * 1f;
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, transform.up, rayLength, groundLayer);
+        Debug.DrawRay(rayOrigin, transform.up * rayLength, Color.red);
+    
+        if (hit.collider != null && !hasScoredForFlip)
+        {
+            currentNitro = Mathf.Min(currentNitro + 10f, maxNitro);
+            hasScoredForFlip = true;
+            Debug.Log("Nitro +10");
+        }
+        else if (hit.collider == null)
+        {
+            hasScoredForFlip = false;
+        }
+        
         float currentMoveInput = 0f;
 
         if (isNewInputSystemActive)

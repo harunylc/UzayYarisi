@@ -108,9 +108,8 @@ public class Car_Driving : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 rayOrigin = (Vector2)transform.position + Vector2.up * 1f;
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.up, rayLength, groundLayer);
-    
-        Debug.DrawRay(rayOrigin, Vector2.up * rayLength, Color.red);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, transform.up, rayLength, groundLayer);
+        Debug.DrawRay(rayOrigin, transform.up * rayLength, Color.red);
     
         if (hit.collider != null && !hasScoredForFlip)
         {
@@ -160,7 +159,7 @@ public class Car_Driving : MonoBehaviour
 
         carRb.AddTorque(currentMoveInput * carRotation * Time.fixedDeltaTime);
         
-        Debug.Log($"Nitro: {nitroActive} | Mevcut hız: {currentSpeed}");
+        //Debug.Log($"Nitro: {nitroActive} | Mevcut hız: {currentSpeed}");
 
     }
     
