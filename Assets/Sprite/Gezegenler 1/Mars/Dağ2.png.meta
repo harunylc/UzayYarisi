@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e2f41a42c94552447965e353e37c6b94
+guid: f1d7a5d2eb112c849b3e352ffdee0f12
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9111797289184757960
-    second: AY_0
+      213: 7672670568331209250
+    second: "Da\u011F2_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AY_0
+      name: "Da\u011F2_0"
       rect:
         serializedVersion: 2
-        x: 21
-        y: 23
-        width: 831
-        height: 832
+        x: 0
+        y: 0
+        width: 1892
+        height: 1225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 83776c054a46c8180800000000000000
-      internalID: -9111797289184757960
+      spriteID: 22ae9f7fa3dca7a60800000000000000
+      internalID: 7672670568331209250
       vertices: []
       indices: 
       edges: []
