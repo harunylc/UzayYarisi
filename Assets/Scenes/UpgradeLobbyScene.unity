@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513567522}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: NerfButtonP1
         m_Mode: 1
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1361787758}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: NerfButtonP2
         m_Mode: 1
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513567522}
+      - m_Target: {fileID: 1824689903}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: RightButtonP1
         m_Mode: 1
@@ -739,11 +739,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513567517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  readyButtonP1: {fileID: 1471995679}
+  readyButtonP2: {fileID: 930478817}
+  rightButtonP1: {fileID: 0}
+  leftButtonP1: {fileID: 0}
+  rightButtonP2: {fileID: 0}
+  leftButtonP2: {fileID: 0}
+  carImageP1: {fileID: 0}
+  carImageP2: {fileID: 0}
+  carSpritesP1: []
+  carSpritesP2: []
 --- !u!1 &593102270
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +837,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513567522}
+      - m_Target: {fileID: 1824689903}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: LeftButtonP1
         m_Mode: 1
@@ -1035,6 +1045,156 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723784088}
   m_CullTransparentMesh: 1
+--- !u!1 &741594713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741594714}
+  - component: {fileID: 741594716}
+  - component: {fileID: 741594715}
+  m_Layer: 5
+  m_Name: CarSelecetP1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &741594714
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741594713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1967646752}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -394, y: 183}
+  m_SizeDelta: {x: 156.3972, y: 48.8741}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &741594715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741594713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &741594716
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741594713}
+  m_CullTransparentMesh: 1
+--- !u!1 &869867592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 869867593}
+  - component: {fileID: 869867595}
+  - component: {fileID: 869867594}
+  m_Layer: 5
+  m_Name: CarSelecetP2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &869867593
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869867592}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2121539959}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 449, y: 184}
+  m_SizeDelta: {x: 156.3972, y: 48.8741}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &869867594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869867592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &869867595
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869867592}
+  m_CullTransparentMesh: 1
 --- !u!1 &920890719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1357,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513567522}
+      - m_Target: {fileID: 1824689903}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: ReadyButtonP2
         m_Mode: 1
@@ -1205,18 +1365,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1803812984}
-        m_TargetAssemblyTypeName: GameFlowConnector, Assembly-CSharp
-        m_MethodName: PlayerReady
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1532,7 +1680,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513567522}
+      - m_Target: {fileID: 1824689903}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: LeftButtonP2
         m_Mode: 1
@@ -1692,11 +1840,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361787753}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  readyButtonP1: {fileID: 1471995679}
+  readyButtonP2: {fileID: 930478817}
+  rightButtonP1: {fileID: 0}
+  leftButtonP1: {fileID: 0}
+  rightButtonP2: {fileID: 0}
+  leftButtonP2: {fileID: 0}
+  carImageP1: {fileID: 0}
+  carImageP2: {fileID: 0}
+  carSpritesP1: []
+  carSpritesP2: []
 --- !u!1 &1382377978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2019,7 +2177,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513567522}
+      - m_Target: {fileID: 1824689903}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: ReadyButtonP1
         m_Mode: 1
@@ -2027,18 +2185,6 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1803812984}
-        m_TargetAssemblyTypeName: GameFlowConnector, Assembly-CSharp
-        m_MethodName: PlayerReady
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2324,7 +2470,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1361787758}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: BuffButtonP2
         m_Mode: 1
@@ -2617,7 +2763,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513567522}
+      - m_Target: {fileID: 1824689903}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: RightButtonP2
         m_Mode: 1
@@ -2667,50 +2813,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765308320}
   m_CullTransparentMesh: 1
---- !u!1 &1803812983
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1803812985}
-  - component: {fileID: 1803812984}
-  m_Layer: 0
-  m_Name: GameFlowConnector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1803812984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803812983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c40c806199855c1489f48b72d435573d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1803812985
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803812983}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 757.4539, y: -7.6476417, z: -0.5180533}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824689900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2721,6 +2823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824689902}
   - component: {fileID: 1824689901}
+  - component: {fileID: 1824689903}
   m_Layer: 0
   m_Name: UpgradeScene_Controller
   m_TagString: Untagged
@@ -2755,6 +2858,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1824689903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824689900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readyButtonP1: {fileID: 1471995679}
+  readyButtonP2: {fileID: 930478817}
+  rightButtonP1: {fileID: 474765654}
+  leftButtonP1: {fileID: 593102272}
+  rightButtonP2: {fileID: 1765308322}
+  leftButtonP2: {fileID: 1267814955}
+  carImageP1: {fileID: 741594715}
+  carImageP2: {fileID: 869867594}
+  carSpritesP1:
+  - {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c, type: 3}
+  - {fileID: -3372307540448159956, guid: 8b435e29fa6dec846a280f39534487cf, type: 3}
+  - {fileID: -646634298396438639, guid: e1d16f3259a12af4c8f6967ace2f8619, type: 3}
+  - {fileID: 5410610133585916095, guid: 209dda2a5e913ac41b144f88f8133376, type: 3}
+  - {fileID: -8549480908206894549, guid: 2ec3918ef763bed4fb2335c023f6976a, type: 3}
+  carSpritesP2:
+  - {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c, type: 3}
+  - {fileID: -3372307540448159956, guid: 8b435e29fa6dec846a280f39534487cf, type: 3}
+  - {fileID: -646634298396438639, guid: e1d16f3259a12af4c8f6967ace2f8619, type: 3}
+  - {fileID: 5410610133585916095, guid: 209dda2a5e913ac41b144f88f8133376, type: 3}
+  - {fileID: -8549480908206894549, guid: 2ec3918ef763bed4fb2335c023f6976a, type: 3}
 --- !u!1 &1845441572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3007,6 +3142,7 @@ RectTransform:
   - {fileID: 593102271}
   - {fileID: 1471995678}
   - {fileID: 1416525501}
+  - {fileID: 741594714}
   m_Father: {fileID: 513567518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3048,6 +3184,7 @@ RectTransform:
   - {fileID: 1267814954}
   - {fileID: 930478816}
   - {fileID: 1487157261}
+  - {fileID: 869867593}
   m_Father: {fileID: 1361787754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3138,7 +3275,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 513567522}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: BuffButtonP1
         m_Mode: 1
@@ -3198,4 +3335,3 @@ SceneRoots:
   - {fileID: 36648019}
   - {fileID: 1264158269}
   - {fileID: 1824689902}
-  - {fileID: 1803812985}

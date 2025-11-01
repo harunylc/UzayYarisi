@@ -31,6 +31,7 @@ public class QTETest : MonoBehaviour
     private bool countdownActive = false;
     private bool QTETrigger = false;
     private bool QTECompleted = false;
+    public GameObject Meteor;
 
     void Start()
     {
@@ -128,6 +129,7 @@ public class QTETest : MonoBehaviour
                 countdownSlider.value = countdownTime;
                 countdownActive = true;
             }
+            Meteor.SetActive(true);
         }
     }
 
