@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "NEPT\xDCN_0": -6069734528421435513
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
