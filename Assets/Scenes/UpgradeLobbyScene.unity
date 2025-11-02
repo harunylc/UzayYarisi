@@ -744,16 +744,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readyButtonP1: {fileID: 1471995679}
-  readyButtonP2: {fileID: 930478817}
-  rightButtonP1: {fileID: 0}
-  leftButtonP1: {fileID: 0}
-  rightButtonP2: {fileID: 0}
-  leftButtonP2: {fileID: 0}
-  carImageP1: {fileID: 0}
-  carImageP2: {fileID: 0}
-  carSpritesP1: []
-  carSpritesP2: []
 --- !u!1 &593102270
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,16 +1835,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readyButtonP1: {fileID: 1471995679}
-  readyButtonP2: {fileID: 930478817}
-  rightButtonP1: {fileID: 0}
-  leftButtonP1: {fileID: 0}
-  rightButtonP2: {fileID: 0}
-  leftButtonP2: {fileID: 0}
-  carImageP1: {fileID: 0}
-  carImageP2: {fileID: 0}
-  carSpritesP1: []
-  carSpritesP2: []
 --- !u!1 &1382377978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,7 +2810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1824689901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2870,26 +2850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readyButtonP1: {fileID: 1471995679}
-  readyButtonP2: {fileID: 930478817}
-  rightButtonP1: {fileID: 474765654}
-  leftButtonP1: {fileID: 593102272}
-  rightButtonP2: {fileID: 1765308322}
-  leftButtonP2: {fileID: 1267814955}
-  carImageP1: {fileID: 741594715}
-  carImageP2: {fileID: 869867594}
-  carSpritesP1:
-  - {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c, type: 3}
-  - {fileID: -3372307540448159956, guid: 8b435e29fa6dec846a280f39534487cf, type: 3}
-  - {fileID: -646634298396438639, guid: e1d16f3259a12af4c8f6967ace2f8619, type: 3}
-  - {fileID: 5410610133585916095, guid: 209dda2a5e913ac41b144f88f8133376, type: 3}
-  - {fileID: -8549480908206894549, guid: 2ec3918ef763bed4fb2335c023f6976a, type: 3}
-  carSpritesP2:
-  - {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c, type: 3}
-  - {fileID: -3372307540448159956, guid: 8b435e29fa6dec846a280f39534487cf, type: 3}
-  - {fileID: -646634298396438639, guid: e1d16f3259a12af4c8f6967ace2f8619, type: 3}
-  - {fileID: 5410610133585916095, guid: 209dda2a5e913ac41b144f88f8133376, type: 3}
-  - {fileID: -8549480908206894549, guid: 2ec3918ef763bed4fb2335c023f6976a, type: 3}
 --- !u!1 &1845441572
 GameObject:
   m_ObjectHideFlags: 0
@@ -3150,6 +3110,70 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2000962968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2000962970}
+  - component: {fileID: 2000962969}
+  m_Layer: 0
+  m_Name: UpgradeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2000962969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000962968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6290e2db0fc90e84aaf0d110b98e0bfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readyButtonP1: {fileID: 1471995679}
+  leftButtonP1: {fileID: 593102272}
+  rightButtonP1: {fileID: 474765654}
+  carImageP1: {fileID: 741594715}
+  carSpritesP1:
+  - {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c, type: 3}
+  - {fileID: -3372307540448159956, guid: 8b435e29fa6dec846a280f39534487cf, type: 3}
+  - {fileID: -646634298396438639, guid: e1d16f3259a12af4c8f6967ace2f8619, type: 3}
+  - {fileID: 5410610133585916095, guid: 209dda2a5e913ac41b144f88f8133376, type: 3}
+  - {fileID: -8549480908206894549, guid: 2ec3918ef763bed4fb2335c023f6976a, type: 3}
+  readyButtonP2: {fileID: 930478817}
+  leftButtonP2: {fileID: 1267814955}
+  rightButtonP2: {fileID: 1765308322}
+  carImageP2: {fileID: 869867594}
+  carSpritesP2:
+  - {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c, type: 3}
+  - {fileID: -3372307540448159956, guid: 8b435e29fa6dec846a280f39534487cf, type: 3}
+  - {fileID: -646634298396438639, guid: e1d16f3259a12af4c8f6967ace2f8619, type: 3}
+  - {fileID: 5410610133585916095, guid: 209dda2a5e913ac41b144f88f8133376, type: 3}
+  - {fileID: -8549480908206894549, guid: 2ec3918ef763bed4fb2335c023f6976a, type: 3}
+--- !u!4 &2000962970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2000962968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 994.04535, y: 687.69244, z: -5.6371803}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2121539958
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,3 +3359,4 @@ SceneRoots:
   - {fileID: 36648019}
   - {fileID: 1264158269}
   - {fileID: 1824689902}
+  - {fileID: 2000962970}

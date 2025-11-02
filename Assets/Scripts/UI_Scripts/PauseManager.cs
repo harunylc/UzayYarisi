@@ -80,12 +80,12 @@ public class PauseManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(GameObject.Find("SoundSlider"));
     }
-
-    public void ExitGame()
-    {
-        Debug.Log("Oyundan çıkılıyor...");
-        Application.Quit();
-    }
+    //
+    // public void ExitGame()
+    // {
+    //     Debug.Log("Oyundan çıkılıyor...");
+    //     Application.Quit();
+    // }
 
     public void GoToMainMenu()
     {

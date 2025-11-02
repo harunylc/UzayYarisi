@@ -6,22 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneFlowManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneFlowManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InputActions/CarController.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InputActions/CarController.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/FullScreenManager.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Default/FullScreenManager.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Merkür.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Merkür.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Neptün.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Neptün.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Satürn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Satürn.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/UpgradeLobbyScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/UpgradeLobbyScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbySystemTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbySystemTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlanetGravityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlanetGravityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/AudioManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/AudioManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneFlowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneFlowManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/GameFlowConnector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/GameFlowConnector.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/GameRoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/GameRoundManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/ResolutionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/ResolutionManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,6 +127,7 @@
       <workItem from="1761743962005" duration="13495000" />
       <workItem from="1761934805541" duration="309000" />
       <workItem from="1761935409674" duration="10772000" />
+      <workItem from="1762027666454" duration="32336000" />
     </task>
     <servers />
   </component>
@@ -141,6 +141,17 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>

@@ -172,6 +172,6 @@ public class DriveMyCar_Player2 : MonoBehaviour
         }
         carRb.AddTorque(currentMoveInput * currentRotation ,ForceMode2D.Force);
         
-        Debug.Log($"Nitro: {nitroActive} | Mevcut hız: {currentSpeed} | Yerde: {isGrounded}");
+        // Debug.Log($"Nitro: {nitroActive} | Mevcut hız: {currentSpeed} | Yerde: {isGrounded}");
     }
 }

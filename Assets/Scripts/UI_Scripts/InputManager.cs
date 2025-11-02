@@ -35,6 +35,7 @@ public class InputManager : MonoBehaviour
 
     public void SwitchToGame()
     {
+
         _playerInput.SwitchCurrentActionMap("Move"); 
     }
 

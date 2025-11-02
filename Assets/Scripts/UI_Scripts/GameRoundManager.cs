@@ -8,6 +8,7 @@ public class GameRoundManager : MonoBehaviour
     public int p1Score = 0;
     public int p2Score = 0;
     public int maxScore = 3;
+    
 
     private bool roundFinished = false;
     private bool gameOver = false;
@@ -39,9 +40,7 @@ public class GameRoundManager : MonoBehaviour
             p1Score++;
         else if (playerNumber == 2)
             p2Score++;
-
-        Debug.Log($"🏁 Oyuncu {playerNumber} bayrağa ulaştı! Skor: P1={p1Score}, P2={p2Score}");
-
+        
         if (p1Score >= maxScore)
             EndGame(1);
         else if (p2Score >= maxScore)
@@ -88,7 +87,6 @@ public class GameRoundManager : MonoBehaviour
     {
         if (scene.name == "MainMenuScene")
         {
-            Debug.Log("🔄 Ana menü yüklendi, GameRoundManager sıfırlanıyor...");
             p1Score = 0;
             p2Score = 0;
             roundFinished = false;

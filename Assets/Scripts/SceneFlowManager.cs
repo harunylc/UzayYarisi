@@ -154,12 +154,12 @@ public class SceneFlowManager : MonoBehaviour
     {
         remainingScenes = new List<string>(scenes);
         ShuffleList(remainingScenes);
-        Debug.Log($"🎲 Haritalar karıştırıldı: {string.Join(", ", remainingScenes)}");
     }
 
     public void LoadUpgradeScene()
     {
-        Fade_Manager.Instance?.StartFadeOutAndLoadScene(upgradeScene);
+        // Artık fade burada değil — sadece sahne ismini döndürüyoruz
+        LoadSceneWithFade(upgradeScene);
     }
 
     public void LoadNextLevelOrEndGame()
@@ -170,13 +170,29 @@ public class SceneFlowManager : MonoBehaviour
             remainingScenes.RemoveAt(0);
 
             Debug.Log($"🌍 Sıradaki harita: {nextLevel}");
-            Fade_Manager.Instance?.StartFadeOutAndLoadScene(nextLevel);
+            LoadSceneWithFade(nextLevel);
         }
         else
         {
             Debug.Log("🟢 Tüm haritalar oynandı — upgrade ekranına dönülüyor (oyun bitmedi).");
             ResetSceneOrder(); // ✅ tekrar karıştır, oyun döngüsünü sıfırla
-            Fade_Manager.Instance?.StartFadeOutAndLoadScene(upgradeScene);
+            LoadSceneWithFade(upgradeScene);
+        }
+    }
+
+    private void LoadSceneWithFade(string sceneName)
+    {
+        // Artık fade kontrolü buradan sadece 1 kez yapılacak
+        if (Fade_Manager.Instance != null)
+        {
+            StartCoroutine(Fade_Manager.Instance.FadeOutThen(() =>
+            {
+                SceneManager.LoadScene(sceneName);
+            }));
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
         }
     }
 
@@ -193,3 +209,4 @@ public class SceneFlowManager : MonoBehaviour
         }
     }
 }
+
