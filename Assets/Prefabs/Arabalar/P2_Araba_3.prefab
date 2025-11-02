@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5675620232717629569}
   - component: {fileID: 3927201924363200736}
   - component: {fileID: 2171232385357730924}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: araba1_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +336,7 @@ GameObject:
   - component: {fileID: 5330589281764530852}
   - component: {fileID: 7034680386220127683}
   - component: {fileID: 4041497198966238072}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: P2_Araba_3
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6394048845697507542}
   - component: {fileID: 6093268810739295084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TagColider
   m_TagString: Player2
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 5302574096971727412}
   - component: {fileID: 2997891327447405386}
   - component: {fileID: 2515631297331578525}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +781,7 @@ GameObject:
   - component: {fileID: 4165994954513570306}
   - component: {fileID: 1414804011431230518}
   - component: {fileID: 2123636627598769189}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 5734784325638803426}
   - component: {fileID: 5184173852720920898}
   - component: {fileID: 1079189616906965471}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front_T
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -20,14 +20,13 @@ public class QTETest : MonoBehaviour
     [Header("Countdown Slider")]
     public Slider countdownSlider;
     public float countdownTime = 2f;
-    
+
     [Header("Meteor Settings")]
     public GameObject meteorPrefab;
     public Transform meteorSpawnPoint;
-    public Transform player; 
+    public Transform player;
     public float meteorSpeed = 6f;
     public GameObject explosionPrefab;
-
 
     private GameObject[] events;
     private string[] buttons = { "A", "B", "X", "Y" };
@@ -53,6 +52,20 @@ public class QTETest : MonoBehaviour
             countdownSlider.maxValue = countdownTime;
             countdownSlider.value = countdownTime;
             countdownSlider.gameObject.SetActive(false);
+        }
+
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.transform;
+                Debug.Log($"Player Bulundu: {player.name}");
+            }
+            else
+            {
+                Debug.LogWarning("Player Bulunamadı");
+            }
         }
     }
 
@@ -155,8 +168,11 @@ public class QTETest : MonoBehaviour
             HideAllKeys();
             QTETrigger = false;
             QTECompleted = true;
-            if (countdownSlider != null) countdownSlider.gameObject.SetActive(false);
-            Debug.Log("✅ Başardın!");
+            if (countdownSlider != null)
+            {
+                countdownSlider.gameObject.SetActive(false);
+            }
+            Debug.Log("✅ QTE Başarıyla Tamamlandı!");
         }
     }
 
@@ -195,18 +211,18 @@ public class QTETest : MonoBehaviour
 
     void SpawnMeteor()
     {
-        if (meteorPrefab == null || meteorSpawnPoint == null || player == null)
+        if (player == null)
         {
-            return;
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.transform;
+            }
         }
 
         GameObject meteor = Instantiate(meteorPrefab, meteorSpawnPoint.position, Quaternion.identity);
+        MeteorFollow mf = meteor.GetComponent<MeteorFollow>() ?? meteor.AddComponent<MeteorFollow>();
 
-        MeteorFollow mf = meteor.GetComponent<MeteorFollow>();
-        if (mf == null)
-        {
-            mf = meteor.AddComponent<MeteorFollow>();
-        }
         mf.target = player;
         mf.speed = meteorSpeed;
         mf.explosionPrefab = explosionPrefab;
@@ -231,21 +247,24 @@ public class MeteorFollow : MonoBehaviour
         {
             return;
         }
+
         Vector3 dir = (target.position - transform.position).normalized;
         transform.position += dir * speed * Time.deltaTime;
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        Transform root = other.transform.root;
+        if (root.CompareTag("Player"))
         {
-            Debug.Log("Meteor player’a çarptı");
+            Debug.Log("Meteor player’a çarptı!");
             if (explosionPrefab != null)
             {
-                GameObject explosion = Instantiate(explosionPrefab, other.transform.position, Quaternion.identity);
+                GameObject explosion = Instantiate(explosionPrefab, root.position, Quaternion.identity);
                 Destroy(explosion, 2f);
             }
 
-            Destroy(other.gameObject);
+            Destroy(root.gameObject);
             Destroy(gameObject);
         }
     }

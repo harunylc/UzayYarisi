@@ -23,7 +23,7 @@ public class QTE2 : MonoBehaviour
 
     [Header("Diken Settings")]
     public GameObject dikenPrefab;
-    public Transform player; 
+    public Transform player;
     public float dikenOffset = -2f;
     public GameObject explosionPrefab;
 
@@ -42,9 +42,7 @@ public class QTE2 : MonoBehaviour
         HideAllKeys();
 
         if (attentionImage != null)
-        {
             attentionImage.SetActive(false);
-        }
 
         if (countdownSlider != null)
         {
@@ -56,18 +54,13 @@ public class QTE2 : MonoBehaviour
 
     void Update()
     {
-        if (QTECompleted)
-        {
-            return;
-        }
+        if (QTECompleted) return;
 
         if (!QTETrigger)
         {
             bool playerInArea = Physics2D.OverlapBox(raycastPosition, raycastSize, 0f, playerLayer) != null;
             if (attentionImage != null)
-            {
                 attentionImage.SetActive(playerInArea);
-            }
         }
 
         if (countdownActive && countdownSlider != null)
@@ -100,23 +93,20 @@ public class QTE2 : MonoBehaviour
             }
 
             if (pressed)
-            {
                 NextKeys();
-            }
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (QTECompleted)
-            return;
+        if (QTECompleted) return;
 
         if (other.CompareTag("Player"))
         {
+            player = other.transform;
+
             if (attentionImage != null)
-            {
                 attentionImage.SetActive(false);
-            }
 
             QTETrigger = true;
             currentIndex = 0;
@@ -154,11 +144,9 @@ public class QTE2 : MonoBehaviour
             QTECompleted = true;
 
             if (countdownSlider != null)
-            {
                 countdownSlider.gameObject.SetActive(false);
-            }
 
-            Debug.Log("✅ Başardın!");
+            Debug.Log("Başardın!");
         }
     }
 
@@ -167,9 +155,7 @@ public class QTE2 : MonoBehaviour
         foreach (var img in events)
         {
             if (img != null)
-            {
                 img.SetActive(false);
-            }
         }
     }
 
@@ -190,33 +176,44 @@ public class QTE2 : MonoBehaviour
         QTECompleted = true;
 
         if (countdownSlider != null)
-        {
             countdownSlider.gameObject.SetActive(false);
-        }
 
         SpawnDiken();
     }
 
     void SpawnDiken()
     {
-        if (dikenPrefab == null || player == null)
+        // Player referansı yoksa bul
+        if (player == null)
         {
-            return;
+            GameObject foundPlayer = GameObject.FindGameObjectWithTag("Player");
+            if (foundPlayer != null)
+                player = foundPlayer.transform;
+            else
+            {
+                Debug.LogWarning("Player bulunamadı, Destroy çalışmadı!");
+                return;
+            }
         }
 
-        Vector3 spawnPos = player.position + new Vector3(0f, dikenOffset, 0f);
-        GameObject diken = Instantiate(dikenPrefab, spawnPos, Quaternion.identity);
+        // Diken spawn et (sadece görsel)
+        if (dikenPrefab != null)
+        {
+            Vector3 spawnPos = player.position + new Vector3(0f, dikenOffset, 0f);
+            Instantiate(dikenPrefab, spawnPos, Quaternion.identity);
+        }
 
-        Debug.Log("Diken player’ın altına spawn oldu!");
+        Debug.Log("QTE başarısız! Player yok edildi.");
 
+        // Patlama efekti
         if (explosionPrefab != null)
         {
             GameObject explosion = Instantiate(explosionPrefab, player.position, Quaternion.identity);
             Destroy(explosion, 2f);
         }
 
+        // ✅ Player anında yok olur
         Destroy(player.gameObject);
-        Destroy(diken, 3f);
     }
 
     void OnDrawGizmosSelected()

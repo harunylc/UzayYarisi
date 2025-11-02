@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942779194}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1829dfe2c147d3b4c9f88a0175ca13b0, type: 3}
   m_Name: 
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   meteorSpawnPoint: {fileID: 1711274448}
   player: {fileID: 998040479}
   meteorSpeed: 6
-  explosionPrefab: {fileID: 7738008898749958321, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
+  explosionPrefab: {fileID: 1151762418944616568, guid: 11e327687d514483887f8a7d5e11ae6b, type: 3}
 --- !u!114 &942779200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942779194}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 946bf6d5c8b5d0c448536fa065367755, type: 3}
   m_Name: 
@@ -1111,7 +1111,7 @@ MonoBehaviour:
   dikenPrefab: {fileID: 5254402476189603277, guid: 1f44ae11046ee4a408737cddfae858f8, type: 3}
   player: {fileID: 998040479}
   dikenOffset: -2
-  explosionPrefab: {fileID: 7738008898749958321, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
+  explosionPrefab: {fileID: 1151762418944616568, guid: 11e327687d514483887f8a7d5e11ae6b, type: 3}
 --- !u!1 &998040475
 GameObject:
   m_ObjectHideFlags: 0
