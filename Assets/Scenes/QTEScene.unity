@@ -1079,7 +1079,7 @@ MonoBehaviour:
   attentionImage: {fileID: 1928442582}
   countdownSlider: {fileID: 1866175718}
   countdownTime: 2
-  meteorPrefab: {fileID: 5254402476189603277, guid: 7a7ff94571dba70428c9c3a9bea95596, type: 3}
+  meteorPrefab: {fileID: 7723587060455271261, guid: 52c7cfd4566b262498a30f8b6874dd3e, type: 3}
   meteorSpawnPoint: {fileID: 1711274448}
   player: {fileID: 998040479}
   meteorSpeed: 6
