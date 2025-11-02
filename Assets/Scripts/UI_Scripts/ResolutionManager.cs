@@ -1,46 +1,97 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ResolutionManager : MonoBehaviour
 {
     [SerializeField] private Dropdown resolutionDropdown;
     [SerializeField] private Toggle fullScreenToggle;
 
-    private void Start()
+    // 🔹 Kalıcı ayarları tutan tek global değişkenler
+    private static int currentResolutionIndex = -1;
+    private static bool currentFullScreen = true;
+    private static bool initialized = false;
+
+    private void Awake()
     {
-        // 🔹 Kaydedilmiş çözünürlük ve fullscreen durumunu yükle
-        int savedResolution = PlayerPrefs.GetInt("ResolutionIndex", 0);
-        bool isFullScreen = PlayerPrefs.GetInt("FullScreen", 1) == 1;
+        // Aynı anda birden fazla ResolutionManager varsa yok et
+        var managers = FindObjectsOfType<ResolutionManager>();
+        if (managers.Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        // 🔹 Uygula
-        ApplyResolution(savedResolution, isFullScreen);
+        DontDestroyOnLoad(gameObject); // Ayar yöneticisi hep yaşasın
 
-        // 🔹 UI senkronizasyonu
-        resolutionDropdown.value = savedResolution;
-        fullScreenToggle.isOn = isFullScreen;
+        // Sadece ilk sahnede PlayerPrefs'ten oku
+        if (!initialized)
+        {
+            currentResolutionIndex = PlayerPrefs.GetInt("ResolutionIndex", 0);
+            currentFullScreen = PlayerPrefs.GetInt("FullScreen", 1) == 1;
 
-        // 🔹 Listener ekle
-        resolutionDropdown.onValueChanged.AddListener(OnResolutionChanged);
-        fullScreenToggle.onValueChanged.AddListener(OnFullScreenChanged);
+            ApplyResolution(currentResolutionIndex, currentFullScreen);
+            initialized = true;
+        }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    public void OnResolutionChanged(int index)
+    private void OnDestroy()
     {
-        bool isFullScreen = fullScreenToggle.isOn;
-        ApplyResolution(index, isFullScreen);
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
-        // 🔹 PlayerPrefs’e kaydet
+    private void Start()
+    {
+        ConnectUI();
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Yeni sahnede UI yeniden doğduysa bağla
+        ConnectUI();
+    }
+
+    // 🔹 Sahnedeki yeni UI elemanlarını bulup güncelle
+    private void ConnectUI()
+    {
+        if (resolutionDropdown == null)
+            resolutionDropdown = FindObjectOfType<Dropdown>(true);
+
+        if (fullScreenToggle == null)
+            fullScreenToggle = FindObjectOfType<Toggle>(true);
+
+        if (resolutionDropdown != null)
+        {
+            resolutionDropdown.onValueChanged.RemoveAllListeners();
+            resolutionDropdown.onValueChanged.AddListener(OnResolutionChanged);
+            resolutionDropdown.value = currentResolutionIndex;
+        }
+
+        if (fullScreenToggle != null)
+        {
+            fullScreenToggle.onValueChanged.RemoveAllListeners();
+            fullScreenToggle.onValueChanged.AddListener(OnFullScreenChanged);
+            fullScreenToggle.isOn = currentFullScreen;
+        }
+    }
+
+    private void OnResolutionChanged(int index)
+    {
+        currentResolutionIndex = index;
+        ApplyResolution(index, currentFullScreen);
+
         PlayerPrefs.SetInt("ResolutionIndex", index);
         PlayerPrefs.Save();
     }
 
-    public void OnFullScreenChanged(bool isFullScreen)
+    private void OnFullScreenChanged(bool isFull)
     {
-        int index = resolutionDropdown.value;
-        ApplyResolution(index, isFullScreen);
+        currentFullScreen = isFull;
+        ApplyResolution(currentResolutionIndex, isFull);
 
-        // 🔹 PlayerPrefs’e kaydet
-        PlayerPrefs.SetInt("FullScreen", isFullScreen ? 1 : 0);
+        PlayerPrefs.SetInt("FullScreen", isFull ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -49,18 +100,14 @@ public class ResolutionManager : MonoBehaviour
         int width = 1920;
         int height = 1080;
 
-        if (index == 1)
+        switch (index)
         {
-            width = 1280;
-            height = 720;
+            case 1: width = 1600; height = 900; break;
+            case 2: width = 1366; height = 768; break;
+            case 3: width = 1280; height = 720; break;
         }
 
         Screen.SetResolution(width, height, fullScreen);
-    }
-
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteKey("ResolutionIndex");
-        PlayerPrefs.DeleteKey("FullScreen");
+        Debug.Log($"[ResolutionManager] Resolution applied: {width}x{height}, fullscreen={fullScreen}");
     }
 }

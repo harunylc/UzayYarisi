@@ -93,4 +93,12 @@ public class Fade_Manager : MonoBehaviour
             canvasGroup.blocksRaycasts = false;
         }
     }
+
+    // --- Fade bittiğinde bir işlem yapmak için yardımcı fonksiyon ---
+    public IEnumerator FadeOutThen(System.Action afterFade)
+    {
+        yield return StartCoroutine(FadeOut());
+        if (afterFade != null)
+            afterFade.Invoke();
+    }
 }

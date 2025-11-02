@@ -14,7 +14,7 @@ public class SpawnManager : MonoBehaviour
     {
         int p1Index = PlayerSelectionData.player1CarIndex;
         int p2Index = PlayerSelectionData.player2CarIndex;
-
+        
         GameObject player1 = Instantiate(carPrefabsP1[p1Index], spawnPointP1.position, Quaternion.identity);
         GameObject player2 = Instantiate(carPrefabsP2[p2Index], spawnPointP2.position, Quaternion.identity);
         player2.transform.rotation = Quaternion.Euler(0, 180, 0);
