@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2ed46bb2a555cbc4cbb744a0725696dc
+guid: 2fb1e245ac71b1f48921db30d80f2bce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 454614866027014211
-    second: "d\xFCnya zemin alt_0"
+      213: -3280518744667018907
+    second: "SAT\xDCRN_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,18 +37,18 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
-    wrapW: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "d\xFCnya zemin alt_0"
+      name: "SAT\xDCRN_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1418
-        height: 1418
+        y: 14
+        width: 1146
+        height: 644
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 348e62fdfcd1f4600800000000000000
-      internalID: 454614866027014211
+      spriteID: 569ac1925914972d0800000000000000
+      internalID: -3280518744667018907
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "d\xFCnya zemin alt_0": 454614866027014211
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
