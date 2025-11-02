@@ -48,7 +48,7 @@ public class GameFlowConnector : MonoBehaviour
         }
         else
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene("simplescene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("SimpleScene");
         }
     }
 }

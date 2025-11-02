@@ -154,7 +154,6 @@ public class SceneFlowManager : MonoBehaviour
     {
         remainingScenes = new List<string>(scenes);
         ShuffleList(remainingScenes);
-        Debug.Log($"🎲 Haritalar karıştırıldı: {string.Join(", ", remainingScenes)}");
     }
 
     public void LoadUpgradeScene()

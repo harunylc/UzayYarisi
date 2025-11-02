@@ -19,6 +19,8 @@ public class UI_Controller : MonoBehaviour
     public GameObject firstSettingsButton;
     public GameObject firstHowToPlayButton;
     public GameObject firstCreatersButton;
+    public GameObject firstExitButton; 
+
 
     private void Awake()
     {

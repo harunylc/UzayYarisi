@@ -8,6 +8,7 @@ public class GameRoundManager : MonoBehaviour
     public int p1Score = 0;
     public int p2Score = 0;
     public int maxScore = 3;
+    
 
     private bool roundFinished = false;
     private bool gameOver = false;
@@ -86,7 +87,6 @@ public class GameRoundManager : MonoBehaviour
     {
         if (scene.name == "MainMenuScene")
         {
-            Debug.Log("🔄 Ana menü yüklendi, GameRoundManager sıfırlanıyor...");
             p1Score = 0;
             p2Score = 0;
             roundFinished = false;

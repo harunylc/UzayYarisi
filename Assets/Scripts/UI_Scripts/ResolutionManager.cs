@@ -1,30 +1,31 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class ResolutionManager : MonoBehaviour
 {
     [SerializeField] private Dropdown resolutionDropdown;
     [SerializeField] private Toggle fullScreenToggle;
 
-    // 🔹 Kalıcı ayarları tutan tek global değişkenler
-    private static int currentResolutionIndex = -1;
+    private static ResolutionManager instance;
+
+    private static int currentResolutionIndex = 0;
     private static bool currentFullScreen = true;
     private static bool initialized = false;
 
     private void Awake()
     {
-        // Aynı anda birden fazla ResolutionManager varsa yok et
-        var managers = FindObjectsOfType<ResolutionManager>();
-        if (managers.Length > 1)
+        // 🔹 Tek örnek olmalı
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
 
-        DontDestroyOnLoad(gameObject); // Ayar yöneticisi hep yaşasın
+        instance = this;
+        DontDestroyOnLoad(gameObject);
 
-        // Sadece ilk sahnede PlayerPrefs'ten oku
         if (!initialized)
         {
             currentResolutionIndex = PlayerPrefs.GetInt("ResolutionIndex", 0);
@@ -32,6 +33,7 @@ public class ResolutionManager : MonoBehaviour
 
             ApplyResolution(currentResolutionIndex, currentFullScreen);
             initialized = true;
+
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -44,54 +46,101 @@ public class ResolutionManager : MonoBehaviour
 
     private void Start()
     {
-        ConnectUI();
+        StartCoroutine(DelayedUIUpdate());
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Yeni sahnede UI yeniden doğduysa bağla
-        ConnectUI();
+        StartCoroutine(DelayedUIUpdate());
     }
 
-    // 🔹 Sahnedeki yeni UI elemanlarını bulup güncelle
+    // 🔹 Sahne yüklenince UI bağlama (sahnede varsa)
+    private IEnumerator DelayedUIUpdate()
+    {
+        // Maksimum 5 saniye boyunca UI’yı arayacağız
+        float timeout = 5f;
+        float elapsed = 0f;
+
+        while (elapsed < timeout)
+        {
+            // UI var mı kontrol et
+            var dropdownInScene = FindObjectsOfType<Dropdown>(true);
+            var toggleInScene = FindObjectsOfType<Toggle>(true);
+
+            if (dropdownInScene.Length > 0 || toggleInScene.Length > 0)
+            {
+                ConnectUI();
+                yield break; // Bulduk, bitir
+            }
+
+            // Henüz yoksa biraz bekle
+            yield return new WaitForSeconds(0.5f);
+            elapsed += 0.5f;
+        }
+
+    }
+
+
+    // 🔹 UI elemanlarını isimle bul ve bağla
     private void ConnectUI()
     {
-        if (resolutionDropdown == null)
-            resolutionDropdown = FindObjectOfType<Dropdown>(true);
+        resolutionDropdown = null;
+        fullScreenToggle = null;
 
-        if (fullScreenToggle == null)
-            fullScreenToggle = FindObjectOfType<Toggle>(true);
+        foreach (var drop in FindObjectsOfType<Dropdown>(true))
+        {
+            if (drop.name == "ResolutionDropDown")
+            {
+                resolutionDropdown = drop;
+                break;
+            }
+        }
 
+        foreach (var tog in FindObjectsOfType<Toggle>(true))
+        {
+            if (tog.name == "FullScreenToggle")
+            {
+                fullScreenToggle = tog;
+                break;
+            }
+        }
+            
         if (resolutionDropdown != null)
         {
             resolutionDropdown.onValueChanged.RemoveAllListeners();
-            resolutionDropdown.onValueChanged.AddListener(OnResolutionChanged);
             resolutionDropdown.value = currentResolutionIndex;
+            resolutionDropdown.RefreshShownValue();
+            resolutionDropdown.onValueChanged.AddListener(OnResolutionChanged);
         }
 
         if (fullScreenToggle != null)
         {
             fullScreenToggle.onValueChanged.RemoveAllListeners();
-            fullScreenToggle.onValueChanged.AddListener(OnFullScreenChanged);
             fullScreenToggle.isOn = currentFullScreen;
+            fullScreenToggle.onValueChanged.AddListener(OnFullScreenChanged);
         }
     }
 
     private void OnResolutionChanged(int index)
     {
+        if (index == currentResolutionIndex) return;
         currentResolutionIndex = index;
         ApplyResolution(index, currentFullScreen);
-
-        PlayerPrefs.SetInt("ResolutionIndex", index);
-        PlayerPrefs.Save();
+        SavePrefs();
     }
 
     private void OnFullScreenChanged(bool isFull)
     {
+        if (isFull == currentFullScreen) return;
         currentFullScreen = isFull;
-        ApplyResolution(currentResolutionIndex, isFull);
+        ApplyResolution(currentResolutionIndex, currentFullScreen);
+        SavePrefs();
+    }
 
-        PlayerPrefs.SetInt("FullScreen", isFull ? 1 : 0);
+    private void SavePrefs()
+    {
+        PlayerPrefs.SetInt("ResolutionIndex", currentResolutionIndex);
+        PlayerPrefs.SetInt("FullScreen", currentFullScreen ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -100,14 +149,12 @@ public class ResolutionManager : MonoBehaviour
         int width = 1920;
         int height = 1080;
 
-        switch (index)
+        if (index == 1)
         {
-            case 1: width = 1600; height = 900; break;
-            case 2: width = 1366; height = 768; break;
-            case 3: width = 1280; height = 720; break;
+            width = 1280;
+            height = 720;
         }
 
         Screen.SetResolution(width, height, fullScreen);
-        Debug.Log($"[ResolutionManager] Resolution applied: {width}x{height}, fullscreen={fullScreen}");
     }
 }
