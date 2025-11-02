@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
-public class QTETest : MonoBehaviour
+public class QTE2 : MonoBehaviour
 {
     [Header("QTE Buttons")]
     public GameObject AImage, BImage, XImage, YImage;
@@ -20,14 +20,12 @@ public class QTETest : MonoBehaviour
     [Header("Countdown Slider")]
     public Slider countdownSlider;
     public float countdownTime = 2f;
-    
-    [Header("Meteor Settings")]
-    public GameObject meteorPrefab;
-    public Transform meteorSpawnPoint;
-    public Transform player; 
-    public float meteorSpeed = 6f;
-    public GameObject explosionPrefab;
 
+    [Header("Diken Settings")]
+    public GameObject dikenPrefab;
+    public Transform player; 
+    public float dikenOffset = -2f;
+    public GameObject explosionPrefab;
 
     private GameObject[] events;
     private string[] buttons = { "A", "B", "X", "Y" };
@@ -36,7 +34,7 @@ public class QTETest : MonoBehaviour
     private bool countdownActive = false;
     private bool QTETrigger = false;
     private bool QTECompleted = false;
-    private bool meteorSpawned = false;
+    private bool dikenSpawned = false;
 
     void Start()
     {
@@ -80,9 +78,9 @@ public class QTETest : MonoBehaviour
                 countdownSlider.value = 0f;
                 countdownActive = false;
 
-                if (!meteorSpawned)
+                if (!dikenSpawned)
                 {
-                    meteorSpawned = true;
+                    dikenSpawned = true;
                     OnQTEFailedByTime();
                 }
             }
@@ -111,9 +109,7 @@ public class QTETest : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (QTECompleted)
-        {
             return;
-        }
 
         if (other.CompareTag("Player"))
         {
@@ -133,7 +129,8 @@ public class QTETest : MonoBehaviour
                 countdownSlider.value = countdownTime;
                 countdownActive = true;
             }
-            meteorSpawned = false;
+
+            dikenSpawned = false;
         }
     }
 
@@ -155,7 +152,12 @@ public class QTETest : MonoBehaviour
             HideAllKeys();
             QTETrigger = false;
             QTECompleted = true;
-            if (countdownSlider != null) countdownSlider.gameObject.SetActive(false);
+
+            if (countdownSlider != null)
+            {
+                countdownSlider.gameObject.SetActive(false);
+            }
+
             Debug.Log("✅ Başardın!");
         }
     }
@@ -163,10 +165,12 @@ public class QTETest : MonoBehaviour
     void HideAllKeys()
     {
         foreach (var img in events)
+        {
             if (img != null)
             {
                 img.SetActive(false);
             }
+        }
     }
 
     void RandomKeys()
@@ -190,63 +194,34 @@ public class QTETest : MonoBehaviour
             countdownSlider.gameObject.SetActive(false);
         }
 
-        SpawnMeteor();
+        SpawnDiken();
     }
 
-    void SpawnMeteor()
+    void SpawnDiken()
     {
-        if (meteorPrefab == null || meteorSpawnPoint == null || player == null)
+        if (dikenPrefab == null || player == null)
         {
             return;
         }
 
-        GameObject meteor = Instantiate(meteorPrefab, meteorSpawnPoint.position, Quaternion.identity);
+        Vector3 spawnPos = player.position + new Vector3(0f, dikenOffset, 0f);
+        GameObject diken = Instantiate(dikenPrefab, spawnPos, Quaternion.identity);
 
-        MeteorFollow mf = meteor.GetComponent<MeteorFollow>();
-        if (mf == null)
+        Debug.Log("Diken player’ın altına spawn oldu!");
+
+        if (explosionPrefab != null)
         {
-            mf = meteor.AddComponent<MeteorFollow>();
+            GameObject explosion = Instantiate(explosionPrefab, player.position, Quaternion.identity);
+            Destroy(explosion, 2f);
         }
-        mf.target = player;
-        mf.speed = meteorSpeed;
-        mf.explosionPrefab = explosionPrefab;
+
+        Destroy(player.gameObject);
+        Destroy(diken, 3f);
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(raycastPosition, raycastSize);
-    }
-}
-
-public class MeteorFollow : MonoBehaviour
-{
-    public Transform target;
-    public float speed = 6f;
-    public GameObject explosionPrefab;
-
-    void Update()
-    {
-        if (target == null)
-        {
-            return;
-        }
-        Vector3 dir = (target.position - transform.position).normalized;
-        transform.position += dir * speed * Time.deltaTime;
-    }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Meteor player’a çarptı");
-            if (explosionPrefab != null)
-            {
-                GameObject explosion = Instantiate(explosionPrefab, other.transform.position, Quaternion.identity);
-                Destroy(explosion, 2f);
-            }
-
-            Destroy(other.gameObject);
-            Destroy(gameObject);
-        }
     }
 }

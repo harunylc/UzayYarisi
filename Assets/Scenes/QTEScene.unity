@@ -904,6 +904,7 @@ GameObject:
   - component: {fileID: 942779196}
   - component: {fileID: 942779195}
   - component: {fileID: 942779199}
+  - component: {fileID: 942779200}
   m_Layer: 0
   m_Name: QTETrigger
   m_TagString: Untagged
@@ -1082,6 +1083,35 @@ MonoBehaviour:
   meteorSpawnPoint: {fileID: 1711274448}
   player: {fileID: 998040479}
   meteorSpeed: 6
+  explosionPrefab: {fileID: 7738008898749958321, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
+--- !u!114 &942779200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942779194}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 946bf6d5c8b5d0c448536fa065367755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AImage: {fileID: 831170272}
+  BImage: {fileID: 163937890}
+  XImage: {fileID: 1259340243}
+  YImage: {fileID: 759915958}
+  raycastPosition: {x: 1.55, y: 1.46}
+  raycastSize: {x: 5, y: 5}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  attentionImage: {fileID: 1928442582}
+  countdownSlider: {fileID: 1866175718}
+  countdownTime: 2
+  dikenPrefab: {fileID: 5254402476189603277, guid: 1f44ae11046ee4a408737cddfae858f8, type: 3}
+  player: {fileID: 998040479}
+  dikenOffset: -2
+  explosionPrefab: {fileID: 7738008898749958321, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
 --- !u!1 &998040475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1269,7 @@ Transform:
   m_GameObject: {fileID: 998040475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.57, y: -0.42, z: 0}
+  m_LocalPosition: {x: -6.2, y: -0.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1526,7 +1556,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1256148676
 BoxCollider2D:
   m_ObjectHideFlags: 0
