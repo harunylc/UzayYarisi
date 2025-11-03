@@ -612,8 +612,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1126981033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 10.1, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -818,7 +818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1263104111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,7 +1012,7 @@ RectTransform:
   m_Father: {fileID: 1072293025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -8.7831, y: 0}
   m_SizeDelta: {x: -7.5662, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1181,7 +1181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1831319584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,7 +1319,7 @@ PrefabInstance:
     - target: {fileID: 3872432016795199006, guid: 2f1366d4e5952fc4598036c76814fe58, type: 3}
       propertyPath: nitroSlider
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 652910763}
     - target: {fileID: 3872432016795199006, guid: 2f1366d4e5952fc4598036c76814fe58, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 8

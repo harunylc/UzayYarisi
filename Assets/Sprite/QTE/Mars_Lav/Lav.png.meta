@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: fa7f769bddb5e2c408e8ea567c788401
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4046108903959519210
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_0"
+  - first:
+      213: -5931751034979527800
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_1"
+  - first:
+      213: -5690269274699325662
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_2"
+  - first:
+      213: 3220491824436022176
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_3"
+  - first:
+      213: -7344454529720798625
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_4"
+  - first:
+      213: -4358177832028537776
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_5"
+  - first:
+      213: -5341739013770995980
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_6"
+  - first:
+      213: -7593886652464067122
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_7"
+  - first:
+      213: 3636465026469038245
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_8"
+  - first:
+      213: -4446097344269926617
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_9"
+  - first:
+      213: -8599783509513049919
+    second: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_10"
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_0"
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 432
+        width: 107
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 610a2f8936559d7c0800000000000000
+      internalID: -4046108903959519210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_1"
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 432
+        width: 107
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8835df78cdf2eada0800000000000000
+      internalID: -5931751034979527800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_2"
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 432
+        width: 107
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f1a353e3a1801b0800000000000000
+      internalID: -5690269274699325662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_3"
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 432
+        width: 107
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ab0f8d504c71bc20800000000000000
+      internalID: 3220491824436022176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_4"
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 432
+        width: 108
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f52bbfe8481431a90800000000000000
+      internalID: -7344454529720798625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_5"
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 432
+        width: 107
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05cf4f53a54a483c0800000000000000
+      internalID: -4358177832028537776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_6"
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 432
+        width: 107
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f695513ba45ed5b0800000000000000
+      internalID: -5341739013770995980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_7"
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 432
+        width: 107
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecd8c4fd2581d9690800000000000000
+      internalID: -7593886652464067122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_8"
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 432
+        width: 108
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a881dcbca1577230800000000000000
+      internalID: 3636465026469038245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_9"
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 432
+        width: 107
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72fbbf5950a4c42c0800000000000000
+      internalID: -4446097344269926617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_10"
+      rect:
+        serializedVersion: 2
+        x: 1529
+        y: 432
+        width: 108
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c86632367e67a880800000000000000
+      internalID: -8599783509513049919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_0": -4046108903959519210
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_1": -5931751034979527800
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_10": -8599783509513049919
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_2": -5690269274699325662
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_3": 3220491824436022176
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_4": -7344454529720798625
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_5": -4358177832028537776
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_6": -5341739013770995980
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_7": -7593886652464067122
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_8": 3636465026469038245
+      "lav-frame4C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_9": -4446097344269926617
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

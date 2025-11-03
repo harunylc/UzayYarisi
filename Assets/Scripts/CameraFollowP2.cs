@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollowP2 : MonoBehaviour
 {
     public Transform target;
     public Vector3 offset = new Vector3(0, 2f, -10f);
@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (target == null)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            GameObject player = GameObject.FindGameObjectWithTag("Player2");
             if (player != null)
             {
                 target = player.transform;
