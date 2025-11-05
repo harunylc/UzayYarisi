@@ -172,7 +172,6 @@ public class QTETest : MonoBehaviour
             {
                 countdownSlider.gameObject.SetActive(false);
             }
-            Debug.Log("✅ QTE Başarıyla Tamamlandı!");
         }
     }
 
