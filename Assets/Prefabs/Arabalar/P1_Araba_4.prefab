@@ -116,6 +116,8 @@ Transform:
   - {fileID: 5874135403603664703}
   - {fileID: 2460092092560818945}
   - {fileID: 4726428323686816532}
+  - {fileID: 7837462512889632875}
+  - {fileID: 1935668437881313292}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4785012203611556096
@@ -218,12 +220,12 @@ MonoBehaviour:
   nitroDrainRate: 30
   nitroRechargeRate: 15
   nitroBoost: 300
+  nitroParticle: {fileID: 2183080406285386870}
   tireGrounded: {fileID: 3490753906604013826}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
   rayLength: 45
-  settingsPanel: {fileID: 0}
 --- !u!114 &8710855484972036283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: c8cc634fa1f3a0141a54b510ed5d6b2d, type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -248,7 +250,63 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2473923691945559934}
+        m_TargetAssemblyTypeName: DriveMyCar, Assembly-CSharp
+        m_MethodName: OnThrotle
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d2605af7-e573-49ba-9cd1-873505956530
+    m_ActionName: 'Move/P1_Throtle[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dade1f50-283e-44c1-873c-b51e41e64366
+    m_ActionName: 'Move/P2_Throtle[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7366277b-5883-46b4-81ba-eac81a857edb
+    m_ActionName: 'Move/PauseOpenClose[/DualShock4GamepadHID/start]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2473923691945559934}
+        m_TargetAssemblyTypeName: DriveMyCar, Assembly-CSharp
+        m_MethodName: OnNitro
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b0d472d1-8a30-4730-8844-98e92e7b4fd4
+    m_ActionName: 'Move/P1_Nitro[/DualShock4GamepadHID/rightShoulder]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 05f66d6b-0970-4ec2-8a92-9ac7715e45da
+    m_ActionName: 'Move/P2_Nitro[/DualShock4GamepadHID/rightShoulder]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26cd39a5-4bbd-4ca3-ab79-2ff00b7d7d05
+    m_ActionName: 'Actions/Cancel[/DualShock4GamepadHID/buttonEast]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 954f31c6-61e4-4cfd-b546-3ac27fbc0a47
+    m_ActionName: 'Actions/Navigate[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/leftStick/right]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 66d1354a-aea7-4402-a9cd-996e093b083b
+    m_ActionName: 'Actions/Submit[/DualShock4GamepadHID/buttonSouth]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Move
@@ -783,3 +841,145 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.815
+--- !u!1001 &962530910015729532
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3891981751522779891}
+    m_Modifications:
+    - target: {fileID: 1650769703933624743, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650769703933624743, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1650769703933624743, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847446, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_Name
+      value: JetEgzoz
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.026800338
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 2278077264105254587, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+--- !u!4 &7837462512889632875 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
+  m_PrefabInstance: {fileID: 962530910015729532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5773029108463164114
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3891981751522779891}
+    m_Modifications:
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.6713033
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.026800338
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248820061754824008, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+      propertyPath: m_Name
+      value: Particlenitro
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+--- !u!4 &1935668437881313292 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+  m_PrefabInstance: {fileID: 5773029108463164114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &2183080406285386870 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5644760150069632676, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
+  m_PrefabInstance: {fileID: 5773029108463164114}
+  m_PrefabAsset: {fileID: 0}

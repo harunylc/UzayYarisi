@@ -152,7 +152,6 @@ public class UpgradeLobbyManager : MonoBehaviour
 
     void Start()
     {
-        // UI event bağlama
         if (leftButtonP1) leftButtonP1.onClick.AddListener(() => ChangeCar(-1, 1));
         if (rightButtonP1) rightButtonP1.onClick.AddListener(() => ChangeCar(1, 1));
         if (readyButtonP1) readyButtonP1.onClick.AddListener(() => PlayerReady(1));
@@ -161,12 +160,10 @@ public class UpgradeLobbyManager : MonoBehaviour
         if (rightButtonP2) rightButtonP2.onClick.AddListener(() => ChangeCar(1, 2));
         if (readyButtonP2) readyButtonP2.onClick.AddListener(() => PlayerReady(2));
 
-        // Başlangıç doğrulama ve ilk görsel
         ValidateAndInit(1);
         ValidateAndInit(2);
     }
 
-    // Dizi ve Image atanmış mı? Uzunluk >=1 mi? İlk resmi göster
     private void ValidateAndInit(int player)
     {
         if (player == 1)
