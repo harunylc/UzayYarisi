@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement; // SceneManager için bu satır önemli
+using UnityEngine.SceneManagement; 
 
 [RequireComponent(typeof(CanvasGroup))]
 public class Fade_Manager : MonoBehaviour
@@ -32,23 +32,19 @@ public class Fade_Manager : MonoBehaviour
 
     private void OnEnable()
     {
-        // Bir sahne yüklendiğinde OnSceneLoaded fonksiyonunu çağır
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        // Script kapandığında dinlemeyi bırak
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-// Yeni bir sahne yüklendiğinde bu fonksiyon otomatik çalışır
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         StartCoroutine(FadeIn());
     }
 
-// --- DIŞARIDAN ÇAĞRILACAK FONKSİYONLAR ---
 
     public IEnumerator FadeOut()
     {
@@ -64,10 +60,7 @@ public class Fade_Manager : MonoBehaviour
     {
         StartCoroutine(FadeOutAndLoad(sceneName));
     }
-
-
-// --- İÇ (PRIVATE) MANTIK ---
-
+    
     private IEnumerator FadeOutAndLoad(string sceneName)
     {
         yield return FadeOut();
@@ -94,7 +87,6 @@ public class Fade_Manager : MonoBehaviour
         }
     }
 
-    // --- Fade bittiğinde bir işlem yapmak için yardımcı fonksiyon ---
     public IEnumerator FadeOutThen(System.Action afterFade)
     {
         yield return StartCoroutine(FadeOut());

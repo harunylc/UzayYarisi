@@ -132,7 +132,6 @@ public class SceneFlowManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    // 🎯 Ana menüye dönüldüğünde sistem sıfırlansın
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == mainMenuScene)
@@ -142,14 +141,12 @@ public class SceneFlowManager : MonoBehaviour
         }
     }
 
-    // ✅ Oyun ilk kez veya tekrar başladığında çağrılır
     public void StartGame()
     {
         ResetSceneOrder();
         LoadUpgradeScene();
     }
 
-    // ✅ Harita listesini sıfırla ve karıştır
     private void ResetSceneOrder()
     {
         remainingScenes = new List<string>(scenes);
@@ -158,7 +155,6 @@ public class SceneFlowManager : MonoBehaviour
 
     public void LoadUpgradeScene()
     {
-        // Artık fade burada değil — sadece sahne ismini döndürüyoruz
         LoadSceneWithFade(upgradeScene);
     }
 
@@ -175,14 +171,13 @@ public class SceneFlowManager : MonoBehaviour
         else
         {
             Debug.Log("🟢 Tüm haritalar oynandı — upgrade ekranına dönülüyor (oyun bitmedi).");
-            ResetSceneOrder(); // ✅ tekrar karıştır, oyun döngüsünü sıfırla
+            ResetSceneOrder(); 
             LoadSceneWithFade(upgradeScene);
         }
     }
 
     private void LoadSceneWithFade(string sceneName)
     {
-        // Artık fade kontrolü buradan sadece 1 kez yapılacak
         if (Fade_Manager.Instance != null)
         {
             StartCoroutine(Fade_Manager.Instance.FadeOutThen(() =>

@@ -16,7 +16,6 @@ public class ResolutionManager : MonoBehaviour
 
     private void Awake()
     {
-        // 🔹 Tek örnek olmalı
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -54,10 +53,8 @@ public class ResolutionManager : MonoBehaviour
         StartCoroutine(DelayedUIUpdate());
     }
 
-    // 🔹 Sahne yüklenince UI bağlama (sahnede varsa)
     private IEnumerator DelayedUIUpdate()
     {
-        // Maksimum 5 saniye boyunca UI’yı arayacağız
         float timeout = 5f;
         float elapsed = 0f;
 
@@ -70,10 +67,9 @@ public class ResolutionManager : MonoBehaviour
             if (dropdownInScene.Length > 0 || toggleInScene.Length > 0)
             {
                 ConnectUI();
-                yield break; // Bulduk, bitir
+                yield break; 
             }
 
-            // Henüz yoksa biraz bekle
             yield return new WaitForSeconds(0.5f);
             elapsed += 0.5f;
         }
@@ -81,7 +77,6 @@ public class ResolutionManager : MonoBehaviour
     }
 
 
-    // 🔹 UI elemanlarını isimle bul ve bağla
     private void ConnectUI()
     {
         resolutionDropdown = null;

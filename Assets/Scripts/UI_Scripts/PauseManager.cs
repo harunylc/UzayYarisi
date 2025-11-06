@@ -19,7 +19,6 @@ public class PauseManager : MonoBehaviour
 
     private void Update()
     {
-        // 🔹 Pause menüsünü aç/kapat
         if (InputManager.instance.PauseOpenClose)
         {
             if (!isPaused)
@@ -28,16 +27,13 @@ public class PauseManager : MonoBehaviour
                 Unpause();
         }
 
-        // 🔹 B tuşu (Cancel) geri adım mantığı
         if (InputManager.instance.CancelPressed())
         {
             if (_settingsPanel.activeSelf)
             {
-                // Ayarlardan pause menüsüne dön
                 _settingsPanel.SetActive(false);
                 _pausePanel.SetActive(true);
 
-                // ✅ Pause menüsü geri geldiğinde buton tekrar seçili olsun
                 EventSystem.current.SetSelectedGameObject(_firstSelectedButton.gameObject);
             }
             else if (isPaused)
@@ -55,7 +51,6 @@ public class PauseManager : MonoBehaviour
         _pausePanel.SetActive(true);
         InputManager.instance.SwitchToUI();
 
-        // ✅ Pause açılır açılmaz ilk buton seçili hale gelsin
         EventSystem.current.SetSelectedGameObject(_firstSelectedButton.gameObject);
     }
 
@@ -76,21 +71,14 @@ public class PauseManager : MonoBehaviour
         _settingsPanel.SetActive(true);
         _pausePanel.SetActive(false);
 
-        // ✅ Ayarlarda seçili buton kalmasın (aksi halde UI karışır)
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(GameObject.Find("SoundSlider"));
     }
-    //
-    // public void ExitGame()
-    // {
-    //     Debug.Log("Oyundan çıkılıyor...");
-    //     Application.Quit();
-    // }
 
     public void GoToMainMenu()
     {
-        Time.timeScale = 1f; // Oyunu tekrar normale al
-        InputManager.instance.SwitchToGame(); // Action map’i resetle
-        SceneManager.LoadScene("MainMenuScene"); // Ana menü sahnesine dön
+        Time.timeScale = 1f;
+        InputManager.instance.SwitchToGame(); 
+        SceneManager.LoadScene("MainMenuScene"); 
     }
 }
