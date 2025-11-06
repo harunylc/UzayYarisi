@@ -136,7 +136,6 @@ public class SceneFlowManager : MonoBehaviour
     {
         if (scene.name == mainMenuScene)
         {
-            Debug.Log("🔄 Ana menüye dönüldü — SceneFlowManager resetleniyor...");
             ResetSceneOrder();
         }
     }
@@ -165,12 +164,10 @@ public class SceneFlowManager : MonoBehaviour
             string nextLevel = remainingScenes[0];
             remainingScenes.RemoveAt(0);
 
-            Debug.Log($"🌍 Sıradaki harita: {nextLevel}");
             LoadSceneWithFade(nextLevel);
         }
         else
         {
-            Debug.Log("🟢 Tüm haritalar oynandı — upgrade ekranına dönülüyor (oyun bitmedi).");
             ResetSceneOrder(); 
             LoadSceneWithFade(upgradeScene);
         }

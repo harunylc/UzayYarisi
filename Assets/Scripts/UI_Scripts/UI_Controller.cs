@@ -6,11 +6,14 @@ using System.Collections.Generic;
 
 public class UI_Controller : MonoBehaviour
 {
-    [Header("Paneller")] public GameObject mainMenu;
+    [Header("Paneller")] 
+    public GameObject mainMenu;
     public GameObject settingsPanel;
     public GameObject howToPlayPanel;
     public GameObject creatersPanel;
     public GameObject exitPanel;
+    public GameObject p1WinPanel; 
+    public GameObject p2WinPanel;
     private List<GameObject> allPanels;
 
     [Header("Gamepad Input")] public InputActionReference cancelAction;
@@ -39,17 +42,57 @@ public class UI_Controller : MonoBehaviour
 
     void Start()
     {
-        foreach (var panel in allPanels)
+        // foreach (var panel in allPanels)
+        // {
+        //     if (panel != null && panel != mainMenu)
+        //     {
+        //         panel.SetActive(false);
+        //     }
+        // }
+        //
+        // mainMenu.SetActive(true);
+        //
+        // EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
+        // UI_Controller.cs içindeki Start() fonksiyonunu tamamen bununla değiştirin.
+
+        void Start()
         {
-            if (panel != null && panel != mainMenu)
+            // Önce TÜM panelleri kapatalım.
+            foreach (var panel in allPanels)
             {
-                panel.SetActive(false);
+                if (panel != null)
+                {
+                    panel.SetActive(false);
+                }
+            }
+    
+            // Şimdi GameRoundManager'dan gelen bir "kazanan" bilgisi var mı diye kontrol et.
+            if (GameRoundManager.LastWinner != 0)
+            {
+                // Eğer bir kazanan varsa, ilgili paneli göster.
+                if (GameRoundManager.LastWinner == 1)
+                {
+                    p1WinPanel.SetActive(true);
+                }
+                else if (GameRoundManager.LastWinner == 2)
+                {
+                    p2WinPanel.SetActive(true);
+                }
+        
+                // Kazanan bilgisini sıfırla ki menüye bir daha girildiğinde bu ekran tekrar çıkmasın.
+                GameRoundManager.LastWinner = 0;
+        
+                // 3 saniye sonra ana menüyü göstermek için bir Coroutine başlat.
+                StartCoroutine(ShowMainMenuAfterDelay(3f));
+            }
+            else
+            {
+                // Eğer bir kazanan bilgisi yoksa (oyun normal şekilde açıldıysa),
+                // direkt ana menüyü göster.
+                mainMenu.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
             }
         }
-
-        mainMenu.SetActive(true);
-
-        EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
     }
 
     void Update()
@@ -92,5 +135,25 @@ public class UI_Controller : MonoBehaviour
     public void LoadSceneWithFade(string sceneName)
     {
         Fade_Manager.Instance.StartFadeOutAndLoadScene(sceneName);
+    }
+    // UI_Controller.cs'in en altına ekleyin.
+
+    private IEnumerator ShowMainMenuAfterDelay(float delay)
+    {
+        // Belirtilen süre kadar bekle.
+        yield return new WaitForSeconds(delay);
+
+        // Tüm panelleri tekrar kapat (kazanan paneli de dahil).
+        foreach (var panel in allPanels)
+        {
+            if (panel != null)
+            {
+                panel.SetActive(false);
+            }
+        }
+
+        // Şimdi ana menüyü aç ve ilk butonu seç.
+        mainMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
     }
 }

@@ -1824,6 +1824,8 @@ MonoBehaviour:
   howToPlayPanel: {fileID: 1429740086}
   creatersPanel: {fileID: 1935219349}
   exitPanel: {fileID: 103949122}
+  p1WinPanel: {fileID: 337535804}
+  p2WinPanel: {fileID: 1952998537}
   cancelAction: {fileID: -8888174083905515789, guid: c8cc634fa1f3a0141a54b510ed5d6b2d, type: 3}
   firstMainMenuButton: {fileID: 288252183}
   firstSettingsButton: {fileID: 820606208}
@@ -5237,8 +5239,6 @@ MonoBehaviour:
   p1Score: 0
   p2Score: 0
   maxScore: 3
-  p1WinPanel: {fileID: 337535804}
-  p2WinPanel: {fileID: 1952998537}
 --- !u!4 &1658937587
 Transform:
   m_ObjectHideFlags: 0

@@ -3,6 +3,8 @@ using UnityEngine;
 public class GameRoundManager : MonoBehaviour
 {
     public static GameRoundManager Instance;
+    
+    public static int LastWinner = 0; 
 
     [Header("Puan Ayarları")]
     public int p1Score = 0;
@@ -66,6 +68,8 @@ public class GameRoundManager : MonoBehaviour
     {
         gameOver = true;
         Debug.Log($"🎉 Oyuncu {winner} oyunu kazandı! Ana menüye dönülüyor...");
+        
+        LastWinner = winner;
 
         if (Fade_Manager.Instance != null)
             Fade_Manager.Instance.StartFadeOutAndLoadScene("MainMenuScene");

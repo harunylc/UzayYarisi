@@ -6,18 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Particals/KLASOR_JETEGZOZ/jetalevÇalışma Yüzeyi 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particals/KLASOR_JETEGZOZ/jetalevÇalışma Yüzeyi 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Particals/KLASOR_NITRO/nitroefektÇalışma Yüzeyi 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Particals/KLASOR_NITRO/nitroefektÇalışma Yüzeyi 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Merkür.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Merkür.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Neptün.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Neptün.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Satürn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Satürn.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/QTE/Dünya/gayzer.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/QTE/Dünya/gayzer.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/QTE/Dünya/gayzersssssss.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/QTE/Dünya/gayzersssssss.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/QTE/Dünya_Gayzer/Frame4.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/QTE/Dünya_Gayzer/Frame8.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprite/QTE/Neptün/Çalışma Yüzeyi 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprite/QTE/Neptün/Çalışma Yüzeyi 1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SceneFlowManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SceneFlowManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,19 +33,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Duzenlenecek",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Duzenlenecek&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.29f1\Editor\Unity.exe" />
@@ -126,6 +115,7 @@
       <workItem from="1761935409674" duration="10772000" />
       <workItem from="1762027666454" duration="32336000" />
       <workItem from="1762465243971" duration="207000" />
+      <workItem from="1762465480369" duration="1496000" />
     </task>
     <servers />
   </component>
