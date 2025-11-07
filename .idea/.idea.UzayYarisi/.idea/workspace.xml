@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenuScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/UI_Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P1_Araba_5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Arabalar/P2_Araba_5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +27,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PU_Scripts/PU_Gravity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.spriteshape/Runtime/SpriteShapeController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem/InputSystem/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
@@ -115,7 +125,8 @@
       <workItem from="1761935409674" duration="10772000" />
       <workItem from="1762027666454" duration="32336000" />
       <workItem from="1762465243971" duration="207000" />
-      <workItem from="1762465480369" duration="3881000" />
+      <workItem from="1762465480369" duration="4606000" />
+      <workItem from="1762533259905" duration="5135000" />
     </task>
     <servers />
   </component>
