@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 5927660741653542765}
   - component: {fileID: 7558236929368371560}
   - component: {fileID: 1924875940485259752}
+  - component: {fileID: 4301242435689821863}
   m_Layer: 6
   m_Name: P1_Araba_2
   m_TagString: Player
@@ -435,7 +436,6 @@ Transform:
   - {fileID: 5732398399433805807}
   - {fileID: 913298409777197244}
   - {fileID: 3894313985921250801}
-  - {fileID: 3147890003556366868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &4944457212998044246
@@ -538,7 +538,7 @@ MonoBehaviour:
   nitroDrainRate: 30
   nitroRechargeRate: 15
   nitroBoost: 300
-  nitroParticle: {fileID: 3402664577704568430}
+  nitroParticle: {fileID: 0}
   tireGrounded: {fileID: 7616613501626529922}
   groundLayer:
     serializedVersion: 2
@@ -630,6 +630,18 @@ MonoBehaviour:
   m_DefaultActionMap: Move
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4301242435689821863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540487465639291749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd1c2f703a40e04a92ed838fb81880d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8031807676216153818
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,71 +992,4 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
   m_PrefabInstance: {fileID: 6310875195393688294}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7020696292809308362
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 3280193350135779946}
-    m_Modifications:
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.6713033
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.026800338
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7248820061754824008, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-      propertyPath: m_Name
-      value: Particlenitro
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
---- !u!4 &3147890003556366868 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5386599082254271198, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-  m_PrefabInstance: {fileID: 7020696292809308362}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3402664577704568430 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5644760150069632676, guid: 1b0e7506e25862f458e8e22658952719, type: 3}
-  m_PrefabInstance: {fileID: 7020696292809308362}
   m_PrefabAsset: {fileID: 0}
