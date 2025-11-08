@@ -109,6 +109,29 @@ public class PowerUpManager : MonoBehaviour
                     enemy.StartCoroutine(reverse.ReverseControls(enemy.gameObject));
             }
         }
+        
+        /*else if (powerUpPrefab.GetComponent<PU_Gravity>() != null)
+        {
+            CarPowerUpHandler handler = player.GetComponent<CarPowerUpHandler>();
+            if (handler != null)
+            {
+                handler.GivePowerUp("Gravity"); // CarPowerUpHandler içinde Update() tuşla aktif ediyor
+            }
+        }*/
+        
+        else if (powerUpPrefab.GetComponent<NitroPU>() != null)
+        {
+            NitroPU nitro = powerUpPrefab.GetComponent<NitroPU>();
+            nitro.Activate(player); // player: PowerUpManager’dan gelen GameObject
+        }
+        if (player == null) return;
+        
+        else if (powerUpPrefab.GetComponent<MassPU>() != null)
+        {
+            MassPU massPU = powerUpPrefab.GetComponent<MassPU>();
+            massPU.Activate(playerTag); // Player1 veya Player2 tagi ile uygula
+        }
+
 
 
         // Buraya diğer power-up türleri eklenebilir (örnek: Nitro, Freeze, Bomb, vb.)
