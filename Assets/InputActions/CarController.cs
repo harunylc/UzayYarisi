@@ -71,6 +71,24 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P1_PowerUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""6f4769c5-58fe-45e1-aa1a-7c185a6cee25"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""P2_PowerUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""f1432e11-862f-4674-8317-2b46bfece900"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -148,6 +166,28 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""P2_Nitro"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d6473ab4-0220-453b-a634-9994d03b8be7"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P1_PowerUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""04179d6e-d162-4b52-8c2c-902f2bc50b25"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""P2_PowerUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -407,6 +447,8 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         m_Move_PauseOpenClose = m_Move.FindAction("PauseOpenClose", throwIfNotFound: true);
         m_Move_P1_Nitro = m_Move.FindAction("P1_Nitro", throwIfNotFound: true);
         m_Move_P2_Nitro = m_Move.FindAction("P2_Nitro", throwIfNotFound: true);
+        m_Move_P1_PowerUp = m_Move.FindAction("P1_PowerUp", throwIfNotFound: true);
+        m_Move_P2_PowerUp = m_Move.FindAction("P2_PowerUp", throwIfNotFound: true);
         // Actions
         m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
         m_Actions_Cancel = m_Actions.FindAction("Cancel", throwIfNotFound: true);
@@ -484,6 +526,8 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Move_PauseOpenClose;
     private readonly InputAction m_Move_P1_Nitro;
     private readonly InputAction m_Move_P2_Nitro;
+    private readonly InputAction m_Move_P1_PowerUp;
+    private readonly InputAction m_Move_P2_PowerUp;
     public struct MoveActions
     {
         private @CarController m_Wrapper;
@@ -493,6 +537,8 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         public InputAction @PauseOpenClose => m_Wrapper.m_Move_PauseOpenClose;
         public InputAction @P1_Nitro => m_Wrapper.m_Move_P1_Nitro;
         public InputAction @P2_Nitro => m_Wrapper.m_Move_P2_Nitro;
+        public InputAction @P1_PowerUp => m_Wrapper.m_Move_P1_PowerUp;
+        public InputAction @P2_PowerUp => m_Wrapper.m_Move_P2_PowerUp;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -517,6 +563,12 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @P2_Nitro.started += instance.OnP2_Nitro;
             @P2_Nitro.performed += instance.OnP2_Nitro;
             @P2_Nitro.canceled += instance.OnP2_Nitro;
+            @P1_PowerUp.started += instance.OnP1_PowerUp;
+            @P1_PowerUp.performed += instance.OnP1_PowerUp;
+            @P1_PowerUp.canceled += instance.OnP1_PowerUp;
+            @P2_PowerUp.started += instance.OnP2_PowerUp;
+            @P2_PowerUp.performed += instance.OnP2_PowerUp;
+            @P2_PowerUp.canceled += instance.OnP2_PowerUp;
         }
 
         private void UnregisterCallbacks(IMoveActions instance)
@@ -536,6 +588,12 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @P2_Nitro.started -= instance.OnP2_Nitro;
             @P2_Nitro.performed -= instance.OnP2_Nitro;
             @P2_Nitro.canceled -= instance.OnP2_Nitro;
+            @P1_PowerUp.started -= instance.OnP1_PowerUp;
+            @P1_PowerUp.performed -= instance.OnP1_PowerUp;
+            @P1_PowerUp.canceled -= instance.OnP1_PowerUp;
+            @P2_PowerUp.started -= instance.OnP2_PowerUp;
+            @P2_PowerUp.performed -= instance.OnP2_PowerUp;
+            @P2_PowerUp.canceled -= instance.OnP2_PowerUp;
         }
 
         public void RemoveCallbacks(IMoveActions instance)
@@ -622,6 +680,8 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         void OnPauseOpenClose(InputAction.CallbackContext context);
         void OnP1_Nitro(InputAction.CallbackContext context);
         void OnP2_Nitro(InputAction.CallbackContext context);
+        void OnP1_PowerUp(InputAction.CallbackContext context);
+        void OnP2_PowerUp(InputAction.CallbackContext context);
     }
     public interface IActionsActions
     {

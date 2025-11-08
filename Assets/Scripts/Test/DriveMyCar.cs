@@ -10,7 +10,7 @@ public class DriveMyCar : MonoBehaviour
     [SerializeField] private Rigidbody2D tireFrontRb;
     [SerializeField] private Rigidbody2D carRb;
     [SerializeField] private float carRotationSpeed = 100f;
-    [SerializeField] private float speed = 150f;
+    [SerializeField] public float speed = 150f;
     [SerializeField] private float currentSpeed;
 
     [Header("Nitro Settings")]
@@ -35,6 +35,8 @@ public class DriveMyCar : MonoBehaviour
 
     private float moveInput;
     private bool isGrounded;
+    
+    private bool controlsInverted = false;
 
     private void Start()
     {
@@ -56,6 +58,14 @@ public class DriveMyCar : MonoBehaviour
     public void OnThrotle(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<float>();
+        
+        if (controlsInverted)
+            moveInput *= -1;
+    }
+    
+    public void InvertControls(bool state)
+    {
+        controlsInverted = state;
     }
 
     public void OnNitro(InputAction.CallbackContext context)
