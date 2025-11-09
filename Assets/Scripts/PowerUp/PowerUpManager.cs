@@ -1,18 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PowerUpManager : MonoBehaviour
 {
-    [Header("UI References")]
-    public Image P1_PowerUpImage;
+    [Header("UI References")] public Image P1_PowerUpImage;
     public Image P2_PowerUpImage;
 
-    [Header("PowerUp Prefabs (6 farklı)")]
-    public GameObject[] powerUps; // 6 farklı power-up prefab
+    [Header("PowerUp Prefabs (6 farklı)")] public GameObject[] powerUps; // 6 farklı power-up prefab
 
     private GameObject P1_currentPowerUp = null;
     private GameObject P2_currentPowerUp = null;
+
+    [Header("DarkScreen Panels")] public PU_DarkScreenID p1_darkPanel_effect;
+    public PU_DarkScreenID p2_darkPanel_effect;
 
     // Power-up alındığında çağrılır
     public void CollectPowerUp(GameObject player, GameObject groundPowerUp)
@@ -65,6 +67,10 @@ public class PowerUpManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag(playerTag);
         if (player == null) return;
 
+        //yunus
+        string opponentTag = (playerTag == "Player") ? "Player2" : "Player";
+        GameObject opponent = GameObject.FindGameObjectWithTag(opponentTag);
+
         // 1️⃣ Eğer Shield power-up'ıysa
         if (powerUpPrefab.GetComponent<Shield>() != null)
         {
@@ -91,7 +97,6 @@ public class PowerUpManager : MonoBehaviour
                     enemy.StartCoroutine(slow.SlowDown(enemy)); // 🔥 burada da aynı
             }
         }
-        
         else if (powerUpPrefab.GetComponent<ReverseControlsPU>() != null)
         {
             ReverseControlsPU reverse = powerUpPrefab.GetComponent<ReverseControlsPU>();
@@ -108,6 +113,49 @@ public class PowerUpManager : MonoBehaviour
                 if (enemy != null)
                     enemy.StartCoroutine(reverse.ReverseControls(enemy.gameObject));
             }
+        }
+        else if (powerUpPrefab.GetComponent<PU_GravityID>() != null)
+        {
+            PU_GravityID gravity = powerUpPrefab.GetComponent<PU_GravityID>();
+            
+            if (playerTag == "Player")
+            {
+                gravity.ApplyEffectToPlayer1();
+            }
+            else if (playerTag == "Player2")
+            {
+                gravity.ApplyEffectToPlayer2();
+
+            }
+        }
+        else if (powerUpPrefab.GetComponent<PU_DarkScreenID>() != null)
+        {
+            // Prefabın üzerindeki PU_DarkScreenID script'ini al
+            PU_DarkScreenID darkScreen = powerUpPrefab.GetComponent<PU_DarkScreenID>();
+
+            if (playerTag == "Player")
+            {
+                StartCoroutine(darkScreen.DarkenPlayer2Screen(5f));
+            }
+            else if (playerTag == "Player2")
+            {
+                StartCoroutine(darkScreen.DarkenPlayer1Screen(5f));
+            }
+        }
+        else if (powerUpPrefab.GetComponent<PU_NitroID>() != null)
+        {
+            PU_NitroID nitro = powerUpPrefab.GetComponent<PU_NitroID>();
+            
+            if (playerTag == "Player")
+            {
+                StartCoroutine(nitro.BoostPlayer1NitroRecharge(10f)); 
+            }
+            else if (playerTag == "Player2")
+            {
+                StartCoroutine(nitro.BoostPlayer2NitroRecharge(10f));
+
+            }
+
         }
     }
 }

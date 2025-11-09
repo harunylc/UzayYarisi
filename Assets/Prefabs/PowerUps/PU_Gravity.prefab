@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8884000802483940068}
   - component: {fileID: 8954166336309225776}
   - component: {fileID: 6802361171678582355}
-  - component: {fileID: -1247767337508286802}
   - component: {fileID: -6912138204492699303}
   m_Layer: 0
   m_Name: PU_Gravity
@@ -121,18 +120,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-1247767337508286802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670217526918241336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70470f6caa17c6840ad306e9a625b1d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &-6912138204492699303
 SpriteRenderer:
   m_ObjectHideFlags: 0

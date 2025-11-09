@@ -181,7 +181,6 @@ GameObject:
   - component: {fileID: 1225376609518294363}
   - component: {fileID: 1457128818512014910}
   - component: {fileID: -3790540033853083587}
-  - component: {fileID: -7446110328576878045}
   m_Layer: 6
   m_Name: P1_Araba_3
   m_TagString: Player
@@ -427,18 +426,6 @@ MonoBehaviour:
   m_DefaultActionMap: Move
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &-7446110328576878045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488505345732419846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd1c2f703a40e04a92ed838fb81880d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2487887093274466282
 GameObject:
   m_ObjectHideFlags: 0

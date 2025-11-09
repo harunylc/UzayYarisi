@@ -694,7 +694,6 @@ GameObject:
   - component: {fileID: 928960800332183168}
   - component: {fileID: 8993655558843773179}
   - component: {fileID: 7390051308627199889}
-  - component: {fileID: -5691600368004036066}
   m_Layer: 6
   m_Name: P2_Araba_2
   m_TagString: Player2
@@ -914,18 +913,6 @@ MonoBehaviour:
   m_DefaultActionMap: Move
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &-5691600368004036066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9051482285971340407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd1c2f703a40e04a92ed838fb81880d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2750741324065384538
 PrefabInstance:
   m_ObjectHideFlags: 0
