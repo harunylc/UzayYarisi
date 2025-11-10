@@ -10,6 +10,8 @@ TagManager:
   - Player2
   - P2
   - P1
+  - P1_DarkPanel
+  - P2_DarkPanel
   layers:
   - Default
   - TransparentFX
