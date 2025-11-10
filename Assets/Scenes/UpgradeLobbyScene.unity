@@ -1763,6 +1763,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 501955446121719367, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: ozellikAdi
+      value: "P2_H\u0131z"
+      objectReference: {fileID: 0}
     - target: {fileID: 628142815575759066, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2059,6 +2063,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2726166928202582985, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: ozellikAdi
+      value: "P2_A\u011F\u0131rl\u0131k"
+      objectReference: {fileID: 0}
     - target: {fileID: 2743984764665683105, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2082,6 +2090,10 @@ PrefabInstance:
     - target: {fileID: 2743984764665683105, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2834521318454576411, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_text
+      value: "Yol Tutu\u015F"
       objectReference: {fileID: 0}
     - target: {fileID: 2932453018392571646, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2211,6 +2223,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3640958373060186778, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: ozellikAdi
+      value: P2_Nitro
+      objectReference: {fileID: 0}
     - target: {fileID: 3679798286501191585, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2402,6 +2418,10 @@ PrefabInstance:
     - target: {fileID: 4895947865621482328, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952771220902287763, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_text
+      value: Fren
       objectReference: {fileID: 0}
     - target: {fileID: 4979300530874331651, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2667,6 +2687,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6251542942060321324, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_text
+      value: "A\u011F\u0131rl\u0131k"
+      objectReference: {fileID: 0}
     - target: {fileID: 6378075892072331516, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2739,6 +2763,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7053524654165501930, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: ozellikAdi
+      value: P2_Fren
+      objectReference: {fileID: 0}
     - target: {fileID: 7084588160556506911, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2762,6 +2790,10 @@ PrefabInstance:
     - target: {fileID: 7084588160556506911, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151953283887281104, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: ozellikAdi
+      value: "P2_YolTutu\u015F"
       objectReference: {fileID: 0}
     - target: {fileID: 7322148339302264275, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3002,6 +3034,10 @@ PrefabInstance:
     - target: {fileID: 9050097916475373771, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9096037556071896739, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_text
+      value: Nitro
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4560,6 +4596,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 679456093082593507, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_text
+      value: Fren
+      objectReference: {fileID: 0}
     - target: {fileID: 821326245626217538, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4727,6 +4767,14 @@ PrefabInstance:
     - target: {fileID: 1651451223984183678, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2011553025175990063, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_text
+      value: "Yol Tutu\u015F"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351858194616801466, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: ozellikAdi
+      value: "P1_H\u0131z"
       objectReference: {fileID: 0}
     - target: {fileID: 2413873966680137412, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_Pivot.x
@@ -5152,6 +5200,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4953005558400993738, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_text
+      value: Nitro
+      objectReference: {fileID: 0}
     - target: {fileID: 5041765837095746322, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5536,6 +5588,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8381850654907082896, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: ozellikAdi
+      value: "P1_A\u011F\u0131rl\u0131k"
+      objectReference: {fileID: 0}
     - target: {fileID: 8441756588408017690, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5608,6 +5664,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8658114403699055130, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: ozellikAdi
+      value: "P1_YolTutu\u015F"
+      objectReference: {fileID: 0}
     - target: {fileID: 8715320746861844967, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5655,6 +5715,18 @@ PrefabInstance:
     - target: {fileID: 8785924572067264692, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805630264834368938, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: ozellikAdi
+      value: P1_Nitro
+      objectReference: {fileID: 0}
+    - target: {fileID: 8818978572233742243, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: ozellikAdi
+      value: P1_Fren
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884354677464948308, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_text
+      value: "A\u011F\u0131rl\u0131k"
       objectReference: {fileID: 0}
     - target: {fileID: 9037445780195623684, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchorMax.y

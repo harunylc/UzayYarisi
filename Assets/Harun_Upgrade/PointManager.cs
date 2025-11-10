@@ -49,19 +49,19 @@ public class PointManager : MonoBehaviour
             gelistirmeler[1].OzellikDegerleriniAyarla(data.temelFren, data.frenIncreasePerLevel);
         }
         
-        if (gelistirmeler.Length > 1 && gelistirmeler[1] != null)
+        if (gelistirmeler.Length > 2 && gelistirmeler[2] != null)
         {
-            gelistirmeler[1].OzellikDegerleriniAyarla(data.temelNitro, data.nitroIncreasePerLevel);
+            gelistirmeler[2].OzellikDegerleriniAyarla(data.temelNitro, data.nitroIncreasePerLevel);
         }
         
-        if (gelistirmeler.Length > 1 && gelistirmeler[1] != null)
+        if (gelistirmeler.Length > 3 && gelistirmeler[3] != null)
         {
-            gelistirmeler[1].OzellikDegerleriniAyarla(data.temelYoltutus, data.yoltutusIncreasePerLevel);
+            gelistirmeler[3].OzellikDegerleriniAyarla(data.temelYoltutus, data.yoltutusIncreasePerLevel);
         }
         
-        if (gelistirmeler.Length > 1 && gelistirmeler[1] != null)
+        if (gelistirmeler.Length > 4 && gelistirmeler[4] != null)
         {
-            gelistirmeler[1].OzellikDegerleriniAyarla(data.temelAgırlık, data.agırlıkIncreasePerLevel);
+            gelistirmeler[4].OzellikDegerleriniAyarla(data.temelAgırlık, data.agırlıkIncreasePerLevel);
         }
         
         

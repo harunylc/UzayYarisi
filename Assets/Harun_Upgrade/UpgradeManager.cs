@@ -13,7 +13,6 @@ public class UpgradeManager : MonoBehaviour
     
     // UI/Debug Amaçlı
     public string ozellikAdi = "Hız"; 
-    public TMP_Text mevcutDegerText; 
     
     // YÜKSELTME DEĞERLERİ (PointManager tarafindan ayarlanacak)
     private float temelDeger = 0f;
@@ -86,11 +85,7 @@ public class UpgradeManager : MonoBehaviour
                 }
             }
         }
+            Debug.Log(ozellikAdi + ": " + GuncelDegeriGetir().ToString("F1"));  
         
-        // Mevcut değeri UI'da göster
-        if (mevcutDegerText != null)
-        {
-            mevcutDegerText.text = ozellikAdi + ": " + GuncelDegeriGetir().ToString("F1"); 
-        }
     }
 }
