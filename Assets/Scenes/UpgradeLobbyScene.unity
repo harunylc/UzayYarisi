@@ -3572,6 +3572,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1416525500}
   m_CullTransparentMesh: 1
+--- !u!114 &1417526153 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7418935576530052672, guid: d21258bd044793544ae792f5bed94717, type: 3}
+  m_PrefabInstance: {fileID: 1113315712}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e68d695d1a8994e93c0f64d9dbc205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1437826112 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3141484336115942194, guid: d21258bd044793544ae792f5bed94717, type: 3}
@@ -4253,6 +4264,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707698887}
   m_CullTransparentMesh: 1
+--- !u!114 &1743246484 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5606459126108646394, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+  m_PrefabInstance: {fileID: 1793050654}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1e68d695d1a8994e93c0f64d9dbc205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1765308320
 GameObject:
   m_ObjectHideFlags: 0
@@ -6036,6 +6058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6290e2db0fc90e84aaf0d110b98e0bfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointManagerP1: {fileID: 1743246484}
+  pointManagerP2: {fileID: 1417526153}
   readyButtonP1: {fileID: 1360975204}
   leftButtonP1: {fileID: 844596836}
   rightButtonP1: {fileID: 453275334}
@@ -6046,6 +6070,12 @@ MonoBehaviour:
   - {fileID: -646634298396438639, guid: e1d16f3259a12af4c8f6967ace2f8619, type: 3}
   - {fileID: 5410610133585916095, guid: 209dda2a5e913ac41b144f88f8133376, type: 3}
   - {fileID: -8549480908206894549, guid: 2ec3918ef763bed4fb2335c023f6976a, type: 3}
+  carPrefabsP1:
+  - {fileID: 6191543987659910002, guid: 5dc89b9cdc3020e41baaac19e4fd3877, type: 3}
+  - {fileID: 7540487465639291749, guid: fbd58cdab313ae14c884df8c11f13783, type: 3}
+  - {fileID: 1488505345732419846, guid: ced542344bf46f04d8eee991f757b6dd, type: 3}
+  - {fileID: 1757032386294281471, guid: 0f7b1148ea6f10347b9075117187f7ec, type: 3}
+  - {fileID: 3115641294105527016, guid: 2f1366d4e5952fc4598036c76814fe58, type: 3}
   readyButtonP2: {fileID: 1249410872}
   leftButtonP2: {fileID: 2084250136}
   rightButtonP2: {fileID: 1571937588}
@@ -6056,6 +6086,12 @@ MonoBehaviour:
   - {fileID: -646634298396438639, guid: e1d16f3259a12af4c8f6967ace2f8619, type: 3}
   - {fileID: 5410610133585916095, guid: 209dda2a5e913ac41b144f88f8133376, type: 3}
   - {fileID: -8549480908206894549, guid: 2ec3918ef763bed4fb2335c023f6976a, type: 3}
+  carPrefabsP2:
+  - {fileID: 9107294385237121401, guid: 2b14aa759ca716446a5cbf056907795d, type: 3}
+  - {fileID: 9051482285971340407, guid: 936dc1d2f3d6f484a929209655986af0, type: 3}
+  - {fileID: 5542691369600792579, guid: f83a544b0ddbf7d4692ad8d11c82145d, type: 3}
+  - {fileID: 4376659800735175874, guid: d15a55e91af18fa41a8bcf4ecc006f8e, type: 3}
+  - {fileID: 3998396138588471346, guid: 7c2f350615726f14c9569db132278493, type: 3}
 --- !u!4 &2000962970
 Transform:
   m_ObjectHideFlags: 0
