@@ -18,7 +18,7 @@ public class DriveMyCar : MonoBehaviour
     [SerializeField] private Slider nitroSlider;
     [SerializeField] private float maxNitro = 100f;
     [SerializeField] private float nitroDrainRate = 30f;
-    public float nitroRechargeRate = 15f;
+    public float nitroRechargeRate = 15f; //yunus degisti bu satiri public yapti
     [SerializeField] private float nitroBoost = 300f;
     private float currentNitro;
 
