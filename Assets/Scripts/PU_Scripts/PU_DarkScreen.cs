@@ -1,95 +1,48 @@
-// using UnityEngine;
-// using UnityEngine.UI;
-// using System.Collections;
-//
-// public class PU_DarkScreen : MonoBehaviour
-// {
-//     public bool isPowerUpObject;
-//     public Image darkPanelImage;
-//     private Coroutine activeCoroutine;
-//
-//     private void OnTriggerEnter2D(Collider2D other)
-//     {
-//         if (!isPowerUpObject) return;
-//
-//         if (other.CompareTag("Player") || other.CompareTag("Player2"))
-//         {
-//             CarPowerUpHandler carHandler = other.GetComponent<CarPowerUpHandler>();
-//             if (carHandler != null)
-//             {
-//                 // Artık güçlendirmenin adını bir string olarak veriyoruz.
-//                 carHandler.GivePowerUp("DarkScreen");
-//                 Destroy(gameObject);
-//             }
-//         }
-//     }
-//
-//     public void Activate(float duration)
-//     {
-//         if (activeCoroutine != null)
-//         {
-//             StopCoroutine(activeCoroutine);
-//         }
-//         activeCoroutine = StartCoroutine(DarkenScreenRoutine(duration));
-//     }
-//
-//     private IEnumerator DarkenScreenRoutine(float duration)
-//     {
-//         if (darkPanelImage == null) yield break;
-//
-//         Color color = darkPanelImage.color;
-//         color.a = 204f / 255f;
-//         darkPanelImage.color = color;
-//         
-//         yield return new WaitForSeconds(duration);
-//
-//         color.a = 0f;
-//         darkPanelImage.color = color;
-//         
-//         activeCoroutine = null;
-//     }
-// }
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-public class PU_DarkScreenID : MonoBehaviour
+public class PU_DarkScreen : MonoBehaviour
 {
-    // Bu script'i PU_DarkScreen prefab'ının üzerine ekleyeceksiniz.
+    [Header("Rol Ayarları")]
+    public bool isPowerUpObject;
 
-    [Header("Hedef Paneller")]
-    [Tooltip("CameraP1'in altındaki Panel objesini buraya sürükleyin.")]
-    public GameObject player1_DarkPanel;
-    
-    [Tooltip("CameraP2'nin altındaki Panel objesini buraya sürükleyin.")]
-    public GameObject player2_DarkPanel;
+    [Header("Panel Ayarları (Eğer Panel ise)")]
+    public Image panelImage;
 
-    // --- BU FONKSİYONU PLAYER 1 ÇAĞIRACAK (P2'nin ekranını karartmak için) ---
-    public IEnumerator DarkenPlayer2Screen(float duration)
+    // --- ROL 1: Toplanabilir Obje Olarak Çalışma ---
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (player2_DarkPanel != null)
+        if (!isPowerUpObject) return;
+
+        if (other.CompareTag("Player") || other.CompareTag("Player2"))
         {
-            player2_DarkPanel.SetActive(true);
-            yield return new WaitForSeconds(duration);
-            player2_DarkPanel.SetActive(false);
-        }
-        else
-        {
-            Debug.LogError("Player 2'nin Dark Panel'i PU_DarkScreenID script'ine atanmamış!");
+            CarPowerUpHandler carHandler = other.GetComponent<CarPowerUpHandler>();
+            if (carHandler != null)
+            {
+                carHandler.GivePowerUp("DarkScreen");
+                Destroy(gameObject);
+            }
         }
     }
 
-    // --- BU FONKSİYONU PLAYER 2 ÇAĞIRACAK (P1'in ekranını karartmak için) ---
-    public IEnumerator DarkenPlayer1Screen(float duration)
+    // --- ROL 2: Power-Up Yöneticisi Tarafından Başlatılacak Olan Coroutine ---
+    // Bu fonksiyonun tek görevi, bir plan (IEnumerator) sunmaktır.
+    // Dışarıdan çağrılabilmesi için "public" olmalıdır.
+    public IEnumerator DarkenScreenRoutine(float duration)
     {
-        if (player1_DarkPanel != null)
+        if (panelImage == null) 
         {
-            player1_DarkPanel.SetActive(true);
-            yield return new WaitForSeconds(duration);
-            player1_DarkPanel.SetActive(false);
+            Debug.LogError("Panel Image, " + gameObject.name + " üzerinde atanmamış!");
+            yield break; // Hata varsa Coroutine'i durdur.
         }
-        else
-        {
-            Debug.LogError("Player 1'in Dark Panel'i PU_DarkScreenID script'ine atanmamış!");
-        }
+        
+        // Önce paneli aktif et.
+        panelImage.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(duration);
+
+        // Süre bitince paneli tekrar kapat.
+        panelImage.gameObject.SetActive(false);
     }
 }

@@ -153,8 +153,15 @@ public class DriveMyCar : MonoBehaviour
             }
         }
     }
+    public float GetNitroRechargeRate()
+    {
+        return nitroRechargeRate;
+    }
+
     public void SetNitroRechargeRate(float newRate)
     {
-        nitroRechargeRate = newRate;
+        nitroRechargeRate = newRate;
     }
+    
+    
 }
