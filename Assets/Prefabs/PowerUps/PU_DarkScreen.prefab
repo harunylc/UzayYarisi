@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8f2bea97bc30348b945175bf82ca19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPowerUpObject: 1
-  darkPanelImage: {fileID: 0}
+  isCollectableObject: 0
+  panelImage: {fileID: 0}
 --- !u!50 &4051008471587223781
 Rigidbody2D:
   serializedVersion: 5
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8f2bea97bc30348b945175bf82ca19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPowerUpObject: 0
-  darkPanelImage: {fileID: 0}
+  isCollectableObject: 1
+  panelImage: {fileID: 0}
 --- !u!212 &207898834882662174
 SpriteRenderer:
   m_ObjectHideFlags: 0

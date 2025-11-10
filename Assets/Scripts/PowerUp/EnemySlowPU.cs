@@ -1,10 +1,11 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class EnemySlowPU : MonoBehaviour
 {
     public float slowAmount = 100f;
-    public float duration = 3f;
+    public float duration = 10f;
 
     public IEnumerator SlowDown(MonoBehaviour target)
     {
