@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 7558236929368371560}
   - component: {fileID: 1924875940485259752}
   - component: {fileID: 4301242435689821863}
+  - component: {fileID: 8003115332699418411}
   m_Layer: 6
   m_Name: P1_Araba_2
   m_TagString: Player
@@ -625,6 +626,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 66d1354a-aea7-4402-a9cd-996e093b083b
     m_ActionName: 'Actions/Submit[/DualShock4GamepadHID/buttonSouth,/XInputControllerWindows/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6f4769c5-58fe-45e1-aa1a-7c185a6cee25
+    m_ActionName: 'Move/P1_PowerUp[/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows1/leftShoulder,/DualShock4GamepadHID1/leftShoulder]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f1432e11-862f-4674-8317-2b46bfece900
+    m_ActionName: 'Move/P2_PowerUp[/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows1/leftShoulder,/DualShock4GamepadHID1/leftShoulder]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Move
@@ -642,6 +651,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd1c2f703a40e04a92ed838fb81880d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8003115332699418411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7540487465639291749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3969f24487bfdb34ea3947ae238360db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsData: {fileID: 11400000, guid: 7543ccdc8f4244c48963e225cce3a94a, type: 2}
 --- !u!1 &8031807676216153818
 GameObject:
   m_ObjectHideFlags: 0
