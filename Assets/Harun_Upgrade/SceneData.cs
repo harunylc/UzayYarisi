@@ -4,7 +4,7 @@ using System;
 [System.Serializable]
 public class SceneData
 {
-    // SceneFlowManager'daki 'scenes' listesi ile eşleşmeli
+    // SceneFlowManager'daki 'scenes' listesi
     public string SceneName; 
     
     // Sahnenin resmini tutacak değişken

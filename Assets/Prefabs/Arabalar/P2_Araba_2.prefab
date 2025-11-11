@@ -696,6 +696,7 @@ GameObject:
   - component: {fileID: 7390051308627199889}
   - component: {fileID: 9188732142108041886}
   - component: {fileID: 5016016521529105614}
+  - component: {fileID: 389159381982881905}
   m_Layer: 6
   m_Name: P2_Araba_2
   m_TagString: Player2
@@ -918,6 +919,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f1432e11-862f-4674-8317-2b46bfece900
     m_ActionName: 'Move/P2_PowerUp[/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows1/leftShoulder,/DualShock4GamepadHID1/leftShoulder]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 389159381982881905}
+        m_TargetAssemblyTypeName: CarPowerUpHandler, Assembly-CSharp
+        m_MethodName: OnUsePowerUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 78c41373-fdb7-4466-8f88-5b2be6a47b65
+    m_ActionName: Move/UsePowerUp
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Move
@@ -982,6 +999,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 11.075421, y: 5.72747}
   m_EdgeRadius: 0
+--- !u!114 &389159381982881905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9051482285971340407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2a9b67a334f47042abdfcaf044d31b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2750741324065384538
 PrefabInstance:
   m_ObjectHideFlags: 0

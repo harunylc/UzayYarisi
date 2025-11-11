@@ -10,7 +10,7 @@ public class PointManager : MonoBehaviour
     public int kullanilanPuan = 0; 
     public const int BolmePuanDegerı = 1;
     
-    // YÜKSELTME KATEGORİLERİ (Inspector'da atanmalı: 0=Hız, 1=Fren, vb.)
+    // YÜKSELTME KATEGORİLERİ
     public UpgradeManager[] gelistirmeler = new UpgradeManager[5]; 
     public TMP_Text kalanPuanText; 
     
@@ -19,7 +19,7 @@ public class PointManager : MonoBehaviour
         GuncellePuanUI();
     }
     
-    // 1. METOT: Lobi Manager'dan gelen SO verisini UpgradeManager'lara dağıt.
+    
     public void YükseltmeVerileriniYukle(CarStatsData data)
     {
     //     Header("Temel Özellikler")]
@@ -68,7 +68,6 @@ public class PointManager : MonoBehaviour
         GuncellePuanUI();
     }
     
-    // 2. METOT: Oyuncu Hazır'a bastığında nihai değerleri statik veriye kaydet.
     public void KaydedilecekDegerleriAyarla(bool isP1)
     {
         // HIZ (Index 0)
@@ -84,8 +83,7 @@ public class PointManager : MonoBehaviour
                 PlayerSelectionData.player2FinalHız = finalSpeed;
             }
         }
-
-        // FREN (Index 1)
+        
         if (gelistirmeler.Length > 1 && gelistirmeler[1] != null)
         {
             float finalBrake = gelistirmeler[1].GuncelDegeriGetir();
@@ -141,7 +139,7 @@ public class PointManager : MonoBehaviour
         
     }
     
-    // --- PUAN YÖNETİMİ METOTLARI ---
+    
     
     private void GuncellePuanUI()
     {

@@ -6,12 +6,12 @@ public class SceneFlowManager : MonoBehaviour
 {
     public static SceneFlowManager Instance;
 
-    // Harita verilerini tutan liste (Inspector'da doldurulmalı)
+    
     public List<SceneData> AllSceneDataList;
     
-    // YENİ: Upgrade ekranında gösterilecek bir sonraki levelin adı
+   
     public string NextLevelSceneName { get; private set; } 
-    // Mevcut level adını tutar (Şimdilik kullanılmıyor, ama faydalıdır)
+   
     public string CurrentSceneName { get; private set; }
     
     public List<string> scenes = new List<string> { "Dünya", "Mars", "Merkür", "Satürn", "Neptün" };
@@ -57,38 +57,30 @@ public class SceneFlowManager : MonoBehaviour
     public void StartGame()
     {
         ResetSceneOrder();
-        PrepareForUpgradeScene(); // İlk upgrade ekranını yüklemeden önce sonraki leveli kaydeder.
+        PrepareForUpgradeScene();
     }
 
-    // YENİ: Leveli tamamladığında upgrade ekranına geçişi hazırlar
+  
     public void LevelCompleted()
     {
-        // remainingScenes'den biten leveli kaldırdıktan sonra çağrılmalı
-        // veya LoadNextLevelOrEndGame'in çağrılmasıyla bu seviyeden çıkılır.
-        
-        // Eğer level bittiyse ve hala level varsa, upgrade ekranına hazırlar
         if (remainingScenes.Count > 0)
         {
              PrepareForUpgradeScene();
         }
         else
         {
-            // Tüm leveller bitti
             LoadMainMenu();
         }
     }
     
-    // YENİ METOT: Upgrade lobisine gitmeden önce hangi levelin geleceğini ayarlar ve lobiyi yükler.
     public void PrepareForUpgradeScene()
     {
         if (remainingScenes.Count > 0)
         {
-            // Bir sonraki level adını al ve NextLevelSceneName'e kaydet (remainingScenes'den ÇIKARMA!)
             NextLevelSceneName = remainingScenes[0]; 
         }
         else
         {
-            // Tüm leveller bitti, ana menüye dönülecek bir durum için NextLevelSceneName'i temizle
             NextLevelSceneName = null; 
         }
         
@@ -127,16 +119,12 @@ public class SceneFlowManager : MonoBehaviour
         }
     }
     
-    // YENİ METOT: Upgrade ekranı için bir sonraki level verisini döndürür.
     public SceneData GetNextLevelData()
     {
         if (string.IsNullOrEmpty(NextLevelSceneName))
         {
-            // Level kalmamışsa (oyun bittiyse)
             return null;
         }
-        
-        // Kaydedilen NextLevelSceneName'i kullanarak listeyi ara
         return AllSceneDataList.Find(data => data.SceneName == NextLevelSceneName);
     }
 
@@ -144,15 +132,6 @@ public class SceneFlowManager : MonoBehaviour
     {
         if (Fade_Manager.Instance != null)
         {
-            // Varsayım: Fade_Manager.Instance.FadeOutThen mevcut ve çalışıyor.
-            // Bu kısmı projenizdeki Fade Manager'a göre ayarlayın.
-            // Örnekteki orijinal kodunuzu kullanıyorum:
-            // Fade_Manager.Instance.StartFadeOutAndLoadScene(sceneName); // (Sizin orijinal kodunuz)
-            
-            // Eğer `FadeOutThen` kullanılıyorsa:
-            // StartCoroutine(Fade_Manager.Instance.FadeOutThen(() => { SceneManager.LoadScene(sceneName); }));
-            
-            // Eğer orijinal kodunuzdaki gibi tek bir metot varsa:
              Fade_Manager.Instance.StartFadeOutAndLoadScene(sceneName); 
         }
         else

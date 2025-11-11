@@ -709,7 +709,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824689903}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: RightButtonP1
         m_Mode: 1
@@ -960,7 +960,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824689903}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: LeftButtonP1
         m_Mode: 1
@@ -1496,7 +1496,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824689903}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: ReadyButtonP2
         m_Mode: 1
@@ -2541,6 +2541,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5620724735263851286, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_text
+      value: <
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620724735263851286, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620724735263851286, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5620724735263851286, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5630643828098229522, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2864,6 +2880,22 @@ PrefabInstance:
     - target: {fileID: 7400942331519328676, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437346571879174451, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_text
+      value: '>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437346571879174451, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437346571879174451, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7437346571879174451, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7864980216143625992, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3286,7 +3318,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824689903}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: LeftButtonP2
         m_Mode: 1
@@ -3808,7 +3840,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824689903}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: ReadyButtonP1
         m_Mode: 1
@@ -4416,7 +4448,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1824689903}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LobbySystemTest, Assembly-CSharp
         m_MethodName: RightButtonP2
         m_Mode: 1
@@ -5298,6 +5330,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5195886007546268086, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_text
+      value: <
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195886007546268086, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195886007546268086, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5195886007546268086, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 5273783735372175312, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5513,6 +5561,22 @@ PrefabInstance:
     - target: {fileID: 7378331926475547339, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408700191685562452, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_text
+      value: '>'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408700191685562452, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408700191685562452, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7408700191685562452, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7460873110991259518, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchorMax.y
@@ -5809,63 +5873,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2413873966680137412, guid: 4418909e6f8c262438917a16a968c574, type: 3}
   m_PrefabInstance: {fileID: 1793050654}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1824689900
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1824689902}
-  - component: {fileID: 1824689901}
-  - component: {fileID: 1824689903}
-  m_Layer: 0
-  m_Name: UpgradeScene_Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1824689901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824689900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a03fd26a86103d4faa700a6fb054d8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1824689902
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824689900}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 960, y: 540, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1824689903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824689900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ab74b7234a7a4540ace365d87129571, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1845441572
 GameObject:
   m_ObjectHideFlags: 0
@@ -6396,5 +6403,4 @@ SceneRoots:
   - {fileID: 1075578548}
   - {fileID: 36648019}
   - {fileID: 1264158269}
-  - {fileID: 1824689902}
   - {fileID: 2000962970}

@@ -26,7 +26,6 @@ public class PU_DarkScreen : MonoBehaviour
         }
     }
 
-    // --- ROL 2: Power-Up Yöneticisi Tarafından Başlatılacak Olan Coroutine ---
     public IEnumerator DarkenScreenRoutine(float duration)
     {
         if (panelImage == null) 

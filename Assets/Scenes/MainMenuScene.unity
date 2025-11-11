@@ -3300,12 +3300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e135c65d8dc22439322680670eba65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scenes:
-  - "D\xFCnya"
-  - Mars
-  - "Merk\xFCr"
-  - "Nept\xFCn"
-  - "Sat\xFCrn"
   AllSceneDataList:
   - SceneName: "D\xFCnya"
     SceneImage: {fileID: 454614866027014211, guid: f880cfc6aa9f96f4ea3e668d49eafecd, type: 3}
@@ -3322,6 +3316,12 @@ MonoBehaviour:
   - SceneName: "Sat\xFCrn"
     SceneImage: {fileID: -676705488414979569, guid: 541e020ace70d924db35a25b7b30c288, type: 3}
     SceneTitleText: "S\u0131radaki gezegen SAT\xDCRN"
+  scenes:
+  - "D\xFCnya"
+  - Mars
+  - "Merk\xFCr"
+  - "Nept\xFCn"
+  - "Sat\xFCrn"
 --- !u!4 &1002186421
 Transform:
   m_ObjectHideFlags: 0

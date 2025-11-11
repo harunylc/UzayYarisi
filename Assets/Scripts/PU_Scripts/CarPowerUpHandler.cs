@@ -6,7 +6,6 @@ public class CarPowerUpHandler : MonoBehaviour
 {
     private string currentPowerUp = "None";
 
-    // --- DEĞİŞKENLER (Inspector'da hiçbir şey atamanıza gerek yok) ---
     private PU_DarkScreen player1_darkPanel;
     private PU_DarkScreen player2_darkPanel;
 
@@ -15,7 +14,6 @@ public class CarPowerUpHandler : MonoBehaviour
     private DriveMyCar_Player2 driveScriptP2;
     private float originalNitroRechargeRate;
 
-    // --- TEMEL UNITY FONKSİYONLARI ---
 
     void Awake()
     {
@@ -27,7 +25,6 @@ public class CarPowerUpHandler : MonoBehaviour
 
     void Start()
     {
-        // Araba sahneye geldiği anda, ihtiyacı olan panelleri Tag ile bulur.
         Debug.LogError("--- CarPowerUpHandler: Paneller aranıyor... ---");
         GameObject p1PanelObject = GameObject.FindWithTag("P1_DarkPanel");
         if (p1PanelObject != null)
@@ -57,10 +54,8 @@ public class CarPowerUpHandler : MonoBehaviour
             Debug.LogError("!!!!!! HATA: 'P2_DarkPanel' etiketine sahip hiçbir obje sahnede bulunamadı! !!!!!!");
         }
     }
-    // --- YENİ FONKSİYON: Bu, PlayerInput tarafından çağrılacak ---
     public void OnUsePowerUp(InputAction.CallbackContext context)
     {
-        // Sadece tuşa basıldığı anda (performed) ve cebimizde bir güç varsa çalışır
         if (context.performed && currentPowerUp != "None")
         {
             UsePowerUp();
@@ -90,9 +85,7 @@ public class CarPowerUpHandler : MonoBehaviour
    // }
     public void GivePowerUp(string powerUpName)
     {
-        Debug.LogError($"--- GÜÇLENDİRME ALINDI! --- İsim: {powerUpName}");
         currentPowerUp = powerUpName;
-        Debug.LogError($"-> 'currentPowerUp' değişkeni '{currentPowerUp}' olarak ayarlandı.");
     }
 
     private void UsePowerUp()
@@ -106,18 +99,15 @@ public class CarPowerUpHandler : MonoBehaviour
         else if (powerUpToUse == "Nitro") UseNitroPowerUp();
     }
 
-    // --- ÖZEL GÜÇLENDİRME FONKSİYONLARI ---
 
     private void UseGravityPowerUp()
     {
         if (rb == null) return;
         rb.mass *= 0.5f;
-        Debug.Log($"{gameObject.name} Gravity güçlendirmesini kullandı! Yeni kütle: {rb.mass}");
     }
 
     private void UseDarkScreenPowerUp()
     {
-        Debug.Log($"{gameObject.name} DarkScreen güçlendirmesini kullandı!");
     
         PU_DarkScreen targetPanel = null;
         if (gameObject.CompareTag("Player"))
@@ -141,7 +131,6 @@ public class CarPowerUpHandler : MonoBehaviour
 
     private void UseNitroPowerUp()
     {
-        Debug.Log($"{gameObject.name} Nitro güçlendirmesini kullandı!");
         StartCoroutine(NitroBoostRoutine(10f));
     }
     
@@ -152,24 +141,20 @@ public class CarPowerUpHandler : MonoBehaviour
             originalNitroRechargeRate = driveScriptP1.GetNitroRechargeRate();
             float boostedRate = originalNitroRechargeRate * 1.5f;
             driveScriptP1.SetNitroRechargeRate(boostedRate);
-            Debug.Log($"P1 Nitro dolum hızı {boostedRate} oldu.");
             
             yield return new WaitForSeconds(duration);
 
             driveScriptP1.SetNitroRechargeRate(originalNitroRechargeRate);
-            Debug.Log($"P1 Nitro dolum hızı normale döndü: {originalNitroRechargeRate}.");
         }
         else if (driveScriptP2 != null)
         {
             originalNitroRechargeRate = driveScriptP2.GetNitroRechargeRate();
             float boostedRate = originalNitroRechargeRate * 1.5f;
             driveScriptP2.SetNitroRechargeRate(boostedRate);
-            Debug.Log($"P2 Nitro dolum hızı {boostedRate} oldu.");
 
             yield return new WaitForSeconds(duration);
 
             driveScriptP2.SetNitroRechargeRate(originalNitroRechargeRate);
-            Debug.Log($"P2 Nitro dolum hızı normale döndü: {originalNitroRechargeRate}.");
         }
     }
 }
