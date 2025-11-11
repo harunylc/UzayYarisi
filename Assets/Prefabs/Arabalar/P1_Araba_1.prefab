@@ -79,8 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2769248619405695995, guid: 8488071d8f66a8a4c943d7b08d5b4c14,
-    type: 3}
+  m_Sprite: {fileID: 2769248619405695995, guid: 8488071d8f66a8a4c943d7b08d5b4c14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -244,8 +243,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c,
-    type: 3}
+  m_Sprite: {fileID: -5851630444083002309, guid: 53c0176fe697eed4c9c8c69820f10d0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -448,6 +446,7 @@ GameObject:
   - component: {fileID: 3586610639881211729}
   - component: {fileID: 5375153854674445214}
   - component: {fileID: 4893273541516531144}
+  - component: {fileID: 8192295332228712552}
   m_Layer: 6
   m_Name: P1_Araba_1
   m_TagString: Player
@@ -471,7 +470,6 @@ Transform:
   - {fileID: 2087792724049652642}
   - {fileID: 8063643577819436371}
   - {fileID: 1926227132596872355}
-  - {fileID: 3728953971391575096}
   - {fileID: 4920466118649007452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -593,8 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: c8cc634fa1f3a0141a54b510ed5d6b2d,
-    type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: c8cc634fa1f3a0141a54b510ed5d6b2d, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -622,15 +619,15 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: d2605af7-e573-49ba-9cd1-873505956530
-    m_ActionName: Move/P1_Throtle[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]
+    m_ActionName: 'Move/P1_Throtle[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: dade1f50-283e-44c1-873c-b51e41e64366
-    m_ActionName: Move/P2_Throtle[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]
+    m_ActionName: 'Move/P2_Throtle[/DualShock4GamepadHID/rightTrigger,/DualShock4GamepadHID/leftTrigger]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 7366277b-5883-46b4-81ba-eac81a857edb
-    m_ActionName: Move/PauseOpenClose[/DualShock4GamepadHID/start]
+    m_ActionName: 'Move/PauseOpenClose[/DualShock4GamepadHID/start]'
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3586610639881211729}
@@ -646,39 +643,39 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_ActionId: b0d472d1-8a30-4730-8844-98e92e7b4fd4
-    m_ActionName: Move/P1_Nitro[/DualShock4GamepadHID/rightShoulder]
+    m_ActionName: 'Move/P1_Nitro[/DualShock4GamepadHID/rightShoulder]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 05f66d6b-0970-4ec2-8a92-9ac7715e45da
-    m_ActionName: Move/P2_Nitro[/DualShock4GamepadHID/rightShoulder]
+    m_ActionName: 'Move/P2_Nitro[/DualShock4GamepadHID/rightShoulder]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 26cd39a5-4bbd-4ca3-ab79-2ff00b7d7d05
-    m_ActionName: Actions/Cancel[/DualShock4GamepadHID/buttonEast]
+    m_ActionName: 'Actions/Cancel[/DualShock4GamepadHID/buttonEast]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 954f31c6-61e4-4cfd-b546-3ac27fbc0a47
-    m_ActionName: Actions/Navigate[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/leftStick/right]
+    m_ActionName: 'Actions/Navigate[/DualShock4GamepadHID/dpad/up,/DualShock4GamepadHID/dpad/down,/DualShock4GamepadHID/dpad/left,/DualShock4GamepadHID/dpad/right,/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/leftStick/right]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 66d1354a-aea7-4402-a9cd-996e093b083b
-    m_ActionName: Actions/Submit[/DualShock4GamepadHID/buttonSouth]
+    m_ActionName: 'Actions/Submit[/DualShock4GamepadHID/buttonSouth]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 6f4769c5-58fe-45e1-aa1a-7c185a6cee25
-    m_ActionName: Move/P1_PowerUp[/DualSenseGamepadHID/leftShoulder]
+    m_ActionName: 'Move/P1_PowerUp[/DualSenseGamepadHID/leftShoulder]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: f1432e11-862f-4674-8317-2b46bfece900
-    m_ActionName: Move/P2_PowerUp[/DualSenseGamepadHID/leftShoulder]
+    m_ActionName: 'Move/P2_PowerUp[/DualSenseGamepadHID/leftShoulder]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 6f4769c5-58fe-45e1-aa1a-7c185a6cee25
-    m_ActionName: Move/P1_PowerUp[/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows1/leftShoulder,/DualShock4GamepadHID1/leftShoulder]
+    m_ActionName: 'Move/P1_PowerUp[/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows1/leftShoulder,/DualShock4GamepadHID1/leftShoulder]'
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: f1432e11-862f-4674-8317-2b46bfece900
-    m_ActionName: Move/P2_PowerUp[/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows1/leftShoulder,/DualShock4GamepadHID1/leftShoulder]
+    m_ActionName: 'Move/P2_PowerUp[/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows1/leftShoulder,/DualShock4GamepadHID1/leftShoulder]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Move
@@ -697,6 +694,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsData: {fileID: 11400000, guid: 329e02d27891a764ab135752b84f518a, type: 2}
+--- !u!61 &8192295332228712552
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6191543987659910002}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.12896824, y: 0.101466894}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 10.23414, y: 4.8656363}
+  m_EdgeRadius: 0
 --- !u!1 &6603275237221534706
 GameObject:
   m_ObjectHideFlags: 0
@@ -775,8 +818,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 2769248619405695995, guid: 8488071d8f66a8a4c943d7b08d5b4c14,
-    type: 3}
+  m_Sprite: {fileID: 2769248619405695995, guid: 8488071d8f66a8a4c943d7b08d5b4c14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -850,84 +892,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.815
---- !u!1 &7296657091940378704
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3728953971391575096}
-  - component: {fileID: 9135329307544762408}
-  m_Layer: 6
-  m_Name: TagColider
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3728953971391575096
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7296657091940378704}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.057500005, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4083769535085858223}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &9135329307544762408
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7296657091940378704}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.16717052, y: 0.060789347}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 10.209602, y: 4.8905253}
-  m_EdgeRadius: 0
 --- !u!1001 &3399073973263582702
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -936,63 +900,51 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4083769535085858223}
     m_Modifications:
-    - target: {fileID: 7738008898749958321, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958321, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.67
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.26
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalPosition.z
       value: -11.41
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7738008898749958323, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-        type: 3}
+    - target: {fileID: 7738008898749958323, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
       propertyPath: ShapeModule.alignToDirection
       value: 0
       objectReference: {fileID: 0}
@@ -1003,7 +955,6 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
 --- !u!4 &4920466118649007452 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 7738008898749958322, guid: ff81dfd2bfbcf42ecb9ca2ae4d8d1c91, type: 3}
   m_PrefabInstance: {fileID: 3399073973263582702}
   m_PrefabAsset: {fileID: 0}

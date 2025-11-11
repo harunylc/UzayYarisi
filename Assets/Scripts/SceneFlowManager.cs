@@ -134,6 +134,9 @@ public class SceneFlowManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // YENİ: Yüklenen sahnenin adını kaydet
+        CurrentSceneName = scene.name;
+
         if (scene.name == mainMenuScene)
         {
             ResetSceneOrder();
@@ -199,6 +202,15 @@ public class SceneFlowManager : MonoBehaviour
             list[k] = list[n];
             list[n] = value;
         }
+    }
+    
+    public List<SceneData> AllSceneDataList;
+    public string CurrentSceneName { get; private set; }
+    
+    public SceneData GetCurrentSceneData()
+    {
+        // Yüklü olan sahnenin adını kullanarak AllSceneDataList'te arama yapar
+        return AllSceneDataList.Find(data => data.SceneName == CurrentSceneName);
     }
 }
 

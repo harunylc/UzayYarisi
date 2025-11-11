@@ -9,11 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 80421370633446236}
-  - component: {fileID: 4997311724404047139}
   - component: {fileID: 4051008471587223781}
   - component: {fileID: 8567770919427091419}
-  - component: {fileID: -4853494316691817209}
   - component: {fileID: 207898834882662174}
+  - component: {fileID: 7065755800954363608}
   m_Layer: 0
   m_Name: PU_DarkScreen
   m_TagString: Untagged
@@ -36,20 +35,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4997311724404047139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5723757594197812676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8f2bea97bc30348b945175bf82ca19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCollectableObject: 0
-  panelImage: {fileID: 0}
 --- !u!50 &4051008471587223781
 Rigidbody2D:
   serializedVersion: 5
@@ -123,20 +108,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 3.5675125, y: 3.8290176}
   m_EdgeRadius: 0
---- !u!114 &-4853494316691817209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5723757594197812676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8f2bea97bc30348b945175bf82ca19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isCollectableObject: 1
-  panelImage: {fileID: 0}
 --- !u!212 &207898834882662174
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -192,3 +163,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7065755800954363608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5723757594197812676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d1bc6953816ff4a8c1ee107bc3171b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCollectableObject: 1
+  panelImage: {fileID: 0}

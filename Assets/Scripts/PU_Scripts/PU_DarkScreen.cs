@@ -5,7 +5,7 @@ using System.Collections;
 public class PU_DarkScreen : MonoBehaviour
 {
     [Header("Rol Ayarları")]
-    public bool isPowerUpObject;
+    public bool isCollectableObject;
 
     [Header("Panel Ayarları (Eğer Panel ise)")]
     public Image panelImage;
@@ -13,7 +13,7 @@ public class PU_DarkScreen : MonoBehaviour
     // --- ROL 1: Toplanabilir Obje Olarak Çalışma ---
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!isPowerUpObject) return;
+        if (!isCollectableObject) return; // Eğer panel ise, bu kodu çalıştırma.
 
         if (other.CompareTag("Player") || other.CompareTag("Player2"))
         {
@@ -27,22 +27,34 @@ public class PU_DarkScreen : MonoBehaviour
     }
 
     // --- ROL 2: Power-Up Yöneticisi Tarafından Başlatılacak Olan Coroutine ---
-    // Bu fonksiyonun tek görevi, bir plan (IEnumerator) sunmaktır.
-    // Dışarıdan çağrılabilmesi için "public" olmalıdır.
     public IEnumerator DarkenScreenRoutine(float duration)
     {
         if (panelImage == null) 
         {
-            Debug.LogError("Panel Image, " + gameObject.name + " üzerinde atanmamış!");
-            yield break; // Hata varsa Coroutine'i durdur.
+            Debug.LogError("HATA: 'panelImage' alanı " + gameObject.name + " üzerinde atanmamış!");
+            yield break; // Coroutine'i durdur.
         }
-        
-        // Önce paneli aktif et.
-        panelImage.gameObject.SetActive(true);
 
+        Debug.Log("--- Ekran karartılıyor (Color.alpha metodu)... ---");
+
+        // Mevcut rengi al
+        Color color = panelImage.color;
+
+        // Alfa değerini 204 yap (0-1 aralığında 0.8'e denk gelir)
+        color.a = 204f / 255f;
+
+        // Yeni rengi Image'a ata
+        panelImage.color = color;
+
+        // Belirtilen süre kadar bekle
         yield return new WaitForSeconds(duration);
 
-        // Süre bitince paneli tekrar kapat.
-        panelImage.gameObject.SetActive(false);
+        // Alfa değerini tekrar 0 yap
+        color.a = 0f;
+
+        // Rengi tekrar ata
+        panelImage.color = color;
+
+        Debug.Log("--- Ekran normale döndü. ---");
     }
 }

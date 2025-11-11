@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4556649214250520564}
   - component: {fileID: 6572338457956655176}
   - component: {fileID: 2776224726157263398}
-  - component: {fileID: 2132764366904057215}
   - component: {fileID: 5821375137662253703}
+  - component: {fileID: 6139709600598899309}
   m_Layer: 0
   m_Name: PU_Nitro
   m_TagString: Untagged
@@ -108,18 +108,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2132764366904057215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7879160341601257878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37658fa84d1a7e24cbbba8961a4315ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &5821375137662253703
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -175,3 +163,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6139709600598899309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7879160341601257878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbf80cfe289eaf4c91723a54c5e6074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

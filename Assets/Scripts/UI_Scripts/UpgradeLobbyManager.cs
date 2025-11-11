@@ -1,7 +1,6 @@
-// UpgradeLobbyManager.cs (Tam ve Gerekli Yardimci Metotlarla Birlikte)
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // TMPro kullanıyorsanız gerekli
+using TMPro;
 
 public class UpgradeLobbyManager : MonoBehaviour
 {
@@ -36,7 +35,9 @@ public class UpgradeLobbyManager : MonoBehaviour
     private int carIndexP2 = 0;
     private bool isReadyP1 = false;
     private bool isReadyP2 = false;
-
+    
+    public Image haritaImage;
+    public TMP_Text haritaText;
     void Start()
     {
         // Button Listener atamaları
@@ -50,6 +51,31 @@ public class UpgradeLobbyManager : MonoBehaviour
 
         ValidateAndInit(1);
         ValidateAndInit(2);
+
+        // Singleton referansını kullanarak Manager'a erişim
+        if (SceneFlowManager.Instance != null)
+        {
+            // Manager'daki metodu çağırarak veriyi çek
+            SceneData currentData = SceneFlowManager.Instance.GetCurrentSceneData();
+
+            if (currentData != null)
+            {
+                // UI Elementlerini Gelen Veriye Göre Güncelle
+                haritaImage.sprite = currentData.SceneImage;
+                haritaText.text = currentData.SceneTitleText;
+                
+                Debug.Log($"Aktif Harita Bilgisi Yüklendi: {currentData.SceneName} - {currentData.SceneTitleText}");
+            }
+            else
+            {
+                // Yüklü sahne Manager'ın listesinde yoksa
+                Debug.LogError($"'{SceneFlowManager.Instance.CurrentSceneName}' sahnesi için veri bulunamadı!");
+            }
+        }
+        else
+        {
+            Debug.LogError("SceneFlowManager örneği bulunamadı!");
+        }
     }
 
     private void ChangeCar(int direction, int player)
@@ -184,4 +210,6 @@ public class UpgradeLobbyManager : MonoBehaviour
         if (idx < 0) idx += len;
         return idx;
     }
+    
+    
 }

@@ -6164,6 +6164,8 @@ MonoBehaviour:
   - {fileID: 5542691369600792579, guid: f83a544b0ddbf7d4692ad8d11c82145d, type: 3}
   - {fileID: 4376659800735175874, guid: d15a55e91af18fa41a8bcf4ecc006f8e, type: 3}
   - {fileID: 3998396138588471346, guid: 7c2f350615726f14c9569db132278493, type: 3}
+  haritaImage: {fileID: 0}
+  haritaText: {fileID: 0}
 --- !u!4 &2000962970
 Transform:
   m_ObjectHideFlags: 0
