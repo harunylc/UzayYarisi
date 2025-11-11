@@ -396,6 +396,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 66d1354a-aea7-4402-a9cd-996e093b083b
     m_ActionName: 'Actions/Submit[/DualShock4GamepadHID/buttonSouth]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2433195378923787033}
+        m_TargetAssemblyTypeName: CarPowerUpHandler, Assembly-CSharp
+        m_MethodName: OnUsePowerUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3776910b-023d-4913-8609-988d0709a545
+    m_ActionName: 'Move/UsePowerUp[/DualSenseGamepadHID/leftShoulder]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Move

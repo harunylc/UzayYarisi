@@ -71,6 +71,15 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UsePowerUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""3776910b-023d-4913-8609-988d0709a545"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -148,6 +157,17 @@ public partial class @CarController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""P2_Nitro"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1e0cff05-43a2-421a-802a-5fc9dfdfa0b6"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UsePowerUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -407,6 +427,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         m_Move_PauseOpenClose = m_Move.FindAction("PauseOpenClose", throwIfNotFound: true);
         m_Move_P1_Nitro = m_Move.FindAction("P1_Nitro", throwIfNotFound: true);
         m_Move_P2_Nitro = m_Move.FindAction("P2_Nitro", throwIfNotFound: true);
+        m_Move_UsePowerUp = m_Move.FindAction("UsePowerUp", throwIfNotFound: true);
         // Actions
         m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
         m_Actions_Cancel = m_Actions.FindAction("Cancel", throwIfNotFound: true);
@@ -484,6 +505,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Move_PauseOpenClose;
     private readonly InputAction m_Move_P1_Nitro;
     private readonly InputAction m_Move_P2_Nitro;
+    private readonly InputAction m_Move_UsePowerUp;
     public struct MoveActions
     {
         private @CarController m_Wrapper;
@@ -493,6 +515,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         public InputAction @PauseOpenClose => m_Wrapper.m_Move_PauseOpenClose;
         public InputAction @P1_Nitro => m_Wrapper.m_Move_P1_Nitro;
         public InputAction @P2_Nitro => m_Wrapper.m_Move_P2_Nitro;
+        public InputAction @UsePowerUp => m_Wrapper.m_Move_UsePowerUp;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -517,6 +540,9 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @P2_Nitro.started += instance.OnP2_Nitro;
             @P2_Nitro.performed += instance.OnP2_Nitro;
             @P2_Nitro.canceled += instance.OnP2_Nitro;
+            @UsePowerUp.started += instance.OnUsePowerUp;
+            @UsePowerUp.performed += instance.OnUsePowerUp;
+            @UsePowerUp.canceled += instance.OnUsePowerUp;
         }
 
         private void UnregisterCallbacks(IMoveActions instance)
@@ -536,6 +562,9 @@ public partial class @CarController: IInputActionCollection2, IDisposable
             @P2_Nitro.started -= instance.OnP2_Nitro;
             @P2_Nitro.performed -= instance.OnP2_Nitro;
             @P2_Nitro.canceled -= instance.OnP2_Nitro;
+            @UsePowerUp.started -= instance.OnUsePowerUp;
+            @UsePowerUp.performed -= instance.OnUsePowerUp;
+            @UsePowerUp.canceled -= instance.OnUsePowerUp;
         }
 
         public void RemoveCallbacks(IMoveActions instance)
@@ -622,6 +651,7 @@ public partial class @CarController: IInputActionCollection2, IDisposable
         void OnPauseOpenClose(InputAction.CallbackContext context);
         void OnP1_Nitro(InputAction.CallbackContext context);
         void OnP2_Nitro(InputAction.CallbackContext context);
+        void OnUsePowerUp(InputAction.CallbackContext context);
     }
     public interface IActionsActions
     {

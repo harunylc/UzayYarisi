@@ -4,11 +4,12 @@ using System.Collections;
 
 public class CarPowerUpHandler : MonoBehaviour
 {
+    private string currentPowerUp = "None";
+
     // --- DEĞİŞKENLER (Inspector'da hiçbir şey atamanıza gerek yok) ---
     private PU_DarkScreen player1_darkPanel;
     private PU_DarkScreen player2_darkPanel;
 
-    private string currentPowerUp = "None";
     private Rigidbody2D rb;
     private DriveMyCar driveScriptP1;
     private DriveMyCar_Player2 driveScriptP2;
@@ -56,28 +57,37 @@ public class CarPowerUpHandler : MonoBehaviour
             Debug.LogError("!!!!!! HATA: 'P2_DarkPanel' etiketine sahip hiçbir obje sahnede bulunamadı! !!!!!!");
         }
     }
-   void Update()
-   {
-       // 1. Gamepad'i kontrol et
-       if (Gamepad.current == null) return; // Gamepad yoksa hiçbir şey yapma
-
-       // 2. Tuşa basıldı mı diye kontrol et
-       if (Gamepad.current.leftShoulder.wasPressedThisFrame)
-       {
-           Debug.LogError("--- SOL BUMPER TUŞUNA BASILDIĞI ALGILANDI ---");
-
-           // 3. Güçlendirme var mı diye kontrol et
-           if (currentPowerUp != "None")
-           {
-               Debug.LogError($"-> Güçlendirme var: '{currentPowerUp}'. Kullanılıyor...");
-               UsePowerUp();
-           }
-           else
-           {
-               Debug.LogError("-> Ama 'currentPowerUp' = 'None'. Cepte güçlendirme yok.");
-           }
-       }
-   }
+    // --- YENİ FONKSİYON: Bu, PlayerInput tarafından çağrılacak ---
+    public void OnUsePowerUp(InputAction.CallbackContext context)
+    {
+        // Sadece tuşa basıldığı anda (performed) ve cebimizde bir güç varsa çalışır
+        if (context.performed && currentPowerUp != "None")
+        {
+            UsePowerUp();
+        }
+    }
+   // void Update()
+   // {
+   //     // 1. Gamepad'i kontrol et
+   //     if (Gamepad.current == null) return; // Gamepad yoksa hiçbir şey yapma
+   //
+   //     // 2. Tuşa basıldı mı diye kontrol et
+   //     if (Gamepad.current.leftShoulder.wasPressedThisFrame)
+   //     {
+   //         Debug.LogError("--- SOL BUMPER TUŞUNA BASILDIĞI ALGILANDI ---");
+   //
+   //         // 3. Güçlendirme var mı diye kontrol et
+   //         if (currentPowerUp != "None")
+   //         {
+   //             Debug.LogError($"-> Güçlendirme var: '{currentPowerUp}'. Kullanılıyor...");
+   //             UsePowerUp();
+   //         }
+   //         else
+   //         {
+   //             Debug.LogError("-> Ama 'currentPowerUp' = 'None'. Cepte güçlendirme yok.");
+   //         }
+   //     }
+   // }
     public void GivePowerUp(string powerUpName)
     {
         Debug.LogError($"--- GÜÇLENDİRME ALINDI! --- İsim: {powerUpName}");
