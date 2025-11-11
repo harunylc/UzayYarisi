@@ -422,7 +422,7 @@ MonoBehaviour:
   P1_PowerUpImage: {fileID: 432959893}
   P2_PowerUpImage: {fileID: 865030929}
   powerUps:
-  - {fileID: 297183651797462561, guid: c63865b6ad3de5e4aa76cfd99a4a29e4, type: 3}
+  - {fileID: 7527794574724789036, guid: 0970baf1c5db7bf46b4f52db70256e68, type: 3}
 --- !u!1001 &288285197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1060,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4083769535085858223, guid: 5dc89b9cdc3020e41baaac19e4fd3877, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.4
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 4083769535085858223, guid: 5dc89b9cdc3020e41baaac19e4fd3877, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1342,7 +1342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &942779195
 BoxCollider2D:
   m_ObjectHideFlags: 0

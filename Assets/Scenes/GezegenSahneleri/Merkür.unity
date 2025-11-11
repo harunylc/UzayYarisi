@@ -4134,6 +4134,7 @@ GameObject:
   - component: {fileID: 769670395}
   - component: {fileID: 769670394}
   - component: {fileID: 769670393}
+  - component: {fileID: 769670398}
   m_Layer: 5
   m_Name: CanvasPause
   m_TagString: Untagged
@@ -4244,6 +4245,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &769670398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769670392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5afe30686d3e194d98b9b0c83076640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClickSO: {fileID: 11400000, guid: 23f577542bafb7e4e9d2460609303a27, type: 2}
+  musicPlayer: {fileID: 1418220808}
 --- !u!1 &793805067
 GameObject:
   m_ObjectHideFlags: 0
@@ -4380,9 +4395,9 @@ MonoBehaviour:
   countdownTime: 2
   meteorPrefab: {fileID: 8605428854538170126, guid: 561b70c642b96b9488a2a597b370aeaa, type: 3}
   meteorSpawnPoint: {fileID: 547955043}
-  player: {fileID: 0}
   meteorSpeed: 6
   explosionPrefab: {fileID: 1151762418944616568, guid: 11e327687d514483887f8a7d5e11ae6b, type: 3}
+  player: {fileID: 0}
 --- !u!61 &798939921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29615,6 +29630,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1204252945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1418220807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418220809}
+  - component: {fileID: 1418220808}
+  m_Layer: 0
+  m_Name: GameplayMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1418220808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418220807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893791c15aec98e4f9024c6b1e9edf25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameplayMusicClip: {fileID: 8300000, guid: 0920aeabcf85f9e4ab15117409df0baf, type: 3}
+--- !u!4 &1418220809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418220807}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 109.27632, y: -55.4573, z: -0.37999955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433453622
 GameObject:
   m_ObjectHideFlags: 0
@@ -33044,3 +33104,4 @@ SceneRoots:
   - {fileID: 1336253557}
   - {fileID: 1705227660}
   - {fileID: 146570502}
+  - {fileID: 1418220809}

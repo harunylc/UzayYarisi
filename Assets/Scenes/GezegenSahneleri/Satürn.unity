@@ -645,6 +645,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1169633556}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &184892280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 184892282}
+  - component: {fileID: 184892281}
+  m_Layer: 0
+  m_Name: GameplayMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &184892281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184892280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893791c15aec98e4f9024c6b1e9edf25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameplayMusicClip: {fileID: 8300000, guid: 0920aeabcf85f9e4ab15117409df0baf, type: 3}
+--- !u!4 &184892282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184892280}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 109.27632, y: -55.4573, z: -0.37999955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &196545106
 GameObject:
   m_ObjectHideFlags: 0
@@ -2184,9 +2229,9 @@ MonoBehaviour:
   countdownTime: 2
   meteorPrefab: {fileID: 8605428854538170126, guid: 561b70c642b96b9488a2a597b370aeaa, type: 3}
   meteorSpawnPoint: {fileID: 2036441876}
-  player: {fileID: 0}
   meteorSpeed: 6
   explosionPrefab: {fileID: 1151762418944616568, guid: 11e327687d514483887f8a7d5e11ae6b, type: 3}
+  player: {fileID: 0}
 --- !u!61 &403003353
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6350,6 +6395,7 @@ GameObject:
   - component: {fileID: 663454872}
   - component: {fileID: 663454871}
   - component: {fileID: 663454870}
+  - component: {fileID: 663454875}
   m_Layer: 5
   m_Name: CanvasPause
   m_TagString: Untagged
@@ -6460,6 +6506,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &663454875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663454869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5afe30686d3e194d98b9b0c83076640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClickSO: {fileID: 11400000, guid: 23f577542bafb7e4e9d2460609303a27, type: 2}
+  musicPlayer: {fileID: 184892281}
 --- !u!1 &664191917
 GameObject:
   m_ObjectHideFlags: 0
@@ -14648,3 +14708,4 @@ SceneRoots:
   - {fileID: 1876709372}
   - {fileID: 581184777}
   - {fileID: 196545109}
+  - {fileID: 184892282}

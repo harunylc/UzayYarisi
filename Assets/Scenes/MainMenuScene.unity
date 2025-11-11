@@ -753,6 +753,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205847425}
   m_CullTransparentMesh: 1
+--- !u!1 &213056196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 213056198}
+  - component: {fileID: 213056197}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &213056197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213056196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d498bf067d14a8346817e4c2bd0e56e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuMusicSO: {fileID: 11400000, guid: 4b34a187b43b5634c9199fe72ff367c2, type: 2}
+--- !u!4 &213056198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213056196}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 109.27632, y: -55.4573, z: -0.37999955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &261551632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1070,7 @@ GameObject:
   - component: {fileID: 313581243}
   - component: {fileID: 313581242}
   - component: {fileID: 313581241}
+  - component: {fileID: 313581245}
   m_Layer: 5
   m_Name: MainCanvas
   m_TagString: Untagged
@@ -1119,6 +1165,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &313581245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313581240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5fe3673cf0a9046b358fbb141989ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClickSO: {fileID: 11400000, guid: 23f577542bafb7e4e9d2460609303a27, type: 2}
 --- !u!1 &337535804
 GameObject:
   m_ObjectHideFlags: 0
@@ -3925,6 +3984,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111427192}
   m_CullTransparentMesh: 1
+--- !u!1 &1123005344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123005346}
+  - component: {fileID: 1123005345}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1123005345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123005344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58467bd02502bdd4f80bf80188c780af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _masterVolume: 1
+  _soundsCollectionSo: {fileID: 11400000, guid: 74b4b363a673c2f478e4852fa56de7a0, type: 2}
+  _sfxMixerGroup: {fileID: 0}
+  _musicMixerGroup: {fileID: 0}
+--- !u!4 &1123005346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123005344}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 109.27632, y: -55.4573, z: -0.37999955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150813917
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,3 +5974,5 @@ SceneRoots:
   - {fileID: 1598154575}
   - {fileID: 1002186421}
   - {fileID: 1658937587}
+  - {fileID: 1123005346}
+  - {fileID: 213056198}
