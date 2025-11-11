@@ -1058,6 +1058,7 @@ MonoBehaviour:
   - {fileID: 8383170777043327439}
   doluSprite: {fileID: -1604603762096336663, guid: 8bf92f4566e350c4ba0fd7706f8af862, type: 3}
   bosSprite: {fileID: 1836314947337142574, guid: 07634a960fc35624b9c8392c04acf97d, type: 3}
+  ozellikAdi: "H\u0131z"
 --- !u!1 &984480008501966961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,78 +1209,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1105028567725674646
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7664337248078385270}
-  - component: {fileID: 520312952981013390}
-  - component: {fileID: 4447827570420067901}
-  m_Layer: 5
-  m_Name: Car_Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &7664337248078385270
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105028567725674646}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7968600781344879960}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &520312952981013390
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105028567725674646}
-  m_CullTransparentMesh: 1
---- !u!114 &4447827570420067901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105028567725674646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
 --- !u!1 &1151124677902885582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,6 +2706,7 @@ MonoBehaviour:
   - {fileID: 2517592372631211417}
   doluSprite: {fileID: -1604603762096336663, guid: 8bf92f4566e350c4ba0fd7706f8af862, type: 3}
   bosSprite: {fileID: 1836314947337142574, guid: 07634a960fc35624b9c8392c04acf97d, type: 3}
+  ozellikAdi: "H\u0131z"
 --- !u!1 &3310052553104020138
 GameObject:
   m_ObjectHideFlags: 0
@@ -4147,7 +4077,6 @@ RectTransform:
   m_Children:
   - {fileID: 5893013806230373185}
   - {fileID: 4675051742259899373}
-  - {fileID: 7664337248078385270}
   m_Father: {fileID: 2413873966680137412}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4711,6 +4640,7 @@ MonoBehaviour:
   - {fileID: 628553643572752964}
   doluSprite: {fileID: -1604603762096336663, guid: 8bf92f4566e350c4ba0fd7706f8af862, type: 3}
   bosSprite: {fileID: 1836314947337142574, guid: 07634a960fc35624b9c8392c04acf97d, type: 3}
+  ozellikAdi: "H\u0131z"
 --- !u!1 &4976167494733132284
 GameObject:
   m_ObjectHideFlags: 0
@@ -7169,6 +7099,7 @@ MonoBehaviour:
   - {fileID: 406534008943002593}
   doluSprite: {fileID: -1604603762096336663, guid: 8bf92f4566e350c4ba0fd7706f8af862, type: 3}
   bosSprite: {fileID: 1836314947337142574, guid: 07634a960fc35624b9c8392c04acf97d, type: 3}
+  ozellikAdi: "H\u0131z"
 --- !u!1 &7530377171859151496
 GameObject:
   m_ObjectHideFlags: 0
@@ -8940,6 +8871,7 @@ MonoBehaviour:
   - {fileID: 8382655039089909813}
   doluSprite: {fileID: -1604603762096336663, guid: 8bf92f4566e350c4ba0fd7706f8af862, type: 3}
   bosSprite: {fileID: 1836314947337142574, guid: 07634a960fc35624b9c8392c04acf97d, type: 3}
+  ozellikAdi: "H\u0131z"
 --- !u!1 &9043107696487565370
 GameObject:
   m_ObjectHideFlags: 0

@@ -3306,6 +3306,22 @@ MonoBehaviour:
   - "Merk\xFCr"
   - "Nept\xFCn"
   - "Sat\xFCrn"
+  AllSceneDataList:
+  - SceneName: "D\xFCnya"
+    SceneImage: {fileID: 454614866027014211, guid: f880cfc6aa9f96f4ea3e668d49eafecd, type: 3}
+    SceneTitleText: "S\u0131radaki gezegen D\xDCNYA"
+  - SceneName: Mars
+    SceneImage: {fileID: -6504906825103280502, guid: 82ed4016247b01d48a9e3e7c3b8e6be5, type: 3}
+    SceneTitleText: "S\u0131radaki gezegen MARS"
+  - SceneName: "Merk\xFCr"
+    SceneImage: {fileID: -8674555962246303903, guid: d9f26add55a190e44b9d2cd0fb5aa969, type: 3}
+    SceneTitleText: "S\u0131radaki gezegen MERK\xDCR"
+  - SceneName: "Nept\xFCn"
+    SceneImage: {fileID: -1584517703161132729, guid: 6823ed16c29c6c746bff4f6998a382d8, type: 3}
+    SceneTitleText: "S\u0131radaki gezegen NEPT\xDCN"
+  - SceneName: "Sat\xFCrn"
+    SceneImage: {fileID: -676705488414979569, guid: 541e020ace70d924db35a25b7b30c288, type: 3}
+    SceneTitleText: "S\u0131radaki gezegen SAT\xDCRN"
 --- !u!4 &1002186421
 Transform:
   m_ObjectHideFlags: 0
