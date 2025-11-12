@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public float duration = 2f; // Shield kaç saniye aktif kalacak
+    public float duration = 2f;
 
     private void Start()
     {
-        Destroy(gameObject, duration); // duration saniye sonra kendini yok eder
+        Destroy(gameObject, duration);
     }
 }

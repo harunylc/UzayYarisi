@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void SoundToPlay(SoundSO soundSO)
+    public void SoundToPlay(SoundSO soundSO)
     {
         AudioClip clip = soundSO.Clip;
 
@@ -108,16 +108,13 @@ public class AudioManager : MonoBehaviour
 
     private void DetermineMusic(AudioMixerGroup audioMixerGroup, AudioSource audioSource)
     {
-        if (audioMixerGroup == _musicMixerGroup)
+        if (audioSource.outputAudioMixerGroup == _musicMixerGroup)
         {
-            if (_currentMusic != null)
-            {
-                _currentMusic.Stop();
-            }
-
+            if (_currentMusic != null) { }
             _currentMusic = audioSource;
         }
     }
+
 
     #endregion
 

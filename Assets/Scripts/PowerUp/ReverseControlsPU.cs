@@ -5,7 +5,6 @@ public class ReverseControlsPU : MonoBehaviour
 {
     [SerializeField] private float duration = 5f;
 
-    // Rakibin kontrollerini ters çevir
     public IEnumerator ReverseControls(GameObject enemyPlayer)
     {
         if (enemyPlayer == null) yield break;

@@ -20630,6 +20630,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287755673}
   m_CullTransparentMesh: 1
+--- !u!1 &298574159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 298574162}
+  - component: {fileID: 298574161}
+  m_Layer: 0
+  m_Name: GameplayMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &298574161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298574159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893791c15aec98e4f9024c6b1e9edf25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameplayMusicClip: {fileID: 8300000, guid: 0920aeabcf85f9e4ab15117409df0baf, type: 3}
+--- !u!4 &298574162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298574159}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 109.27632, y: -55.4573, z: -0.37999955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327715186
 GameObject:
   m_ObjectHideFlags: 0
@@ -30441,6 +30486,7 @@ GameObject:
   - component: {fileID: 2888528473008320354}
   - component: {fileID: 1985711828695194496}
   - component: {fileID: 22523971517639212}
+  - component: {fileID: 9194325681167124289}
   m_Layer: 5
   m_Name: CanvasPause
   m_TagString: Untagged
@@ -32990,6 +33036,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &9194325681167124289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790598902574925237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5afe30686d3e194d98b9b0c83076640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonClickSO: {fileID: 11400000, guid: 23f577542bafb7e4e9d2460609303a27, type: 2}
+  musicPlayer: {fileID: 298574161}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
