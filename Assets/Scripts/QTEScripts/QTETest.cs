@@ -24,11 +24,9 @@ public class QTETest : MonoBehaviour
     [Header("Meteor Settings")]
     public GameObject meteorPrefab;
     public Transform meteorSpawnPoint;
+    public Transform player;
     public float meteorSpeed = 6f;
     public GameObject explosionPrefab;
-
-    [Header("Player References")]
-    public Transform player;
 
     private GameObject[] events;
     private string[] buttons = { "A", "B", "X", "Y" };

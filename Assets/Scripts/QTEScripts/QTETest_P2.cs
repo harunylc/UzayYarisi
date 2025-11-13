@@ -37,15 +37,13 @@ public class QTETest_P2 : MonoBehaviour
     private bool QTECompleted = false;
     private bool meteorSpawned = false;
 
-    void Start()
+    private void Start()
     {
         events = new GameObject[] { AImage, BImage, XImage, YImage };
         HideAllKeys();
 
         if (attentionImage != null)
-        {
             attentionImage.SetActive(false);
-        }
 
         if (countdownSlider != null)
         {
@@ -55,34 +53,18 @@ public class QTETest_P2 : MonoBehaviour
         }
 
         if (player == null)
-        {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player2");
-            if (playerObj != null)
-            {
-                player = playerObj.transform;
-                Debug.Log($"Player2 Bulundu: {player.name}");
-            }
-            else
-            {
-                Debug.LogWarning("Player2 Bulunamadı");
-            }
-        }
+            player = GameObject.FindGameObjectWithTag("Player2")?.transform;
     }
 
-    void Update()
+    private void Update()
     {
-        if (QTECompleted)
-        {
-            return;
-        }
+        if (QTECompleted) return;
 
         if (!QTETrigger)
         {
-            bool playerInArea = Physics2D.OverlapBox(raycastPosition, raycastSize, 0f, playerLayer) != null;
+            bool playerInArea = Physics2D.OverlapBox(raycastPosition, raycastSize, 0f, playerLayer);
             if (attentionImage != null)
-            {
                 attentionImage.SetActive(playerInArea);
-            }
         }
 
         if (countdownActive && countdownSlider != null)
@@ -115,25 +97,18 @@ public class QTETest_P2 : MonoBehaviour
             }
 
             if (pressed)
-            {
                 NextKeys();
-            }
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (QTECompleted)
-        {
-            return;
-        }
+        if (QTECompleted) return;
 
         if (other.CompareTag("Player2"))
         {
             if (attentionImage != null)
-            {
                 attentionImage.SetActive(false);
-            }
 
             QTETrigger = true;
             currentIndex = 0;
@@ -146,45 +121,41 @@ public class QTETest_P2 : MonoBehaviour
                 countdownSlider.value = countdownTime;
                 countdownActive = true;
             }
+
             meteorSpawned = false;
         }
     }
 
-    void ShowCurrentKeys()
+    private void ShowCurrentKeys()
     {
         HideAllKeys();
         events[currentIndex].SetActive(true);
     }
 
-    void NextKeys()
+    private void NextKeys()
     {
         currentIndex++;
         if (currentIndex < events.Length)
-        {
             ShowCurrentKeys();
-        }
         else
         {
             HideAllKeys();
             QTETrigger = false;
             QTECompleted = true;
+
             if (countdownSlider != null)
-            {
                 countdownSlider.gameObject.SetActive(false);
-            }
         }
     }
 
-    void HideAllKeys()
+    private void HideAllKeys()
     {
         foreach (var img in events)
             if (img != null)
-            {
                 img.SetActive(false);
-            }
     }
 
-    void RandomKeys()
+    private void RandomKeys()
     {
         for (int i = 0; i < events.Length; i++)
         {
@@ -194,76 +165,75 @@ public class QTETest_P2 : MonoBehaviour
         }
     }
 
-    void OnQTEFailedByTime()
+    private void OnQTEFailedByTime()
     {
         HideAllKeys();
         QTETrigger = false;
         QTECompleted = true;
 
         if (countdownSlider != null)
-        {
             countdownSlider.gameObject.SetActive(false);
-        }
+
+        // Eğer oyuncuda shield varsa meteor spawn etme
+        if(player != null && player.GetComponentInChildren<Shield>() != null)
+            return;
 
         SpawnMeteor();
     }
 
-    void SpawnMeteor()
+    private void SpawnMeteor()
     {
-        if (player == null)
-        {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player2");
-            if (playerObj != null)
-            {
-                player = playerObj.transform;
-            }
-        }
+        if(player == null) return;
 
         GameObject meteor = Instantiate(meteorPrefab, meteorSpawnPoint.position, Quaternion.identity);
-        MeteorFollow_P2 mf = meteor.GetComponent<MeteorFollow_P2>() ?? meteor.AddComponent<MeteorFollow_P2>();
-
+        MeteorFollow2 mf = meteor.GetComponent<MeteorFollow2>() ?? meteor.AddComponent<MeteorFollow2>();
         mf.target = player;
         mf.speed = meteorSpeed;
         mf.explosionPrefab = explosionPrefab;
     }
 
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(raycastPosition, raycastSize);
     }
 }
 
-public class MeteorFollow_P2 : MonoBehaviour
+public class MeteorFollow2 : MonoBehaviour
 {
     public Transform target;
     public float speed = 6f;
     public GameObject explosionPrefab;
 
-    void Update()
+    private void Update()
     {
-        if (target == null)
-        {
-            return;
-        }
+        if (target == null) return;
 
         Vector3 dir = (target.position - transform.position).normalized;
         transform.position += dir * speed * Time.deltaTime;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Transform root = other.transform.root;
         if (root.CompareTag("Player2"))
         {
+            // Shield varsa meteor yok olur ama oyuncuya zarar gelmez
+            if(root.GetComponentInChildren<Shield>() != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            // Patlama
             if (explosionPrefab != null)
             {
                 GameObject explosion = Instantiate(explosionPrefab, root.position, Quaternion.identity);
                 Destroy(explosion, 3f);
             }
 
-            Destroy(root.gameObject);
-            Destroy(gameObject);
+            Destroy(root.gameObject); // oyuncu yok olur
+            Destroy(gameObject);      // meteor yok olur
         }
     }
 }

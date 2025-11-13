@@ -198,8 +198,23 @@ public class QTE2_P2 : MonoBehaviour
             countdownSlider.gameObject.SetActive(false);
         }
 
-        SpawnDikenAndExplode();
+        // Shield var mı kontrol et
+        if (!PlayerHasShield(player))
+        {
+            SpawnDikenAndExplode();
+        }
     }
+
+// Oyuncuda shield olup olmadığını kontrol eden yardımcı fonksiyon
+    bool PlayerHasShield(Transform playerTransform)
+    {
+        if (playerTransform == null) return false;
+
+        // Oyuncunun alt objelerinde Shield var mı diye bakıyoruz
+        Shield shield = playerTransform.GetComponentInChildren<Shield>();
+        return shield != null;
+    }
+
 
     void SpawnDikenAndExplode()
     {
