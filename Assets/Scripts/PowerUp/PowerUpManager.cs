@@ -8,7 +8,7 @@ public class PowerUpManager : MonoBehaviour
     [Header("UI References")] public Image P1_PowerUpImage;
     public Image P2_PowerUpImage;
 
-    [Header("PowerUp Prefabs (6 farklı)")]
+    [Header("PowerUp Prefabs (3 farklı)")]
     public GameObject[] powerUps;
 
     private GameObject P1_currentPowerUp = null;
@@ -61,9 +61,9 @@ public class PowerUpManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag(playerTag);
         if (player == null) return;
 
-        //yunus
+        /*//yunus
         string opponentTag = (playerTag == "Player") ? "Player2" : "Player";
-        GameObject opponent = GameObject.FindGameObjectWithTag(opponentTag);
+        GameObject opponent = GameObject.FindGameObjectWithTag(opponentTag);*/
 
         // 1️⃣ Eğer Shield power-up'ıysa
         if (powerUpPrefab.GetComponent<Shield>() != null)

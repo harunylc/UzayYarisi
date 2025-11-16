@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShieldPU : MonoBehaviour
+public class PowerUpPickUp : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
