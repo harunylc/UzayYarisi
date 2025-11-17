@@ -159,4 +159,8 @@ public class DriveMyCar_Player2 : MonoBehaviour
     {
         nitroRechargeRate = newRate;
     }
+    public void OnPowerUp()
+    {
+        PowerUpManager.Instance.UsePowerUp_P2();
+    }
 }

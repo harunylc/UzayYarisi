@@ -14,6 +14,10 @@ TagManager:
   - P2_DarkPanel
   - CameraP1
   - CameraP2
+  - P1_PowerUI
+  - P2_PowerUI
+  - P1_Text
+  - P2_Text
   layers:
   - Default
   - TransparentFX

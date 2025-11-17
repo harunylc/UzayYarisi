@@ -163,5 +163,8 @@ public class DriveMyCar : MonoBehaviour
         nitroRechargeRate = newRate;
     }
     
-    
+    public void OnPowerUp()
+    {
+        PowerUpManager.Instance.UsePowerUp_P1();
+    }
 }
