@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
-public class QTETest_P2 : MonoBehaviour
+public class QTE2 : MonoBehaviour
 {
     [Header("QTE Buttons")]
     public GameObject AImage, BImage, XImage, YImage;
@@ -21,12 +21,14 @@ public class QTETest_P2 : MonoBehaviour
     public Slider countdownSlider;
     public float countdownTime = 2f;
 
-    [Header("Meteor Settings")]
-    public GameObject meteorPrefab;
-    public Transform meteorSpawnPoint;
-    public Transform player;
-    public float meteorSpeed = 6f;
+    [Header("Diken Settings")]
+    public GameObject dikenPrefab;
+
+    public float zeminY = 0f;
+
+    [Header("Patlama Ayarları")]
     public GameObject explosionPrefab;
+    private Transform player;
 
     private GameObject[] events;
     private string[] buttons = { "A", "B", "X", "Y" };
@@ -35,7 +37,7 @@ public class QTETest_P2 : MonoBehaviour
     private bool countdownActive = false;
     private bool QTETrigger = false;
     private bool QTECompleted = false;
-    private bool meteorSpawned = false;
+    private bool dikenSpawned = false;
 
     void Start()
     {
@@ -53,28 +55,11 @@ public class QTETest_P2 : MonoBehaviour
             countdownSlider.value = countdownTime;
             countdownSlider.gameObject.SetActive(false);
         }
-
-        if (player == null)
-        {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player2");
-            if (playerObj != null)
-            {
-                player = playerObj.transform;
-                Debug.Log($"Player2 Bulundu: {player.name}");
-            }
-            else
-            {
-                Debug.LogWarning("Player2 Bulunamadı");
-            }
-        }
     }
 
     void Update()
     {
-        if (QTECompleted)
-        {
-            return;
-        }
+        if (QTECompleted) return;
 
         if (!QTETrigger)
         {
@@ -93,9 +78,9 @@ public class QTETest_P2 : MonoBehaviour
                 countdownSlider.value = 0f;
                 countdownActive = false;
 
-                if (!meteorSpawned)
+                if (!dikenSpawned)
                 {
-                    meteorSpawned = true;
+                    dikenSpawned = true;
                     OnQTEFailedByTime();
                 }
             }
@@ -123,13 +108,16 @@ public class QTETest_P2 : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (QTECompleted)
+        if (QTETrigger || QTECompleted)
         {
             return;
         }
 
-        if (other.CompareTag("Player2"))
+        Transform rootPlayer = other.transform.root;
+        if (rootPlayer.CompareTag("Player"))
         {
+            player = rootPlayer;
+
             if (attentionImage != null)
             {
                 attentionImage.SetActive(false);
@@ -146,7 +134,8 @@ public class QTETest_P2 : MonoBehaviour
                 countdownSlider.value = countdownTime;
                 countdownActive = true;
             }
-            meteorSpawned = false;
+
+            dikenSpawned = false;
         }
     }
 
@@ -168,20 +157,24 @@ public class QTETest_P2 : MonoBehaviour
             HideAllKeys();
             QTETrigger = false;
             QTECompleted = true;
+
             if (countdownSlider != null)
             {
                 countdownSlider.gameObject.SetActive(false);
             }
+
         }
     }
 
     void HideAllKeys()
     {
         foreach (var img in events)
+        {
             if (img != null)
             {
                 img.SetActive(false);
             }
+        }
     }
 
     void RandomKeys()
@@ -205,65 +198,56 @@ public class QTETest_P2 : MonoBehaviour
             countdownSlider.gameObject.SetActive(false);
         }
 
-        SpawnMeteor();
+        if (!PlayerHasShield(player))
+        {
+            SpawnDikenAndExplode();
+        }
     }
 
-    void SpawnMeteor()
+    bool PlayerHasShield(Transform playerTransform)
+    {
+        if (playerTransform == null) return false;
+
+        Shield shield = playerTransform.GetComponentInChildren<Shield>();
+        return shield != null;
+    }
+
+
+    void SpawnDikenAndExplode()
     {
         if (player == null)
         {
-            GameObject playerObj = GameObject.FindGameObjectWithTag("Player2");
-            if (playerObj != null)
+            GameObject foundPlayer = GameObject.FindGameObjectWithTag("Player");
+            if (foundPlayer != null)
             {
-                player = playerObj.transform;
+                player = foundPlayer.transform;
             }
         }
 
-        GameObject meteor = Instantiate(meteorPrefab, meteorSpawnPoint.position, Quaternion.identity);
-        MeteorFollow_P2 mf = meteor.GetComponent<MeteorFollow_P2>() ?? meteor.AddComponent<MeteorFollow_P2>();
+        if (player == null)
+        {
+            return;
+        }
 
-        mf.target = player;
-        mf.speed = meteorSpeed;
-        mf.explosionPrefab = explosionPrefab;
+        if (dikenPrefab != null)
+        {
+            Vector3 spawnPos = player.position;
+            spawnPos.y = zeminY;
+            Instantiate(dikenPrefab, spawnPos, Quaternion.identity);
+        }
+
+        if (explosionPrefab != null)
+        {
+            GameObject explosion = Instantiate(explosionPrefab, player.position, Quaternion.identity);
+            Destroy(explosion, 3f);
+        }
+
+        Destroy(player.gameObject);
     }
 
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(raycastPosition, raycastSize);
-    }
-}
-
-public class MeteorFollow_P2 : MonoBehaviour
-{
-    public Transform target;
-    public float speed = 6f;
-    public GameObject explosionPrefab;
-
-    void Update()
-    {
-        if (target == null)
-        {
-            return;
-        }
-
-        Vector3 dir = (target.position - transform.position).normalized;
-        transform.position += dir * speed * Time.deltaTime;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        Transform root = other.transform.root;
-        if (root.CompareTag("Player2"))
-        {
-            if (explosionPrefab != null)
-            {
-                GameObject explosion = Instantiate(explosionPrefab, root.position, Quaternion.identity);
-                Destroy(explosion, 3f);
-            }
-
-            Destroy(root.gameObject);
-            Destroy(gameObject);
-        }
     }
 }

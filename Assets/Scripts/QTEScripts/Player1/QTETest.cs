@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
-public class QTE2 : MonoBehaviour
+public class QTETest : MonoBehaviour
 {
     [Header("QTE Buttons")]
     public GameObject AImage, BImage, XImage, YImage;
@@ -21,14 +21,14 @@ public class QTE2 : MonoBehaviour
     public Slider countdownSlider;
     public float countdownTime = 2f;
 
-    [Header("Diken Settings")]
-    public GameObject dikenPrefab;
-
-    public float zeminY = 0f;
-
-    [Header("Patlama Ayarları")]
+    [Header("Meteor Settings")]
+    public GameObject meteorPrefab;
+    public Transform meteorSpawnPoint;
+    public float meteorSpeed = 6f;
     public GameObject explosionPrefab;
-    private Transform player;
+
+    [Header("Player References")]
+    public Transform player;
 
     private GameObject[] events;
     private string[] buttons = { "A", "B", "X", "Y" };
@@ -37,17 +37,15 @@ public class QTE2 : MonoBehaviour
     private bool countdownActive = false;
     private bool QTETrigger = false;
     private bool QTECompleted = false;
-    private bool dikenSpawned = false;
+    private bool meteorSpawned = false;
 
-    void Start()
+    private void Start()
     {
         events = new GameObject[] { AImage, BImage, XImage, YImage };
         HideAllKeys();
 
         if (attentionImage != null)
-        {
             attentionImage.SetActive(false);
-        }
 
         if (countdownSlider != null)
         {
@@ -55,19 +53,20 @@ public class QTE2 : MonoBehaviour
             countdownSlider.value = countdownTime;
             countdownSlider.gameObject.SetActive(false);
         }
+
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
-    void Update()
+    private void Update()
     {
         if (QTECompleted) return;
 
         if (!QTETrigger)
         {
-            bool playerInArea = Physics2D.OverlapBox(raycastPosition, raycastSize, 0f, playerLayer) != null;
+            bool playerInArea = Physics2D.OverlapBox(raycastPosition, raycastSize, 0f, playerLayer);
             if (attentionImage != null)
-            {
                 attentionImage.SetActive(playerInArea);
-            }
         }
 
         if (countdownActive && countdownSlider != null)
@@ -78,9 +77,9 @@ public class QTE2 : MonoBehaviour
                 countdownSlider.value = 0f;
                 countdownActive = false;
 
-                if (!dikenSpawned)
+                if (!meteorSpawned)
                 {
-                    dikenSpawned = true;
+                    meteorSpawned = true;
                     OnQTEFailedByTime();
                 }
             }
@@ -100,28 +99,18 @@ public class QTE2 : MonoBehaviour
             }
 
             if (pressed)
-            {
                 NextKeys();
-            }
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (QTETrigger || QTECompleted)
-        {
-            return;
-        }
+        if (QTECompleted) return;
 
-        Transform rootPlayer = other.transform.root;
-        if (rootPlayer.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            player = rootPlayer;
-
             if (attentionImage != null)
-            {
                 attentionImage.SetActive(false);
-            }
 
             QTETrigger = true;
             currentIndex = 0;
@@ -135,23 +124,21 @@ public class QTE2 : MonoBehaviour
                 countdownActive = true;
             }
 
-            dikenSpawned = false;
+            meteorSpawned = false;
         }
     }
 
-    void ShowCurrentKeys()
+    private void ShowCurrentKeys()
     {
         HideAllKeys();
         events[currentIndex].SetActive(true);
     }
 
-    void NextKeys()
+    private void NextKeys()
     {
         currentIndex++;
         if (currentIndex < events.Length)
-        {
             ShowCurrentKeys();
-        }
         else
         {
             HideAllKeys();
@@ -159,25 +146,18 @@ public class QTE2 : MonoBehaviour
             QTECompleted = true;
 
             if (countdownSlider != null)
-            {
                 countdownSlider.gameObject.SetActive(false);
-            }
-
         }
     }
 
-    void HideAllKeys()
+    private void HideAllKeys()
     {
         foreach (var img in events)
-        {
             if (img != null)
-            {
                 img.SetActive(false);
-            }
-        }
     }
 
-    void RandomKeys()
+    private void RandomKeys()
     {
         for (int i = 0; i < events.Length; i++)
         {
@@ -187,70 +167,72 @@ public class QTE2 : MonoBehaviour
         }
     }
 
-    void OnQTEFailedByTime()
+    private void OnQTEFailedByTime()
     {
         HideAllKeys();
         QTETrigger = false;
         QTECompleted = true;
 
         if (countdownSlider != null)
-        {
             countdownSlider.gameObject.SetActive(false);
-        }
 
-        // Shield var mı kontrol et
-        if (!PlayerHasShield(player))
-        {
-            SpawnDikenAndExplode();
-        }
-    }
-
-// Oyuncuda shield olup olmadığını kontrol eden yardımcı fonksiyon
-    bool PlayerHasShield(Transform playerTransform)
-    {
-        if (playerTransform == null) return false;
-
-        // Oyuncunun alt objelerinde Shield var mı diye bakıyoruz
-        Shield shield = playerTransform.GetComponentInChildren<Shield>();
-        return shield != null;
-    }
-
-
-    void SpawnDikenAndExplode()
-    {
-        if (player == null)
-        {
-            GameObject foundPlayer = GameObject.FindGameObjectWithTag("Player");
-            if (foundPlayer != null)
-            {
-                player = foundPlayer.transform;
-            }
-        }
-
-        if (player == null)
-        {
+        if(player != null && player.GetComponentInChildren<Shield>() != null)
             return;
-        }
 
-        if (dikenPrefab != null)
-        {
-            Vector3 spawnPos = player.position;
-            spawnPos.y = zeminY;
-            Instantiate(dikenPrefab, spawnPos, Quaternion.identity);
-        }
-
-        if (explosionPrefab != null)
-        {
-            GameObject explosion = Instantiate(explosionPrefab, player.position, Quaternion.identity);
-            Destroy(explosion, 3f);
-        }
-
-        Destroy(player.gameObject);
+        SpawnMeteor();
     }
 
-    void OnDrawGizmosSelected()
+    private void SpawnMeteor()
+    {
+        if(player == null) return;
+
+        GameObject meteor = Instantiate(meteorPrefab, meteorSpawnPoint.position, Quaternion.identity);
+        MeteorFollow mf = meteor.GetComponent<MeteorFollow>() ?? meteor.AddComponent<MeteorFollow>();
+        mf.target = player;
+        mf.speed = meteorSpeed;
+        mf.explosionPrefab = explosionPrefab;
+    }
+
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(raycastPosition, raycastSize);
+    }
+}
+
+public class MeteorFollow : MonoBehaviour
+{
+    public Transform target;
+    public float speed = 6f;
+    public GameObject explosionPrefab;
+
+    private void Update()
+    {
+        if (target == null) return;
+
+        Vector3 dir = (target.position - transform.position).normalized;
+        transform.position += dir * speed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Transform root = other.transform.root;
+        if (root.CompareTag("Player"))
+        {
+            if(root.GetComponentInChildren<Shield>() != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            if (explosionPrefab != null)
+            {
+                GameObject explosion = Instantiate(explosionPrefab, root.position, Quaternion.identity);
+                Destroy(explosion, 3f);
+            }
+
+            Destroy(root.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
