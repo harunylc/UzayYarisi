@@ -55,8 +55,11 @@ public class DriveMyCar_Player2 : MonoBehaviour
     public void OnThrotle(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<float>();
+        moveInput = -moveInput;
         if (controlsInverted)
+        {
             moveInput *= -1;
+        }
     }
 
     public void OnNitro(InputAction.CallbackContext context)
@@ -121,8 +124,8 @@ public class DriveMyCar_Player2 : MonoBehaviour
             TryActivateNitro(false);
         }
 
-        tireFrontRb.AddTorque(-moveInput * currentSpeed, ForceMode2D.Force);
-        tireBackRb.AddTorque(-moveInput * currentSpeed, ForceMode2D.Force);
+        tireFrontRb.AddTorque(moveInput * currentSpeed, ForceMode2D.Force);
+        tireBackRb.AddTorque(moveInput * currentSpeed, ForceMode2D.Force);
 
         float currentRotation = isGrounded ? carRotationSpeed / 5f : carRotationSpeed;
         carRb.AddTorque(moveInput * currentRotation, ForceMode2D.Force);

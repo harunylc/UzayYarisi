@@ -3210,7 +3210,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: 1920 x 1080
 --- !u!222 &925966968
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4029,6 +4029,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58467bd02502bdd4f80bf80188c780af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioMixer: {fileID: 0}
+  musicSlider: {fileID: 2086557461}
+  sfxSlider: {fileID: 820606210}
   _masterVolume: 1
   _soundsCollectionSo: {fileID: 11400000, guid: 74b4b363a673c2f478e4852fa56de7a0, type: 2}
   _sfxMixerGroup: {fileID: 0}

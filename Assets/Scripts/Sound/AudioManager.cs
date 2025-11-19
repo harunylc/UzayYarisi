@@ -3,10 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Diagnostics;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
+    
+    [Header("AudioMixer")]
+    [SerializeField] private AudioMixer _audioMixer;
+
+    
+    [Header("UI Sliders")]
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -17,6 +26,21 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+    
+    private void Start()
+    {
+        // Başlangıç değerlerini mixer’dan al ve slider’a uygula
+        _audioMixer.GetFloat("MusicVolume", out float musicVol);
+        musicSlider.value = Mathf.Pow(10, musicVol / 20); // dB -> 0-1
+
+        _audioMixer.GetFloat("SFXVolume", out float sfxVol);
+        sfxSlider.value = Mathf.Pow(10, sfxVol / 20);
+
+        // Slider eventlerini ekle
+        musicSlider.onValueChanged.AddListener(SetMusicVolume);
+        sfxSlider.onValueChanged.AddListener(SetSFXVolume);
+    }
+
     
     [Range(0f, 2f)] [SerializeField] private float _masterVolume = 1f;
     [SerializeField] private SoundsCollectionSO _soundsCollectionSo;
@@ -114,6 +138,19 @@ public class AudioManager : MonoBehaviour
             _currentMusic = audioSource;
         }
     }
+    
+    public void SetMusicVolume(float value)
+    {
+        float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20;
+        _audioMixer.SetFloat("MusicVolume", dB);
+    }
+
+    public void SetSFXVolume(float value)
+    {
+        float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20;
+        _audioMixer.SetFloat("SFXVolume", dB);
+    }
+
 
 
     #endregion
