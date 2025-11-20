@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/PowerUpYunus.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/PowerUpYunus.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/CarPowerUpHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/CarPowerUpHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/PU_DarkScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/PU_DarkScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/PU_Gravity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/PU_Gravity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/PU_Nitro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/PU_Nitro.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PowerUp/PowerUpManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PowerUp/PowerUpManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +17,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PU_Scripts/PU_NitroID.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MinIMap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.spriteshape/Runtime/SpriteShapeController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem/InputSystem/InputManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
@@ -125,7 +118,7 @@
       <workItem from="1762465480369" duration="4606000" />
       <workItem from="1762533259905" duration="8576000" />
       <workItem from="1762706496872" duration="18590000" />
-      <workItem from="1763621249532" duration="8141000" />
+      <workItem from="1763621249532" duration="12798000" />
     </task>
     <servers />
   </component>
