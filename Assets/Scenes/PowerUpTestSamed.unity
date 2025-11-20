@@ -4833,6 +4833,8 @@ MonoBehaviour:
   P2_PowerUpImage: {fileID: 1485692771}
   powerUps:
   - {fileID: 7527794574724789036, guid: 0970baf1c5db7bf46b4f52db70256e68, type: 3}
+  - {fileID: 297183651797462561, guid: c63865b6ad3de5e4aa76cfd99a4a29e4, type: 3}
+  - {fileID: 2954796624711904204, guid: f3fee43c989ec954d90b48fa658150d9, type: 3}
 --- !u!114 &1733108161
 MonoBehaviour:
   m_ObjectHideFlags: 0

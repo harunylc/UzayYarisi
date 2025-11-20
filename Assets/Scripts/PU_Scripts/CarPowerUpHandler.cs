@@ -17,7 +17,6 @@ public class CarPowerUpHandler : MonoBehaviour
 
     void Awake()
     {
-        
         rb = GetComponent<Rigidbody2D>();
         driveScriptP1 = GetComponent<DriveMyCar>();
         driveScriptP2 = GetComponent<DriveMyCar_Player2>();

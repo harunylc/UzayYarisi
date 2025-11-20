@@ -1,6 +1,8 @@
 using UnityEngine;
+using System.Collections;
 public class PU_Gravity : MonoBehaviour
 {
+    /*
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") || other.CompareTag("Player2"))
@@ -14,4 +16,5 @@ public class PU_Gravity : MonoBehaviour
             }
         }
     }
+    */
 }
