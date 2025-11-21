@@ -22961,37 +22961,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 104393104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &739536883
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 739536884}
-  m_Layer: 0
-  m_Name: -----yunus-----
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &739536884
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739536883}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 827.0277, y: 501.76605, z: -5.1797647}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &740560511
 GameObject:
   m_ObjectHideFlags: 0
@@ -34591,15 +34560,16 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 61671410}
+  - {fileID: 8881819402973547013}
   - {fileID: 2510319158814877985}
-  - {fileID: 739536884}
   - {fileID: 1646438273}
+  - {fileID: 734569708}
   - {fileID: 255661713}
   - {fileID: 707987795131269931}
   - {fileID: 9150410061517340639}
-  - {fileID: 8881819402973547013}
   - {fileID: 6796433110237733641}
   - {fileID: 1058074599}
+  - {fileID: 636835574}
   - {fileID: 925125564}
   - {fileID: 359299518}
   - {fileID: 2058790949}
@@ -34611,9 +34581,7 @@ SceneRoots:
   - {fileID: 1916739295}
   - {fileID: 82608109}
   - {fileID: 298574162}
-  - {fileID: 636835574}
   - {fileID: 944592922}
-  - {fileID: 734569708}
   - {fileID: 33473733}
   - {fileID: 788884656}
   - {fileID: 106350235}

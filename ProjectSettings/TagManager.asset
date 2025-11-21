@@ -18,6 +18,8 @@ TagManager:
   - P2_PowerUI
   - P1_Text
   - P2_Text
+  - P1_WinPanel
+  - P2_WinPanel
   layers:
   - Default
   - TransparentFX

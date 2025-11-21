@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections; 
+using UnityEngine.SceneManagement;
 
 public class GameRoundManager : MonoBehaviour
 {
@@ -42,13 +44,21 @@ public class GameRoundManager : MonoBehaviour
             p1Score++;
         else if (playerNumber == 2)
             p2Score++;
-        
+
         if (p1Score >= maxScore)
+        {
             EndGame(1);
+
+        }
         else if (p2Score >= maxScore)
+        {
             EndGame(2);
+            
+        }
         else
-            Invoke(nameof(GoToUpgradeScene), 2f);
+        {
+            Invoke(nameof(GoToUpgradeScene), 0.01f);
+        }
     }
 
     private void GoToUpgradeScene()
@@ -70,24 +80,69 @@ public class GameRoundManager : MonoBehaviour
         Debug.Log($"🎉 Oyuncu {winner} oyunu kazandı! Ana menüye dönülüyor...");
         
         LastWinner = winner;
+        
+        // EndGame'i başlatan Coroutine'i çağır
+        StartCoroutine(EndGameRoutine(winner));
 
+        /*
         if (Fade_Manager.Instance != null)
             Fade_Manager.Instance.StartFadeOutAndLoadScene("MainMenuScene");
         else
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenuScene");
+            */
     }
+    
+    //sonradan eklendi <<<<<<<<<<<<<<<<<<
+    private IEnumerator EndGameRoutine(int winner)
+    {
+        // 1. Oyunu durdur/yavaşlat (Time.timeScale = 0 bazen Coroutine'leri de durdurabilir,
+        // bu yüzden çok küçük bir değer kullanmak daha güvenlidir)
+        Time.timeScale = 0.001f;
+
+        // 2. Sahnedeki doğru "Kazandı" panelini bul
+        string panelTag = (winner == 1) ? "P1_WinPanel" : "P2_WinPanel";
+        GameObject winPanel = GameObject.FindWithTag(panelTag);
+
+        if (winPanel != null)
+        {
+            // 3. Paneli aktif et
+            winPanel.SetActive(true);
+
+            // 4. Gerçek zaman kullanarak 3 saniye bekle (Time.timeScale'den etkilenmez)
+            yield return new WaitForSecondsRealtime(6f);
+            
+            // 5. Paneli tekrar kapat
+            winPanel.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning(panelTag + " etiketli bir kazanan paneli bu sahnede bulunamadı!");
+            // Panel bulunamazsa bile, yine de ana menüye dönmeden önce bekleyelim
+            yield return new WaitForSecondsRealtime(6f);
+        }
+
+        // 6. Zamanı normale döndür
+        Time.timeScale = 1f;
+        
+        // 7. Fade ile ana menüye geçiş yap
+        if (Fade_Manager.Instance != null)
+            Fade_Manager.Instance.StartFadeOutAndLoadScene("MainMenuScene");
+        else
+            SceneManager.LoadScene("MainMenuScene");
+    }
+    //>>>>>>>>>>>>>>>>>>>>
 
     private void OnEnable()
     {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainMenuScene")
         {
