@@ -1,28 +1,27 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public class ReverseControlsPU : MonoBehaviour
 {
-    [SerializeField] private float duration = 5f;
+    public float duration = 5f;
 
-    public IEnumerator ReverseControls(GameObject enemyPlayer)
+    public IEnumerator ReverseControls(GameObject targetPlayer)
     {
-        if (enemyPlayer == null) yield break;
+        // DriveMyCar veya DriveMyCar_Player2 scriptlerini bul
+        var drive1 = targetPlayer.GetComponent<DriveMyCar>();
+        var drive2 = targetPlayer.GetComponent<DriveMyCar_Player2>();
 
-        var player1 = enemyPlayer.GetComponent<DriveMyCar>();
-        var player2 = enemyPlayer.GetComponent<DriveMyCar_Player2>();
-
-        if (player1 != null)
+        if (drive1 != null)
         {
-            player1.InvertControls(true);
+            drive1.InvertControls(true);
             yield return new WaitForSeconds(duration);
-            player1.InvertControls(false);
+            drive1.InvertControls(false);
         }
-        else if (player2 != null)
+        else if (drive2 != null)
         {
-            player2.InvertControls(true);
+            drive2.InvertControls(true);
             yield return new WaitForSeconds(duration);
-            player2.InvertControls(false);
+            drive2.InvertControls(false);
         }
     }
 }
