@@ -31,29 +31,19 @@ public class PU_DarkScreen : MonoBehaviour
         if (panelImage == null) 
         {
             Debug.LogError("HATA: 'panelImage' alanı " + gameObject.name + " üzerinde atanmamış!");
-            yield break; // Coroutine'i durdur.
+            yield break; 
         }
-
-        Debug.Log("--- Ekran karartılıyor (Color.alpha metodu)... ---");
-
-        // Mevcut rengi al
+        
         Color color = panelImage.color;
 
-        // Alfa değerini 204 yap (0-1 aralığında 0.8'e denk gelir)
         color.a = 204f / 255f;
 
-        // Yeni rengi Image'a ata
         panelImage.color = color;
 
-        // Belirtilen süre kadar bekle
         yield return new WaitForSeconds(duration);
 
-        // Alfa değerini tekrar 0 yap
         color.a = 0f;
 
-        // Rengi tekrar ata
         panelImage.color = color;
-
-        Debug.Log("--- Ekran normale döndü. ---");
     }
 }

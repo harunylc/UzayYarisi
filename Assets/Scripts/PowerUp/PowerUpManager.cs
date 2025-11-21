@@ -84,7 +84,6 @@ public class PowerUpManager : MonoBehaviour
             P2_PowerUpImage.sprite = P2_currentPowerUp.GetComponent<SpriteRenderer>().sprite;
     }
 
-
     public void CollectPowerUp(GameObject player, GameObject groundPowerUp)
     {
         int index = Random.Range(0, powerUps.Length);
@@ -205,6 +204,70 @@ public class PowerUpManager : MonoBehaviour
                     if (enemyText != null)
                         StartCoroutine(ShowText(enemyText, "Kontroller Tersine Döndü!", displayDuration));
                 }
+            }
+        }
+        
+        else if (powerUpPrefab.GetComponent<PU_Nitro>() != null)
+        {
+            PU_Nitro slow = powerUpPrefab.GetComponent<PU_Nitro>();
+
+            if (playerTag == "Player")
+            {
+                DriveMyCar myCar = FindObjectOfType<DriveMyCar>();
+                if (myCar != null)
+                    myCar.StartCoroutine(slow.Nitro(myCar));
+            }
+            else if (playerTag == "Player2")
+            {
+                DriveMyCar_Player2 myCar = FindObjectOfType<DriveMyCar_Player2>();
+                if (myCar != null)
+                    myCar.StartCoroutine(slow.Nitro(myCar));
+            }
+        }
+        /*else if (powerUpPrefab.GetComponent<PU_Gravity>() != null)
+        {
+            if (playerTag == "Player")
+            {
+                Rigidbody2D rb1 = opponent.GetComponent<Rigidbody2D>();
+                rb1.mass *= 0.5f;
+            }
+            else if (playerTag == "Player2")
+            {
+                Rigidbody2D rb2 = opponent.GetComponent<Rigidbody2D>();
+                rb2.mass *= 0.5f;
+            }
+            else
+            {
+                Debug.Log("Error tag bunulamadi gravity icin !!!!!!!!!!!");
+            }
+        }*/
+        else if (powerUpPrefab.GetComponent<PU_DarkScreen>() != null)
+        {
+            // Hedef panelin etiketini (Tag) belirle
+            string targetPanelTag = (playerTag == "Player") ? "P2_DarkPanel" : "P1_DarkPanel";
+
+            // O etikete sahip paneli sahnede bul
+            GameObject panelObject = GameObject.FindWithTag(targetPanelTag);
+
+            if (panelObject != null)
+            {
+                // Panelin üzerindeki PU_DarkScreen script'ini al
+                PU_DarkScreen panelScript = panelObject.GetComponent<PU_DarkScreen>();
+
+                if (panelScript != null)
+                {
+                    // Coroutine'i, her zaman aktif olan PowerUpManager'ın kendisi başlatır,
+                    // ama panelin planını (DarkenScreenRoutine) kullanır.
+                    StartCoroutine(panelScript.DarkenScreenRoutine(5f));
+                }
+                else
+                {
+                    Debug.LogError(panelObject.name + " objesinin üzerinde PU_DarkScreen script'i bulunamadı!");
+                }
+            }
+            else
+            {
+                Debug.LogError(targetPanelTag + " etiketine sahip bir panel bulunamadı!");
             }
         }
     }
