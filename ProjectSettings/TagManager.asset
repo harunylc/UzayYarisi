@@ -20,6 +20,12 @@ TagManager:
   - P2_Text
   - P1_WinPanel
   - P2_WinPanel
+  - p1kupa1
+  - p1kupa2
+  - p1kupa3
+  - p2kupa1
+  - p2kupa2
+  - p2kupa3
   layers:
   - Default
   - TransparentFX

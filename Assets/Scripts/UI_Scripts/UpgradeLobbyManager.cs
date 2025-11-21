@@ -4,6 +4,11 @@ using TMPro; // TextMeshPro kullanıldığı için gerekli
 
 public class UpgradeLobbyManager : MonoBehaviour
 {
+    //yunus ait <<<<<<<<<
+    [Header("Kupa Ikonları")]
+    public Image[] player1_KupaIkonlari; // P1 için 3 kupayı buraya sürükleyeceğiz
+    public Image[] player2_KupaIkonlari; // P2 için 3 kupayı buraya sürükleyeceğiz
+    //>>>>>>>>>>>>>>
    
     [Header("Manager References")]
     public PointManager pointManagerP1;
@@ -78,8 +83,49 @@ public class UpgradeLobbyManager : MonoBehaviour
         {
             Debug.LogError("SceneFlowManager örneği bulunamadı!");
         }
-       
+        
+        //yunusa ait<<<<<<<<<
+        UpdateKupaUI();
+        //>>>>>>>>>>>
     }
+    
+    //yunusa ait <<<<<<<<<<<<<<<<<
+    private void UpdateKupaUI()
+    {
+        // GameRoundManager'dan skorları al. Eğer GameRoundManager yoksa, skorları 0 kabul et.
+        int p1Score = (GameRoundManager.Instance != null) ? GameRoundManager.Instance.p1Score : 0;
+        int p2Score = (GameRoundManager.Instance != null) ? GameRoundManager.Instance.p2Score : 0;
+
+        // --- Player 1 Kupalarını Ayarla ---
+        // P1'in tüm kupalarını döngüyle kontrol et.
+        for (int i = 0; i < player1_KupaIkonlari.Length; i++)
+        {
+            // Eğer kupa index'i (i), oyuncunun skorundan küçükse, kupayı göster.
+            // Örnek: Skor 2 ise, index 0 ve 1 olan kupalar (ilk iki kupa) aktif olur.
+            if (i < p1Score)
+            {
+                player1_KupaIkonlari[i].gameObject.SetActive(true);
+            }
+            else // Değilse, kupayı gizle.
+            {
+                player1_KupaIkonlari[i].gameObject.SetActive(false);
+            }
+        }
+
+        // --- Player 2 Kupalarını Ayarla (Aynı mantık) ---
+        for (int i = 0; i < player2_KupaIkonlari.Length; i++)
+        {
+            if (i < p2Score)
+            {
+                player2_KupaIkonlari[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                player2_KupaIkonlari[i].gameObject.SetActive(false);
+            }
+        }
+    }
+    //>>>>>>>>>>>>>>>>>>>>>>>>
 
     private void ChangeCar(int direction, int player)
     {
