@@ -6516,7 +6516,7 @@ MonoBehaviour:
   P1_PowerUpImage: {fileID: 0}
   P2_PowerUpImage: {fileID: 0}
   powerUps:
-  - {fileID: 7879160341601257878, guid: a1a3b73167358004281c666b4b09f7b7, type: 3}
+  - {fileID: 5723757594197812676, guid: c193ead18e8124b46a682921a3a664ca, type: 3}
   P1_Text: {fileID: 0}
   P2_Text: {fileID: 0}
 --- !u!4 &908446904

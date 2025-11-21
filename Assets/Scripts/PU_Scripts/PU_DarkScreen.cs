@@ -36,7 +36,7 @@ public class PU_DarkScreen : MonoBehaviour
         
         Color color = panelImage.color;
 
-        color.a = 204f / 255f;
+        color.a = 242.25f / 255f;
 
         panelImage.color = color;
 
