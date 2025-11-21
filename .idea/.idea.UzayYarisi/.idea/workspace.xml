@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Merkür.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Merkür.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Neptün.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Neptün.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Satürn.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Satürn.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/GameRoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/GameRoundManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +118,7 @@
       <workItem from="1762533259905" duration="8576000" />
       <workItem from="1762706496872" duration="18590000" />
       <workItem from="1763621249532" duration="13398000" />
-      <workItem from="1763754487404" duration="6131000" />
+      <workItem from="1763754487404" duration="6814000" />
     </task>
     <servers />
   </component>

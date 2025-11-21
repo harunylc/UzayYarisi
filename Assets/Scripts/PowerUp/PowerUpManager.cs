@@ -224,23 +224,23 @@ public class PowerUpManager : MonoBehaviour
                     myCar.StartCoroutine(slow.Nitro(myCar));
             }
         }
-        /*else if (powerUpPrefab.GetComponent<PU_Gravity>() != null)
+        else if (powerUpPrefab.GetComponent<PU_Gravity>() != null)
         {
             if (playerTag == "Player")
             {
-                Rigidbody2D rb1 = opponent.GetComponent<Rigidbody2D>();
+                Rigidbody2D rb1 = player.GetComponent<Rigidbody2D>();
                 rb1.mass *= 0.5f;
             }
             else if (playerTag == "Player2")
             {
-                Rigidbody2D rb2 = opponent.GetComponent<Rigidbody2D>();
+                Rigidbody2D rb2 = player.GetComponent<Rigidbody2D>();
                 rb2.mass *= 0.5f;
             }
             else
             {
                 Debug.Log("Error tag bunulamadi gravity icin !!!!!!!!!!!");
             }
-        }*/
+        }
         else if (powerUpPrefab.GetComponent<PU_DarkScreen>() != null)
         {
             // Hedef panelin etiketini (Tag) belirle
