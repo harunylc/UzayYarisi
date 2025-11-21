@@ -15476,7 +15476,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a120248c398b17b479d93b3c962b6d39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flag: {fileID: 0}
+  flag: {fileID: 300761340}
   trackPath: {fileID: 307652081}
   player1Icon: {fileID: 1213100076}
   player2Icon: {fileID: 322904573}
