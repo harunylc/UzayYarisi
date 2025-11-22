@@ -39,43 +39,6 @@ public class UI_Controller : MonoBehaviour
 
     void Start()
     {
-        /*
-        // foreach (var panel in allPanels)
-        // {
-        //     if (panel != null && panel != mainMenu)
-        //     {
-        //         panel.SetActive(false);
-        //     }
-        // }
-        //
-        // mainMenu.SetActive(true);
-        //
-        // EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
-        // UI_Controller.cs içindeki Start() fonksiyonunu tamamen bununla değiştirin.
-
-
-        // Önce tüm panelleri kapat
-        foreach (var panel in allPanels)
-        {
-            if (panel != null) panel.SetActive(false);
-        }
-
-        // 1. KAZANAN KONTROLÜ
-        if (GameRoundManager.LastWinner != 0)
-        {
-            if (GameRoundManager.LastWinner == 1 && p1WinPanel != null) p1WinPanel.SetActive(true);
-            else if (GameRoundManager.LastWinner == 2 && p2WinPanel != null) p2WinPanel.SetActive(true);
-            
-            GameRoundManager.LastWinner = 0;
-            StartCoroutine(ShowMainMenuAfterDelay(3f));
-        }
-        // 2. NORMAL BAŞLANGIÇ
-        else
-        {
-            if (mainMenu != null) mainMenu.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
-        }
-        */
         foreach (var panel in allPanels)
         {
             if (panel != null)
@@ -84,7 +47,6 @@ public class UI_Controller : MonoBehaviour
             }
         }
         
-        // Direkt ana menüyü göster.
         if (mainMenu != null)
         {
             mainMenu.SetActive(true);
@@ -140,23 +102,6 @@ public class UI_Controller : MonoBehaviour
             Fade_Manager.Instance.StartFadeOutAndLoadScene(sceneName);
         }
     }
-
-    /*
-    private IEnumerator ShowMainMenuAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-
-        foreach (var panel in allPanels)
-        {
-            if (panel != null)
-            {
-                panel.SetActive(false);
-            }
-        }
-        mainMenu.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
-    }
-    */
 
     public void QuitGame()
     {

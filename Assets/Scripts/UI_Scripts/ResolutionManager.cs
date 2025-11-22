@@ -60,7 +60,6 @@ public class ResolutionManager : MonoBehaviour
 
         while (elapsed < timeout)
         {
-            // UI var mı kontrol et
             var dropdownInScene = FindObjectsOfType<Dropdown>(true);
             var toggleInScene = FindObjectsOfType<Toggle>(true);
 

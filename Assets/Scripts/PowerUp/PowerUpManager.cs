@@ -250,21 +250,16 @@ public class PowerUpManager : MonoBehaviour
         }
         else if (powerUpPrefab.GetComponent<PU_DarkScreen>() != null)
         {
-            // Hedef panelin etiketini (Tag) belirle
             string targetPanelTag = (playerTag == "Player") ? "P2_DarkPanel" : "P1_DarkPanel";
 
-            // O etikete sahip paneli sahnede bul
             GameObject panelObject = GameObject.FindWithTag(targetPanelTag);
 
             if (panelObject != null)
             {
-                // Panelin üzerindeki PU_DarkScreen script'ini al
                 PU_DarkScreen panelScript = panelObject.GetComponent<PU_DarkScreen>();
 
                 if (panelScript != null)
                 {
-                    // Coroutine'i, her zaman aktif olan PowerUpManager'ın kendisi başlatır,
-                    // ama panelin planını (DarkenScreenRoutine) kullanır.
                     StartCoroutine(panelScript.DarkenScreenRoutine(5f));
                 }
                 else

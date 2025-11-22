@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // TextMeshPro kullanıldığı için gerekli
+using TMPro; 
 
 public class UpgradeLobbyManager : MonoBehaviour
 {
     //yunus ait <<<<<<<<<
     [Header("Kupa Ikonları")]
-    public Image[] player1_KupaIkonlari; // P1 için 3 kupayı buraya sürükleyeceğiz
-    public Image[] player2_KupaIkonlari; // P2 için 3 kupayı buraya sürükleyeceğiz
+    public Image[] player1_KupaIkonlari; 
+    public Image[] player2_KupaIkonlari; 
     //>>>>>>>>>>>>>>
    
     [Header("Manager References")]
@@ -47,12 +47,41 @@ public class UpgradeLobbyManager : MonoBehaviour
     
     void Start()
     {
+        //yunus ekledi yeni <<<<<<<<<<<<<<
+        if (CarSelectionLocker.AreCarsLocked())
+        {
+            Debug.Log("Arabalar kilitli. Kayıtlı seçimler yükleniyor...");
+
+            // Kilitlenmiş index'leri al
+            carIndexP1 = CarSelectionLocker.GetLockedCarIndexP1();
+            carIndexP2 = CarSelectionLocker.GetLockedCarIndexP2();
+            
+            // Araba değiştirme butonlarını deaktif et
+            if (leftButtonP1) leftButtonP1.interactable = false;
+            if (rightButtonP1) rightButtonP1.interactable = false;
+            if (leftButtonP2) leftButtonP2.interactable = false;
+            if (rightButtonP2) rightButtonP2.interactable = false;
+        }
+        else
+        {
+            Debug.Log("Arabalar kilitli değil. Serbest seçim modu.");
+            // Arabalar kilitli değilse, buton dinleyicilerini ekle.
+            if (leftButtonP1) leftButtonP1.onClick.AddListener(() => ChangeCar(-1, 1));
+            if (rightButtonP1) rightButtonP1.onClick.AddListener(() => ChangeCar(1, 1));
+            if (leftButtonP2) leftButtonP2.onClick.AddListener(() => ChangeCar(-1, 2));
+            if (rightButtonP2) rightButtonP2.onClick.AddListener(() => ChangeCar(1, 2));
+        }
+        //>>>>>>>>>>>>>>>>>>>
+        
+        /*
         if (leftButtonP1) leftButtonP1.onClick.AddListener(() => ChangeCar(-1, 1));
         if (rightButtonP1) rightButtonP1.onClick.AddListener(() => ChangeCar(1, 1));
-        if (readyButtonP1) readyButtonP1.onClick.AddListener(() => PlayerReady(1));
-
+        
         if (leftButtonP2) leftButtonP2.onClick.AddListener(() => ChangeCar(-1, 2));
         if (rightButtonP2) rightButtonP2.onClick.AddListener(() => ChangeCar(1, 2));
+       */
+        
+        if (readyButtonP1) readyButtonP1.onClick.AddListener(() => PlayerReady(1));
         if (readyButtonP2) readyButtonP2.onClick.AddListener(() => PlayerReady(2));
 
         ValidateAndInit(1);
@@ -92,27 +121,21 @@ public class UpgradeLobbyManager : MonoBehaviour
     //yunusa ait <<<<<<<<<<<<<<<<<
     private void UpdateKupaUI()
     {
-        // GameRoundManager'dan skorları al. Eğer GameRoundManager yoksa, skorları 0 kabul et.
         int p1Score = (GameRoundManager.Instance != null) ? GameRoundManager.Instance.p1Score : 0;
         int p2Score = (GameRoundManager.Instance != null) ? GameRoundManager.Instance.p2Score : 0;
 
-        // --- Player 1 Kupalarını Ayarla ---
-        // P1'in tüm kupalarını döngüyle kontrol et.
         for (int i = 0; i < player1_KupaIkonlari.Length; i++)
         {
-            // Eğer kupa index'i (i), oyuncunun skorundan küçükse, kupayı göster.
-            // Örnek: Skor 2 ise, index 0 ve 1 olan kupalar (ilk iki kupa) aktif olur.
             if (i < p1Score)
             {
                 player1_KupaIkonlari[i].gameObject.SetActive(true);
             }
-            else // Değilse, kupayı gizle.
+            else 
             {
                 player1_KupaIkonlari[i].gameObject.SetActive(false);
             }
         }
 
-        // --- Player 2 Kupalarını Ayarla (Aynı mantık) ---
         for (int i = 0; i < player2_KupaIkonlari.Length; i++)
         {
             if (i < p2Score)
@@ -191,6 +214,12 @@ public class UpgradeLobbyManager : MonoBehaviour
         
         if (isReadyP1 && isReadyP2)
         {
+            //yeni eklendi <<<<<<<
+            if (!CarSelectionLocker.AreCarsLocked())
+            {
+                CarSelectionLocker.LockSelections(carIndexP1, carIndexP2);
+            }
+            //>>>>>>>>>>
             SceneFlowManager.Instance.LoadNextLevelOrEndGame();
         }
     }
@@ -219,15 +248,15 @@ public class UpgradeLobbyManager : MonoBehaviour
     
     private void SetP1Interactable(bool on)
     {
-        if (leftButtonP1) leftButtonP1.interactable = on;
-        if (rightButtonP1) rightButtonP1.interactable = on;
+        // if (leftButtonP1) leftButtonP1.interactable = on;
+        // if (rightButtonP1) rightButtonP1.interactable = on;
         if (readyButtonP1) readyButtonP1.interactable = on;
     }
 
     private void SetP2Interactable(bool on)
     {
-        if (leftButtonP2) leftButtonP2.interactable = on;
-        if (rightButtonP2) rightButtonP2.interactable = on;
+        // if (leftButtonP2) leftButtonP2.interactable = on;
+        // if (rightButtonP2) rightButtonP2.interactable = on;
         if (readyButtonP2) readyButtonP2.interactable = on;
     }
 
