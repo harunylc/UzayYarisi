@@ -1191,7 +1191,7 @@ GameObject:
   - component: {fileID: 337535806}
   m_Layer: 5
   m_Name: P1WinPnl
-  m_TagString: Untagged
+  m_TagString: P1_WinPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5601,7 +5601,7 @@ GameObject:
   - component: {fileID: 1952998538}
   m_Layer: 5
   m_Name: P2WinPnl
-  m_TagString: Untagged
+  m_TagString: P2_WinPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,11 +1,14 @@
 using UnityEngine;
+using System;
+using System.Collections; 
+using UnityEngine.SceneManagement;
 
 public class GameRoundManager : MonoBehaviour
 {
+    public static event Action<int> OnGameOver;
+    
     public static GameRoundManager Instance;
     
-    public static int LastWinner = 0; 
-
     [Header("Puan Ayarları")]
     public int p1Score = 0;
     public int p2Score = 0;
@@ -42,52 +45,58 @@ public class GameRoundManager : MonoBehaviour
             p1Score++;
         else if (playerNumber == 2)
             p2Score++;
-        
+
         if (p1Score >= maxScore)
+        {
             EndGame(1);
+
+        }
         else if (p2Score >= maxScore)
+        {
             EndGame(2);
+            
+        }
         else
-            Invoke(nameof(GoToUpgradeScene), 2f);
+        {
+            Invoke(nameof(GoToUpgradeScene), 0.01f);
+        }
     }
 
     private void GoToUpgradeScene()
     {
         if (gameOver) return;
         roundFinished = false;
-
-        if (Fade_Manager.Instance != null)
-            Fade_Manager.Instance.StartFadeOutAndLoadScene("UpgradeLobbyScene");
-        else if (SceneFlowManager.Instance != null)
-            SceneFlowManager.Instance.LoadUpgradeScene();
-        else
-            UnityEngine.SceneManagement.SceneManager.LoadScene("UpgradeLobbyScene");
+        SceneFlowManager.Instance.LoadUpgradeScene();
     }
 
     private void EndGame(int winner)
     {
         gameOver = true;
-        Debug.Log($"🎉 Oyuncu {winner} oyunu kazandı! Ana menüye dönülüyor...");
-        
-        LastWinner = winner;
-
+        OnGameOver?.Invoke(winner);
+        StartCoroutine(ReturnToMenuAfterDelay(4f));
+    }
+    
+    private IEnumerator ReturnToMenuAfterDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        Time.timeScale = 1f;
         if (Fade_Manager.Instance != null)
             Fade_Manager.Instance.StartFadeOutAndLoadScene("MainMenuScene");
         else
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenuScene");
+            SceneManager.LoadScene("MainMenuScene");
     }
-
+    
     private void OnEnable()
     {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainMenuScene")
         {

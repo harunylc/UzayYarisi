@@ -11,17 +11,16 @@ public class UI_Controller : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject howToPlayPanel;
     public GameObject creatersPanel;
-    public GameObject p1WinPanel;
-    public GameObject p2WinPanel;
     private List<GameObject> allPanels;
 
-    [Header("Gamepad Input")] public InputActionReference cancelAction;
+    [Header("Gamepad Input")] 
+    public InputActionReference cancelAction;
 
-    [Header("İlk Seçilecek Butonlar")] public GameObject firstMainMenuButton;
+    [Header("İlk Seçilecek Butonlar")] 
+    public GameObject firstMainMenuButton;
     public GameObject firstSettingsButton;
     public GameObject firstHowToPlayButton;
     public GameObject firstCreatersButton;
-
 
     private void Awake()
     {
@@ -40,6 +39,7 @@ public class UI_Controller : MonoBehaviour
 
     void Start()
     {
+        /*
         // foreach (var panel in allPanels)
         // {
         //     if (panel != null && panel != mainMenu)
@@ -73,6 +73,21 @@ public class UI_Controller : MonoBehaviour
         else
         {
             if (mainMenu != null) mainMenu.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
+        }
+        */
+        foreach (var panel in allPanels)
+        {
+            if (panel != null)
+            {
+                panel.SetActive(false);
+            }
+        }
+        
+        // Direkt ana menüyü göster.
+        if (mainMenu != null)
+        {
+            mainMenu.SetActive(true);
             EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
         }
     }
@@ -115,9 +130,18 @@ public class UI_Controller : MonoBehaviour
 
     public void LoadSceneWithFade(string sceneName)
     {
-        Fade_Manager.Instance.StartFadeOutAndLoadScene(sceneName);
+        if (SceneFlowManager.Instance != null)
+        {
+            SceneFlowManager.Instance.StartGame();
+        }
+        else
+        {
+            // Acil durum için eski kod
+            Fade_Manager.Instance.StartFadeOutAndLoadScene(sceneName);
+        }
     }
 
+    /*
     private IEnumerator ShowMainMenuAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -132,6 +156,7 @@ public class UI_Controller : MonoBehaviour
         mainMenu.SetActive(true);
         EventSystem.current.SetSelectedGameObject(firstMainMenuButton);
     }
+    */
 
     public void QuitGame()
     {
