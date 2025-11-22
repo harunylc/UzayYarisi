@@ -19,7 +19,7 @@ public class QTETest_P2 : MonoBehaviour
 
     [Header("Countdown Slider")]
     public Slider countdownSlider;
-    public float countdownTime = 2f;
+    public float countdownTime = 4f;
 
     [Header("Meteor Settings")]
     public GameObject meteorPrefab;

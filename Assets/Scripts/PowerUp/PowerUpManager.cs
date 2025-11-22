@@ -185,27 +185,34 @@ public class PowerUpManager : MonoBehaviour
         else if (powerUpPrefab.GetComponent<ReverseControlsPU>() != null)
         {
             ReverseControlsPU reverse = powerUpPrefab.GetComponent<ReverseControlsPU>();
+
             if (playerTag == "Player")
             {
                 DriveMyCar_Player2 enemy = FindObjectOfType<DriveMyCar_Player2>();
+
                 if (enemy != null)
                 {
                     enemy.StartCoroutine(reverse.ReverseControls(enemy.gameObject));
+
                     if (enemyText != null)
-                        StartCoroutine(ShowText(enemyText, "Kontroller Tersine Döndü!", displayDuration));
+                        StartCoroutine(ShowText(enemyText, "Kontrollerin Ters Döndü!", displayDuration));
                 }
             }
             else if (playerTag == "Player2")
             {
                 DriveMyCar enemy = FindObjectOfType<DriveMyCar>();
+
                 if (enemy != null)
                 {
                     enemy.StartCoroutine(reverse.ReverseControls(enemy.gameObject));
+
                     if (enemyText != null)
-                        StartCoroutine(ShowText(enemyText, "Kontroller Tersine Döndü!", displayDuration));
+                        StartCoroutine(ShowText(enemyText, "Kontrollerin Ters Döndü!", displayDuration));
                 }
             }
         }
+
+
         
         else if (powerUpPrefab.GetComponent<PU_Nitro>() != null)
         {

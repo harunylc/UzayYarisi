@@ -119,6 +119,7 @@ Transform:
   - {fileID: 5874135403603664703}
   - {fileID: 2460092092560818945}
   - {fileID: 4726428323686816532}
+  - {fileID: 4715121670697598392}
   - {fileID: 7837462512889632875}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -222,7 +223,7 @@ MonoBehaviour:
   nitroDrainRate: 30
   nitroRechargeRate: 15
   nitroBoost: 300
-  nitroParticle: {fileID: 0}
+  nitroParticle: {fileID: 4715121670697598393}
   tireGrounded: {fileID: 3490753906604013826}
   groundLayer:
     serializedVersion: 2
@@ -310,7 +311,19 @@ MonoBehaviour:
     m_ActionId: 66d1354a-aea7-4402-a9cd-996e093b083b
     m_ActionName: 'Actions/Submit[/DualShock4GamepadHID/buttonSouth]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2473923691945559934}
+        m_TargetAssemblyTypeName: DriveMyCar, Assembly-CSharp
+        m_MethodName: OnPowerUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6f4769c5-58fe-45e1-aa1a-7c185a6cee25
     m_ActionName: 'Move/P1_PowerUp[/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows1/leftShoulder,/DualShock4GamepadHID1/leftShoulder]'
   - m_PersistentCalls:
@@ -1012,4 +1025,87 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7034581258187847447, guid: 08901acfacdca42759f15ec5a089c6db, type: 3}
   m_PrefabInstance: {fileID: 962530910015729532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8009719273427430892
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3891981751522779891}
+    m_Modifications:
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.026800338
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3334712185645486167, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+      propertyPath: m_Name
+      value: ParticlenitroParlak
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+--- !u!4 &4715121670697598392 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3334712185645486164, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+  m_PrefabInstance: {fileID: 8009719273427430892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4715121670697598393 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3334712185645486165, guid: 5180f022d611c3f40a0c8f2aea9679c7, type: 3}
+  m_PrefabInstance: {fileID: 8009719273427430892}
   m_PrefabAsset: {fileID: 0}

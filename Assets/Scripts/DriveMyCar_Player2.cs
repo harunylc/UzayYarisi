@@ -32,6 +32,9 @@ public class DriveMyCar_Player2 : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float rayLength = 45f;
     private bool hasScoredForFlip = false;
+    
+    [Header("Trigger Swap System")]
+    private bool swapTriggers = false;
 
     private float moveInput;
     private bool isGrounded;
@@ -51,15 +54,30 @@ public class DriveMyCar_Player2 : MonoBehaviour
 
         if (nitroParticle != null) nitroParticle.Stop();
     }
+        
+    public void InvertTriggers(bool state)
+    {
+        swapTriggers = state;
+    }
 
     public void OnThrotle(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<float>();
-        moveInput = -moveInput;
+        float input = context.ReadValue<float>();
+
+        // Eğer power-up kontrolleri ters çevirdiyse
         if (controlsInverted)
-        {
-            moveInput *= -1;
-        }
+            input = -input; // TERS KONTROL
+
+        // R2/L2 tersine çevrilmek isteniyorsa
+        if (swapTriggers)
+            input *= -1f;
+
+        moveInput = -input;
+    }
+    
+    public void SetReverseControls(bool state)
+    {
+        controlsInverted = state;
     }
 
     public void OnNitro(InputAction.CallbackContext context)

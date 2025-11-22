@@ -18,6 +18,7 @@ TagManager:
   - P2_PowerUI
   - P1_Text
   - P2_Text
+  - QTE
   layers:
   - Default
   - TransparentFX

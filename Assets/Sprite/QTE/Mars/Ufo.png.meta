@@ -1,46 +1,49 @@
 fileFormatVersion: 2
-guid: ff43ef7c382f5314abdcdbae2e13a05b
+guid: 056688ff3e8d12d4bb0ce8bfc62fd94b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4311198710280397712
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_0"
+      213: -4136258972378647308
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_0"
   - first:
-      213: 8558874509554459951
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_1"
+      213: 5980655216320907207
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_1"
   - first:
-      213: 4450317004694155144
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_2"
+      213: 205989477322205065
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_2"
   - first:
-      213: -5320921702227992920
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_3"
+      213: 497466478278132099
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_3"
   - first:
-      213: 5171060806601442786
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_4"
+      213: -4037567336487357947
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_4"
   - first:
-      213: 1016708438498219773
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_5"
+      213: 7821810719444669711
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_5"
   - first:
-      213: -457193369733660442
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_6"
+      213: -9102537881507328596
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_6"
   - first:
-      213: -1937021465810473730
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_7"
+      213: 4737316568944010899
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_7"
   - first:
-      213: -1839502520828130173
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_8"
+      213: 8726866221675234386
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_8"
   - first:
-      213: 8152387798774686143
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_9"
+      213: 6929594547908409700
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_9"
   - first:
-      213: -4843772126430246649
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_10"
+      213: -9071324821727237170
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_10"
   - first:
-      213: -3865739671767342175
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_11"
+      213: 9042883115342346587
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_11"
   - first:
-      213: -8219007294688333473
-    second: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_12"
+      213: 7966633749351405682
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_12"
+  - first:
+      213: -1151591799807357208
+    second: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_13"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -149,7 +152,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_0"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_0"
       rect:
         serializedVersion: 2
         x: 192
@@ -164,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 093a262a26474db30800000000000000
-      internalID: 4311198710280397712
+      spriteID: 4f43954216e0996c0800000000000000
+      internalID: -4136258972378647308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_1"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_1"
       rect:
         serializedVersion: 2
         x: 578
@@ -186,14 +189,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f25a323050b37c670800000000000000
-      internalID: 8558874509554459951
+      spriteID: 7c705ec7b3e8ff250800000000000000
+      internalID: 5980655216320907207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_2"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_2"
       rect:
         serializedVersion: 2
         x: 958
@@ -208,14 +211,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88fecaaacb3b2cd30800000000000000
-      internalID: 4450317004694155144
+      spriteID: 98722479652dbd200800000000000000
+      internalID: 205989477322205065
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_3"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_3"
       rect:
         serializedVersion: 2
         x: 1339
@@ -230,14 +233,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8ae980d37e94826b0800000000000000
-      internalID: -5320921702227992920
+      spriteID: 381ce65502b57e600800000000000000
+      internalID: 497466478278132099
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_4"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_4"
       rect:
         serializedVersion: 2
         x: 14
@@ -252,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2e58c69f76c43c740800000000000000
-      internalID: 5171060806601442786
+      spriteID: 50273ff36eda7f7c0800000000000000
+      internalID: -4037567336487357947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_5"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_5"
       rect:
         serializedVersion: 2
         x: 401
@@ -274,14 +277,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df614d420f21c1e00800000000000000
-      internalID: 1016708438498219773
+      spriteID: f0597d85867ac8c60800000000000000
+      internalID: 7821810719444669711
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_6"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_6"
       rect:
         serializedVersion: 2
         x: 785
@@ -296,19 +299,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6e08c537d09b7a9f0800000000000000
-      internalID: -457193369733660442
+      spriteID: cad083a260a4da180800000000000000
+      internalID: -9102537881507328596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_7"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_7"
       rect:
         serializedVersion: 2
-        x: 1167
-        y: 476
-        width: 349
+        x: 1165
+        y: 475
+        width: 351
         height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -318,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: efc6f085d315e15e0800000000000000
-      internalID: -1937021465810473730
+      spriteID: 396ea70f1545eb140800000000000000
+      internalID: 4737316568944010899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_8"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_8"
       rect:
         serializedVersion: 2
         x: 1550
-        y: 477
-        width: 350
-        height: 224
+        y: 476
+        width: 352
+        height: 223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,18 +343,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 38c8a921436c876e0800000000000000
-      internalID: -1839502520828130173
+      spriteID: 254ce49779e0c1970800000000000000
+      internalID: 8726866221675234386
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_9"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_9"
       rect:
         serializedVersion: 2
-        x: 192
-        y: 156
+        x: 11
+        y: 192
         width: 353
         height: 224
       alignment: 0
@@ -362,18 +365,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb1a1318289132170800000000000000
-      internalID: 8152387798774686143
+      spriteID: 4697099d68dda2060800000000000000
+      internalID: 6929594547908409700
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_10"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_10"
       rect:
         serializedVersion: 2
-        x: 573
-        y: 156
+        x: 392
+        y: 192
+        width: 353
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecba3c6f22e2c1280800000000000000
+      internalID: -9071324821727237170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_11"
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 193
         width: 352
         height: 224
       alignment: 0
@@ -384,18 +409,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 709cf271ae677ccb0800000000000000
-      internalID: -4843772126430246649
+      spriteID: b59bb5b3846ce7d70800000000000000
+      internalID: 9042883115342346587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_11"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_12"
       rect:
         serializedVersion: 2
-        x: 953
-        y: 156
+        x: 1158
+        y: 193
         width: 353
         height: 224
       alignment: 0
@@ -406,20 +431,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a32c2600422a5ac0800000000000000
-      internalID: -3865739671767342175
+      spriteID: 2789abd9f2b2f8e60800000000000000
+      internalID: 7966633749351405682
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_12"
+      name: "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_13"
       rect:
         serializedVersion: 2
-        x: 1338
-        y: 156
-        width: 353
-        height: 225
+        x: 1542
+        y: 193
+        width: 355
+        height: 224
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -428,8 +453,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f51f1c1696830fd80800000000000000
-      internalID: -8219007294688333473
+      spriteID: 8eeca360c59b400f0800000000000000
+      internalID: -1151591799807357208
       vertices: []
       indices: 
       edges: []
@@ -448,19 +473,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_0": 4311198710280397712
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_1": 8558874509554459951
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_10": -4843772126430246649
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_11": -3865739671767342175
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_12": -8219007294688333473
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_2": 4450317004694155144
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_3": -5320921702227992920
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_4": 5171060806601442786
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_5": 1016708438498219773
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_6": -457193369733660442
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_7": -1937021465810473730
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_8": -1839502520828130173
-      "mars-ufo3C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_9": 8152387798774686143
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_0": -4136258972378647308
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_1": 5980655216320907207
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_10": -9071324821727237170
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_11": 9042883115342346587
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_12": 7966633749351405682
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_13": -1151591799807357208
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_2": 205989477322205065
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_3": 497466478278132099
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_4": -4037567336487357947
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_5": 7821810719444669711
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_6": -9102537881507328596
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_7": 4737316568944010899
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_8": 8726866221675234386
+      "marsufo6C\u0327al\u0131s\u0327ma Yu\u0308zeyi 1_9": 6929594547908409700
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
