@@ -25,36 +25,30 @@ public class RaceProgressUI : MonoBehaviour
         pathMiddle = pathWidth / 2f;
         pathEnd = pathWidth;
 
-        // İkonları başlangıç pozisyonlarına ayarla
         if(player1Icon != null) player1Icon.anchoredPosition = new Vector2(pathStart, player1Icon.anchoredPosition.y);
         if(player2Icon != null) player2Icon.anchoredPosition = new Vector2(pathEnd, player2Icon.anchoredPosition.y);
     }
 
     void Update()
     {
-        // --- Oyuncu 1'i Yönet ---
         if (player1Car == null)
         {
-            // Arabayı sahnede Tag'i ile ara.
             GameObject p1Object = GameObject.FindWithTag("Player");
             if (p1Object != null)
             {
                 player1Car = p1Object.transform;
                 
-                // Başlangıç mesafesini SADECE BİR KERE (initialDistance < 0 iken) hesapla.
                 if (initialDistanceP1 < 0f && flag != null) 
                 {
                     initialDistanceP1 = Vector2.Distance(player1Car.position, flag.position);
                 }
             }
         }
-        else // Eğer araba zaten biliniyorsa...
+        else 
         {
-            // ...ikonunun pozisyonunu güncelle.
             UpdatePlayerIcon(player1Car, player1Icon, initialDistanceP1, pathStart, pathMiddle);
         }
 
-        // --- Oyuncu 2'yi Yönet (Aynı mantık) ---
         if (player2Car == null)
         {
             GameObject p2Object = GameObject.FindWithTag("Player2");
@@ -75,19 +69,15 @@ public class RaceProgressUI : MonoBehaviour
 
     private void UpdatePlayerIcon(Transform car, RectTransform icon, float initialDistance, float mapStart, float mapEnd)
     {
-        // initialDistance hala hesaplanmamışsa bir şey yapma.
         if (initialDistance < 0f) return; 
 
         float currentDistance = Vector2.Distance(car.position, flag.position);
         
-        // İlerleme oranını hesapla (0 = hiç ilerlemedi, 1 = bayrağa ulaştı)
         float progress = 1.0f - (currentDistance / initialDistance);
-        progress = Mathf.Clamp01(progress); // Değerin 0 ile 1 arasında kalmasını garanti et
+        progress = Mathf.Clamp01(progress); 
 
-        // UI ikonunun yeni X pozisyonunu hesapla
         float newX = Mathf.Lerp(mapStart, mapEnd, progress);
 
-        // İkonun pozisyonunu güncelle
         Vector2 pos = icon.anchoredPosition;
         pos.x = newX;
         icon.anchoredPosition = pos;

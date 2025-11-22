@@ -1904,7 +1904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d1bc6953816ff4a8c1ee107bc3171b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCollectableObject: 0
   panelImage: {fileID: 166784308}
 --- !u!114 &166784308
 MonoBehaviour:
@@ -6683,7 +6682,7 @@ MonoBehaviour:
   P1_PowerUpImage: {fileID: 0}
   P2_PowerUpImage: {fileID: 0}
   powerUps:
-  - {fileID: 7527794574724789036, guid: 0970baf1c5db7bf46b4f52db70256e68, type: 3}
+  - {fileID: 5723757594197812676, guid: c193ead18e8124b46a682921a3a664ca, type: 3}
   P1_Text: {fileID: 0}
   P2_Text: {fileID: 0}
 --- !u!4 &908446904
@@ -30807,7 +30806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95d1bc6953816ff4a8c1ee107bc3171b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCollectableObject: 0
   panelImage: {fileID: 1703436014}
 --- !u!114 &1703436014
 MonoBehaviour:

@@ -18,7 +18,7 @@ public class DriveMyCar_Player2 : MonoBehaviour
     [SerializeField] private Slider nitroSlider;
     [SerializeField] private float maxNitro = 100f;
     [SerializeField] private float nitroDrainRate = 30f;
-    public float nitroRechargeRate = 15f; // yunus degisti public yapti
+    public float nitroRechargeRate = 15f; 
     [SerializeField] private float nitroBoost = 300f;
     private float currentNitro;
 
@@ -170,16 +170,7 @@ public class DriveMyCar_Player2 : MonoBehaviour
             }
         }
     }
-
-    public float GetNitroRechargeRate()
-    {
-        return nitroRechargeRate;
-    }
-
-    public void SetNitroRechargeRate(float newRate)
-    {
-        nitroRechargeRate = newRate;
-    }
+    
     public void OnPowerUp()
     {
         PowerUpManager.Instance.UsePowerUp_P2();

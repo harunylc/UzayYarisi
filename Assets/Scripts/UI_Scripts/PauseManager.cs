@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement; // Üstte ekli değilse ekle
+using UnityEngine.SceneManagement; 
 
 public class PauseManager : MonoBehaviour
 {

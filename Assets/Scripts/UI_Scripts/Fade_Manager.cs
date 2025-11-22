@@ -87,10 +87,10 @@ public class Fade_Manager : MonoBehaviour
         }
     }
 
-    public IEnumerator FadeOutThen(System.Action afterFade)
-    {
-        yield return StartCoroutine(FadeOut());
-        if (afterFade != null)
-            afterFade.Invoke();
-    }
+    // public IEnumerator FadeOutThen(System.Action afterFade)
+    // {
+    //     yield return StartCoroutine(FadeOut());
+    //     if (afterFade != null)
+    //         afterFade.Invoke();
+    // }
 }

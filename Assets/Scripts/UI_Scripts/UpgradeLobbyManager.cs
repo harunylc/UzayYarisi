@@ -1,13 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // TextMeshPro kullanıldığı için gerekli
+using TMPro; 
 
 public class UpgradeLobbyManager : MonoBehaviour
 {
     //yunus ait <<<<<<<<<
     [Header("Kupa Ikonları")]
-    public Image[] player1_KupaIkonlari; // P1 için 3 kupayı buraya sürükleyeceğiz
-    public Image[] player2_KupaIkonlari; // P2 için 3 kupayı buraya sürükleyeceğiz
+    public Image[] player1_KupaIkonlari; 
+    public Image[] player2_KupaIkonlari; 
     //>>>>>>>>>>>>>>
    
     [Header("Manager References")]
@@ -92,27 +92,21 @@ public class UpgradeLobbyManager : MonoBehaviour
     //yunusa ait <<<<<<<<<<<<<<<<<
     private void UpdateKupaUI()
     {
-        // GameRoundManager'dan skorları al. Eğer GameRoundManager yoksa, skorları 0 kabul et.
         int p1Score = (GameRoundManager.Instance != null) ? GameRoundManager.Instance.p1Score : 0;
         int p2Score = (GameRoundManager.Instance != null) ? GameRoundManager.Instance.p2Score : 0;
 
-        // --- Player 1 Kupalarını Ayarla ---
-        // P1'in tüm kupalarını döngüyle kontrol et.
         for (int i = 0; i < player1_KupaIkonlari.Length; i++)
         {
-            // Eğer kupa index'i (i), oyuncunun skorundan küçükse, kupayı göster.
-            // Örnek: Skor 2 ise, index 0 ve 1 olan kupalar (ilk iki kupa) aktif olur.
             if (i < p1Score)
             {
                 player1_KupaIkonlari[i].gameObject.SetActive(true);
             }
-            else // Değilse, kupayı gizle.
+            else 
             {
                 player1_KupaIkonlari[i].gameObject.SetActive(false);
             }
         }
 
-        // --- Player 2 Kupalarını Ayarla (Aynı mantık) ---
         for (int i = 0; i < player2_KupaIkonlari.Length; i++)
         {
             if (i < p2Score)
