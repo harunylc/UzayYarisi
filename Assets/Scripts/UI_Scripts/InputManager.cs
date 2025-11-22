@@ -43,5 +43,20 @@ public class InputManager : MonoBehaviour
     {
         _playerInput.SwitchCurrentActionMap("Actions"); 
     }
+    public void DisableAllInput()
+    {
+        if (_playerInput != null)
+        {
+            _playerInput.DeactivateInput();
+        }
+    }
+    
+    public void EnableAllInput()
+    {
+        if (_playerInput != null)
+        {
+            _playerInput.ActivateInput();
+        }
+    }
 }
 
