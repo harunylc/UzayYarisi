@@ -32,6 +32,9 @@ public class DriveMyCar : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float rayLength = 45f;
     private bool hasScoredForFlip = false;
+    
+    [Header("Trigger Swap System")]
+    private bool swapTriggers = false;
 
     private float moveInput;
     private bool isGrounded;
@@ -54,19 +57,29 @@ public class DriveMyCar : MonoBehaviour
             nitroParticle.Stop();
         }
     }
+        
+    public void InvertTriggers(bool state)
+    {
+        swapTriggers = state;
+    }
 
     public void OnThrotle(InputAction.CallbackContext context)
     {
-        moveInput = context.ReadValue<float>();
-        
+        float input = context.ReadValue<float>();
+
         if (controlsInverted)
-            moveInput *= -1;
+            input = -input;
+        if (swapTriggers)
+            input *= -1f;
+
+        moveInput = input;
     }
-    
-    public void InvertControls(bool state)
+
+    public void SetReverseControls(bool state)
     {
         controlsInverted = state;
     }
+
 
     public void OnNitro(InputAction.CallbackContext context)
     {

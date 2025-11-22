@@ -3,25 +3,21 @@ using UnityEngine;
 
 public class ReverseControlsPU : MonoBehaviour
 {
-    public float duration = 5f;
+    public float duration = 3f;
 
     public IEnumerator ReverseControls(GameObject targetPlayer)
     {
-        // DriveMyCar veya DriveMyCar_Player2 scriptlerini bul
-        var drive1 = targetPlayer.GetComponent<DriveMyCar>();
-        var drive2 = targetPlayer.GetComponent<DriveMyCar_Player2>();
-
-        if (drive1 != null)
+        if (targetPlayer.TryGetComponent<DriveMyCar>(out var p1))
         {
-            drive1.InvertControls(true);
+            p1.SetReverseControls(true);
             yield return new WaitForSeconds(duration);
-            drive1.InvertControls(false);
+            p1.SetReverseControls(false);
         }
-        else if (drive2 != null)
+        else if (targetPlayer.TryGetComponent<DriveMyCar_Player2>(out var p2))
         {
-            drive2.InvertControls(true);
+            p2.SetReverseControls(true);
             yield return new WaitForSeconds(duration);
-            drive2.InvertControls(false);
+            p2.SetReverseControls(false);
         }
     }
 }
