@@ -14,12 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carIndex: 0
   "temelH\u0131zlanma": 10
-  temelFren: 5
+  temelFren: 10
   temelNitro: 7
-  temelYoltutus: 9
-  "temelAg\u0131rl\u0131k": 4
-  "h\u0131zlanmaIncreasePerLevel": 2
-  frenIncreasePerLevel: 1.5
-  nitroIncreasePerLevel: 0.5
-  yoltutusIncreasePerLevel: 0.5
-  "ag\u0131rl\u0131kIncreasePerLevel": 0.5
+  temelYoltutus: 2.5
+  "temelAg\u0131rl\u0131k": 500
