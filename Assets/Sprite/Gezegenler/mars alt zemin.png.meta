@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: af38d73b1d7910d4e9ae365fce56cae9
+guid: 7cb330c2799bfa24c9afb64cd48f3098
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4851948344177668797
-    second: "mars zemin \xFCst_0"
+      213: -2132711919979355538
+    second: mars alt zemin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "mars zemin \xFCst_0"
+      name: mars alt zemin_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 240
-        height: 115
+        width: 241
+        height: 241
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db23143ff45955340800000000000000
-      internalID: 4851948344177668797
+      spriteID: e62a361fec51762e0800000000000000
+      internalID: -2132711919979355538
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "mars zemin \xFCst_0": 4851948344177668797
+      mars alt zemin_0: -2132711919979355538
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
