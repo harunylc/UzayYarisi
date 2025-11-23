@@ -8,7 +8,7 @@ public class Map_Making_Fixed : MonoBehaviour
     [SerializeField] private SpriteShapeController spriteShapeController;
 
     [Header("Map Settings")]
-    [SerializeField, Range(3, 3000)] private int levelLength = 3000; 
+    [SerializeField, Range(3, 500)] private int levelLength = 500; 
     [SerializeField, Range(1f, 100f)] private float xMultiplier = 2f;
     [SerializeField, Range(1f, 100f)] private float yMultiplier = 10f;
     [SerializeField, Range(0f, 1f)] private float noiseScale = 0.1f; 
