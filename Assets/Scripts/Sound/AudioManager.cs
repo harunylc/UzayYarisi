@@ -2,168 +2,180 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using UnityEngine.Diagnostics;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance { get; private set; }
-    
-    [Header("AudioMixer")]
-    [SerializeField] private AudioMixer _audioMixer;
+public static AudioManager Instance { get; private set; }
 
-    
-    [Header("UI Sliders")]
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private Slider sfxSlider;
-    private void Awake()
-    {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-    
-    private void Start()
-    {
-        // Başlangıç değerlerini mixer’dan al ve slider’a uygula
-        _audioMixer.GetFloat("MusicVolume", out float musicVol);
-        musicSlider.value = Mathf.Pow(10, musicVol / 20); // dB -> 0-1
+[Header("AudioMixer")]  
+[SerializeField] private AudioMixer _audioMixer;  
 
-        _audioMixer.GetFloat("SFXVolume", out float sfxVol);
-        sfxSlider.value = Mathf.Pow(10, sfxVol / 20);
+[Header("UI Sliders")]  
+[SerializeField] private Slider musicSlider;  
+[SerializeField] private Slider sfxSlider;  
 
-        // Slider eventlerini ekle
-        musicSlider.onValueChanged.AddListener(SetMusicVolume);
-        sfxSlider.onValueChanged.AddListener(SetSFXVolume);
-    }
+public float MusicSliderValue { get; private set; } = 1f;  
+public float SFXSliderValue { get; private set; } = 1f;  
 
-    
-    [Range(0f, 2f)] [SerializeField] private float _masterVolume = 1f;
-    [SerializeField] private SoundsCollectionSO _soundsCollectionSo;
+[Range(0f, 2f)] [SerializeField] private float _masterVolume = 1f;  
+[SerializeField] private SoundsCollectionSO _soundsCollectionSo;  
 
-    [SerializeField] private AudioMixerGroup _sfxMixerGroup;
-    [SerializeField] private AudioMixerGroup _musicMixerGroup;
+[SerializeField] private AudioMixerGroup _sfxMixerGroup;  
+[SerializeField] private AudioMixerGroup _musicMixerGroup;  
 
-    private AudioSource _currentMusic;
+private AudioSource _currentMusic;  
 
+private readonly string[] gameScenes = { "Dünya", "Mars", "Merkür", "Neptün", "Satürn" };  
 
-    #region Sound Methods
+private void Awake()  
+{  
+    if (Instance != null && Instance != this)  
+    {  
+        Destroy(gameObject);  
+        return;  
+    }  
+    Instance = this;  
+    DontDestroyOnLoad(gameObject);  
+}  
 
-    private void PlayRandomSound(SoundSO[] sounds)
-    {
-        if (sounds != null && sounds.Length > 0)
-        {
-            SoundSO soundSo = sounds[Random.Range(0, sounds.Length)];
-            SoundToPlay(soundSo);
-        }
-    }
+private void OnEnable()  
+{  
+    SceneManager.sceneLoaded += OnSceneLoaded;  
+}  
 
-    public void SoundToPlay(SoundSO soundSO)
-    {
-        AudioClip clip = soundSO.Clip;
+private void OnDisable()  
+{  
+    SceneManager.sceneLoaded -= OnSceneLoaded;  
+}  
 
-        float pitch = soundSO.Pitch;
-        float volume = soundSO.Volume * _masterVolume;
-        bool loop = soundSO.Loop;
-        AudioMixerGroup audioMixerGroup;
+private void OnSceneLoaded(Scene scene, LoadSceneMode mode)  
+{  
+    foreach (string gameScene in gameScenes)  
+    {  
+        if (scene.name == gameScene)  
+        {  
+            PlayGameMusic();  
+            break;  
+        }  
+    }  
+}  
 
-        pitch = RandomizePitch(soundSO, pitch);
+private void Start()  
+{  
+    _audioMixer.GetFloat("MusicVolume", out float musicVol);  
+    musicSlider.value = Mathf.Pow(10, musicVol / 20);  
 
-        audioMixerGroup = DetermineAudioMixerGroup(soundSO);
+    _audioMixer.GetFloat("SFXVolume", out float sfxVol);  
+    sfxSlider.value = Mathf.Pow(10, sfxVol / 20);  
 
-        PlaySound(clip, pitch, volume, loop, audioMixerGroup);
-    }
+    musicSlider.onValueChanged.AddListener(SetMusicVolume);  
+    sfxSlider.onValueChanged.AddListener(SetSFXVolume);  
+}  
 
-    private AudioMixerGroup DetermineAudioMixerGroup(SoundSO soundSO)
-    {
-        AudioMixerGroup audioMixerGroup;
-        switch (soundSO.AudioType)
-        {
-            case SoundSO.AudioTypes.SFX:
-                audioMixerGroup = _sfxMixerGroup;
-                break;
-            case SoundSO.AudioTypes.Music:
-                audioMixerGroup = _musicMixerGroup;
-                break;
-            default:
-                audioMixerGroup = null;
-                break;
-        }
+#region Sound Methods  
 
-        return audioMixerGroup;
-    }
+private void PlayRandomSound(SoundSO[] sounds)  
+{  
+    if (sounds != null && sounds.Length > 0)  
+    {  
+        SoundSO soundSo = sounds[Random.Range(0, sounds.Length)];  
+        SoundToPlay(soundSo);  
+    }  
+}  
 
-    private static float RandomizePitch(SoundSO soundSO, float pitch)
-    {
-        if (soundSO.RandomizePitch)
-        {
-            float randomPitchModifier =
-                Random.Range(-soundSO.RandomPitchRangeModifier, soundSO.RandomPitchRangeModifier);
-            pitch = soundSO.Pitch + randomPitchModifier;
-        }
+public void SoundToPlay(SoundSO soundSO)  
+{  
+    AudioClip clip = soundSO.Clip;  
 
-        return pitch;
-    }
+    float pitch = soundSO.Pitch;  
+    float volume = soundSO.Volume * _masterVolume;  
+    bool loop = soundSO.Loop;  
+    AudioMixerGroup audioMixerGroup;  
 
-    private void PlaySound(AudioClip clip, float pitch, float volume, bool loop, AudioMixerGroup audioMixerGroup)
-    {
-        GameObject soundObject = new GameObject("Temp Audio Source");
-        AudioSource audioSource = soundObject.AddComponent<AudioSource>();
+    pitch = RandomizePitch(soundSO, pitch);  
+    audioMixerGroup = DetermineAudioMixerGroup(soundSO);  
+    PlaySound(clip, pitch, volume, loop, audioMixerGroup);  
+}  
 
-        audioSource.clip = clip;
-        audioSource.pitch = pitch;
-        audioSource.volume = volume;
-        audioSource.loop = loop;
-        audioSource.outputAudioMixerGroup = audioMixerGroup;
+private AudioMixerGroup DetermineAudioMixerGroup(SoundSO soundSO)  
+{  
+    switch (soundSO.AudioType)  
+    {  
+        case SoundSO.AudioTypes.SFX: return _sfxMixerGroup;  
+        case SoundSO.AudioTypes.Music: return _musicMixerGroup;  
+        default: return null;  
+    }  
+}  
 
-        audioSource.Play();
+private static float RandomizePitch(SoundSO soundSO, float pitch)  
+{  
+    if (soundSO.RandomizePitch)  
+    {  
+        float randomPitchModifier = Random.Range(-soundSO.RandomPitchRangeModifier, soundSO.RandomPitchRangeModifier);  
+        pitch = soundSO.Pitch + randomPitchModifier;  
+    }  
+    return pitch;  
+}  
 
-        if (!loop)
-        {
-            Destroy(soundObject, clip.length);
-        }
+private void PlaySound(AudioClip clip, float pitch, float volume, bool loop, AudioMixerGroup audioMixerGroup)  
+{  
+    GameObject soundObject = new GameObject("Temp Audio Source");  
+    AudioSource audioSource = soundObject.AddComponent<AudioSource>();  
 
-        DetermineMusic(audioMixerGroup, audioSource);
-    }
+    audioSource.clip = clip;  
+    audioSource.pitch = pitch;  
+    audioSource.volume = volume;  
+    audioSource.loop = loop;  
+    audioSource.outputAudioMixerGroup = audioMixerGroup;  
 
-    private void DetermineMusic(AudioMixerGroup audioMixerGroup, AudioSource audioSource)
-    {
-        if (audioSource.outputAudioMixerGroup == _musicMixerGroup)
-        {
-            if (_currentMusic != null) { }
-            _currentMusic = audioSource;
-        }
-    }
-    
-    public void SetMusicVolume(float value)
-    {
-        float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20;
-        _audioMixer.SetFloat("MusicVolume", dB);
-    }
+    audioSource.Play();  
 
-    public void SetSFXVolume(float value)
-    {
-        float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20;
-        _audioMixer.SetFloat("SFXVolume", dB);
-    }
+    if (!loop) Destroy(soundObject, clip.length);  
 
+    if (audioMixerGroup == _musicMixerGroup) _currentMusic = audioSource;  
+}  
 
+#endregion  
 
-    #endregion
+#region Volume Controls  
 
-    #region SFX
+public void SetMusicVolume(float value)  
+{  
+    MusicSliderValue = value;  
+    float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20;  
+    _audioMixer.SetFloat("MusicVolume", dB);  
+}  
 
-    public void PlayPickUp()
-    {
-        PlayRandomSound(_soundsCollectionSo.PickUp);
-    }
-    #endregion
+public void SetSFXVolume(float value)  
+{  
+    SFXSliderValue = value;  
+    float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20;  
+    _audioMixer.SetFloat("SFXVolume", dB);  
+}  
 
-    #region Music
+#endregion  
 
-    #endregion
+#region SFX  
+
+public void PlayPickUp()  
+{  
+    PlayRandomSound(_soundsCollectionSo.PickUp);  
+}  
+
+#endregion  
+
+#region Music  
+
+public void PlayGameMusic()  
+{  
+    if (_soundsCollectionSo.Music != null && _soundsCollectionSo.Music.Length > 0)  
+    {  
+        SoundToPlay(_soundsCollectionSo.Music[0]);  
+    }  
+}  
+
+#endregion  
+
 }
