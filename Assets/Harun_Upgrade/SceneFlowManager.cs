@@ -14,7 +14,7 @@ public class SceneFlowManager : MonoBehaviour
     public List<string> scenes = new List<string> { "Dünya", "Mars", "Merkür", "Satürn", "Neptün" };
     private List<string> remainingScenes = new List<string>();
 
-    private string upgradeScene = "UpgradeLobbyScene";
+    private string upgradeScene = "UpgradeLobby";
     private string mainMenuScene = "MainMenuScene";
 
     private void Awake()
