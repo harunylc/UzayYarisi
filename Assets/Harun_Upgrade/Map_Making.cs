@@ -2,32 +2,34 @@ using System;
 using UnityEngine;
 using UnityEngine.U2D;
 
-// OnValidate hatalarını önlemek için editör modunda çalışır ama kontrollü olmalı
 [ExecuteInEditMode]
-public class Map_Making_Corrected : MonoBehaviour
+public class Map_Making_Fixed : MonoBehaviour
 {
     [SerializeField] private SpriteShapeController spriteShapeController;
 
     [Header("Map Settings")]
-    [SerializeField, Range(3, 2000)] private int levelLength = 2000;
+    // 2000 çok yüksek bir sayı, çarpışma (collider) hesaplamasını yorar. 
+    // Test için 100-500 arası daha sağlıklıdır, ama 2000 de çalışır.
+    [SerializeField, Range(3, 2000)] private int levelLength = 500; 
     [SerializeField, Range(1f, 100f)] private float xMultiplier = 2f;
-    [SerializeField, Range(1f, 100f)] private float yMultiplier = 10f; // Yüksekliği artırdım ki fark görülsün
+    [SerializeField, Range(1f, 100f)] private float yMultiplier = 10f;
     [SerializeField, Range(0f, 1f)] private float noiseScale = 0.1f; 
-    [SerializeField, Range(0f, 1f)] private float curveSmoothness = 0.5f;
+    
+    // CRASH ÖNLEYİCİ: Bu değeri 0.5'in üzerine çıkarmak çok risklidir.
+    // 0.35 ideal yumuşaklıktır.
+    [SerializeField, Range(0f, 0.5f)] private float curveSmoothness = 0.35f;
+    
     [SerializeField] private float bottomDepth = 20f; 
 
-    // Bu değişken gereksiz yenilemeleri (loop) engeller
     private bool _needsUpdate = false;
 
     private void OnValidate()
     {
-        // Değerler değiştiğinde haritayı yeniden oluşturmak için işaretle
         _needsUpdate = true;
     }
 
     private void Update()
     {
-        // Sadece editör modunda ve bir değişiklik olduğunda çalıştır
         if (_needsUpdate && !Application.isPlaying)
         {
             GenerateMap();
@@ -35,6 +37,8 @@ public class Map_Making_Corrected : MonoBehaviour
         }
     }
 
+    // Editörde scriptin yanındaki üç noktaya basarak da çalıştırabilirsin
+    [ContextMenu("Force Generate Map")] 
     private void GenerateMap()
     {
         if (spriteShapeController == null) return;
@@ -42,54 +46,69 @@ public class Map_Making_Corrected : MonoBehaviour
         Spline spline = spriteShapeController.spline;
         spline.Clear();
 
-        // --- 1. Üst Yüzey Noktalarını Oluştur ---
+        // Noktaları tutmak için geçici dizi (Eğim hesabı için lazım)
+        Vector3[] points = new Vector3[levelLength];
+
+        // --- 1. Önce Sadece Nokta Pozisyonlarını Hesapla ---
         for (int i = 0; i < levelLength; i++)
         {
             float xPos = i * xMultiplier;
             float yPos = Mathf.PerlinNoise(0, i * noiseScale) * yMultiplier;
-            
-            // Z eksenini her zaman 0 tutmalıyız
-            Vector3 currentPos = new Vector3(xPos, yPos, 0);
-            
-            spline.InsertPointAt(i, currentPos);
-            
-            // Başlangıç ve Bitiş noktaları HARİÇ aradaki noktalara eğim ver
-            if (i > 0 && i < levelLength - 1)
-            {
-                spline.SetTangentMode(i, ShapeTangentMode.Continuous);
-                
-                // Teğetlerin uzunluğunu noktalar arası mesafeye göre sınırlamazsak "loop" oluşur
-                Vector3 tangent = Vector3.right * xMultiplier * curveSmoothness;
-                spline.SetRightTangent(i, tangent);
-                spline.SetLeftTangent(i, -tangent); // Left tangent negatiftir
-            }
-            else
-            {
-                // İLK ve SON üst nokta "Broken" (Keskin) olmalı ki aşağıya düz insin
-                spline.SetTangentMode(i, ShapeTangentMode.Broken); // ÖNEMLİ DÜZELTME
-                spline.SetRightTangent(i, Vector3.zero);
-                spline.SetLeftTangent(i, Vector3.zero);
-            }
+            points[i] = new Vector3(xPos, yPos, 0);
+            spline.InsertPointAt(i, points[i]);
         }
         
-        // --- 2. Alt Köşeleri Oluştur ve Şekli Kapat ---
+        // --- 2. Şimdi Teğetleri (Eğimi) Hesapla ---
+        // Loop içinde (i-1) ve (i+1) noktalarına bakarak daha doğal bir eğim vereceğiz.
+        for (int i = 0; i < levelLength; i++)
+        {
+            // İlk ve Son nokta "Broken" (Keskin) kalmalı
+            if (i == 0 || i == levelLength - 1)
+            {
+                spline.SetTangentMode(i, ShapeTangentMode.Broken);
+                spline.SetRightTangent(i, Vector3.zero);
+                spline.SetLeftTangent(i, Vector3.zero);
+                continue;
+            }
+
+            spline.SetTangentMode(i, ShapeTangentMode.Continuous);
+
+            // Önceki ve sonraki nokta arasındaki vektörü al
+            Vector3 prevPoint = points[i - 1];
+            Vector3 nextPoint = points[i + 1];
+            
+            // Bu vektör, noktanın eğim yönünü belirler
+            Vector3 slopeDir = (nextPoint - prevPoint).normalized;
+
+            // Teğet uzunluğunu iki nokta arasındaki mesafeye göre ölçekle
+            // Çarpışmayı (Crash) önleyen sihirli formül burası:
+            float distance = (nextPoint - prevPoint).magnitude;
+            Vector3 tangent = slopeDir * distance * curveSmoothness * 0.5f;
+
+            spline.SetRightTangent(i, tangent);
+            spline.SetLeftTangent(i, -tangent);
+        }
         
+        // --- 3. Alt Köşeleri Oluştur ve Şekli Kapat ---
         float endX = (levelLength - 1) * xMultiplier;
 
         // Sağ Alt Köşe
-        int rightBottomIndex = levelLength;
-        Vector3 rightBottomPos = new Vector3(endX, -bottomDepth, 0); 
-        spline.InsertPointAt(rightBottomIndex, rightBottomPos);
-        spline.SetTangentMode(rightBottomIndex, ShapeTangentMode.Broken); // Keskin Köşe
+        spline.InsertPointAt(levelLength, new Vector3(endX, -bottomDepth, 0));
+        spline.SetTangentMode(levelLength, ShapeTangentMode.Broken); 
 
         // Sol Alt Köşe
-        int leftBottomIndex = levelLength + 1;
-        Vector3 leftBottomPos = new Vector3(0, -bottomDepth, 0);
-        spline.InsertPointAt(leftBottomIndex, leftBottomPos);
-        spline.SetTangentMode(leftBottomIndex, ShapeTangentMode.Broken); // Keskin Köşe
+        spline.InsertPointAt(levelLength + 1, new Vector3(0, -bottomDepth, 0));
+        spline.SetTangentMode(levelLength + 1, ShapeTangentMode.Broken); 
 
-        // --- 3. Sprite Shape'i Yenile ---
-        // Bu komut bazen takılı kalan geometrileri temizler
-        spriteShapeController.BakeMesh();
+        // --- 4. Sprite Shape'i Yenile ---
+        try 
+        {
+            spriteShapeController.BakeMesh();
+        }
+        catch (System.Exception)
+        {
+            // Eğer Burst yine de hata verirse editörü kilitlemesin diye yakalıyoruz
+            Debug.LogError("Mesh oluşturulurken hata oldu. curveSmoothness değerini düşürün.");
+        }
     }
 }
