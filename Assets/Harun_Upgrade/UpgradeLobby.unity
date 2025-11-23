@@ -521,6 +521,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1075578548}
     m_Modifications:
+    - target: {fileID: 1485059410847592612, guid: bf4be8bb54e7e5c4dbc0539e2a36b907, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4041741350990666256, guid: bf4be8bb54e7e5c4dbc0539e2a36b907, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2496,7 +2500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2834521318454576411, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_text
-      value: "Yol Tutu\u015F"
+      value: Takla
       objectReference: {fileID: 0}
     - target: {fileID: 2932453018392571646, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3261,6 +3265,30 @@ PrefabInstance:
     - target: {fileID: 7400942331519328676, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418935576530052672, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: bolumPuanlari.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418935576530052672, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[0]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418935576530052672, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418935576530052672, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[2]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418935576530052672, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[3]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418935576530052672, guid: d21258bd044793544ae792f5bed94717, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[4]'
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7437346571879174451, guid: d21258bd044793544ae792f5bed94717, type: 3}
       propertyPath: m_text
@@ -5205,7 +5233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2011553025175990063, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_text
-      value: "Yol Tutu\u015F"
+      value: Takla
       objectReference: {fileID: 0}
     - target: {fileID: 2351858194616801466, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: ozellikAdi
@@ -5822,6 +5850,30 @@ PrefabInstance:
     - target: {fileID: 5579748011247789210, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606459126108646394, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: bolumPuanlari.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606459126108646394, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[0]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606459126108646394, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606459126108646394, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[2]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606459126108646394, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[3]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5606459126108646394, guid: 4418909e6f8c262438917a16a968c574, type: 3}
+      propertyPath: 'bolumPuanlari.Array.data[4]'
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6374730788278791641, guid: 4418909e6f8c262438917a16a968c574, type: 3}
       propertyPath: m_AnchorMax.y

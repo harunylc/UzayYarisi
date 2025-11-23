@@ -1,190 +1,140 @@
-// PointManager.cs
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
+using System.Collections.Generic; // List kullanmak için gerekli
 
 public class PointManager : MonoBehaviour
 {
-    // PUAN VERİLERİ
-    public int toplamPuanHavuzu = 50; 
+    [Header("Bölüm Puan Ayarları")]
+    // Inspector'da buraya eleman ekle. 
+    // Element 0: İlk giriş puanı (Örn: 5)
+    // Element 1: İlk yarışı bitirince gelen puan (Örn: 3)
+    // Element 2: İkinci yarışı bitirince gelen puan...
+    public List<int> bolumPuanlari = new List<int>(); 
+
+    [Header("Sistem Verileri")]
+    public int toplamPuanHavuzu = 0; 
     public int kullanilanPuan = 0; 
-    public const int BolmePuanDegerı = 1;
     
-    // YÜKSELTME KATEGORİLERİ
+    [Header("Bağlantılar")]
+    // 0:Hız, 1:Fren, 2:Nitro, 3:Yol Tutuş, 4:Ağırlık
     public UpgradeManager[] gelistirmeler = new UpgradeManager[5]; 
     public TMP_Text kalanPuanText; 
     
     void Start()
     {
-        GuncellePuanUI();
+        // Start'ta çağırmıyoruz çünkü veriyi dışarıdan (SceneFlowManager vb.) yükleyeceğiz.
+        // Ama test için açık kalabilir.
+        // GuncellePuanUI();
     }
-    
     
     public void YükseltmeVerileriniYukle(CarStatsData data)
     {
-    //     Header("Temel Özellikler")]
-    // public float temelHızlanma;
-    // public float temelFren;
-    // public float temelNitro;
-    // public float temelYoltutus;
-    // public float temelAgırlık;
-    //
-    // [Header("Yükseltme Etkisi")]
-    // public float hızlanmaIncreasePerLevel = 2f;
-    // public float frenIncreasePerLevel = 1.5f;
-    // public float nitroIncreasePerLevel = 0.5f;
-    // public float yoltutusIncreasePerLevel = 0.5f;
-    // public float agırlıkIncreasePerLevel = 0.5f;
-    
+        // --- 1. YENİ PUAN SİSTEMİ (BÖLÜM HARÇLIĞI) ---
+        
+        int suankiBolum = PlayerSelectionData.currentMapIndex;
+
+        // Listede bu bölüm için ayarlanmış bir puan var mı?
+        if (suankiBolum < bolumPuanlari.Count)
+        {
+            toplamPuanHavuzu = bolumPuanlari[suankiBolum];
+        }
+        else
+        {
+            // Eğer liste bittiyse (Örn: 10. bölüme geldin ama listede 5 tane var)
+            // Varsayılan olarak son elemanı veya sabit bir puanı verelim.
+            toplamPuanHavuzu = 3; 
+            Debug.LogWarning("Bu bölüm için puan ayarlanmamış, varsayılan 3 verildi.");
+        }
+
+        // Kullanılan puanı sıfırlıyoruz çünkü yeni bir harcama hakkı verdik.
         kullanilanPuan = 0; 
 
+
+        // --- 2. ARABA VERİLERİNİ YÜKLEME (KALDIĞI YERDEN DEVAM) ---
         
-        if (gelistirmeler.Length > 0 && gelistirmeler[0] != null)
-        {
-            gelistirmeler[0].OzellikDegerleriniAyarla(data.temelHızlanma, data.hızlanmaIncreasePerLevel);
-        }
+        // Eğer ilk bölümdeysek (0), araba fabrika ayarlarında (ScriptableObject) gelir.
+        // Değilse, önceki yarıştan kazandığımız güçlerle (PlayerSelectionData) gelir.
+        bool isNewGame = (suankiBolum == 0);
         
-        if (gelistirmeler.Length > 1 && gelistirmeler[1] != null)
-        {
-            gelistirmeler[1].OzellikDegerleriniAyarla(data.temelFren, data.frenIncreasePerLevel);
-        }
-        
-        if (gelistirmeler.Length > 2 && gelistirmeler[2] != null)
-        {
-            gelistirmeler[2].OzellikDegerleriniAyarla(data.temelNitro, data.nitroIncreasePerLevel);
-        }
-        
-        if (gelistirmeler.Length > 3 && gelistirmeler[3] != null)
-        {
-            gelistirmeler[3].OzellikDegerleriniAyarla(data.temelYoltutus, data.yoltutusIncreasePerLevel);
-        }
-        
-        if (gelistirmeler.Length > 4 && gelistirmeler[4] != null)
-        {
-            gelistirmeler[4].OzellikDegerleriniAyarla(data.temelAgırlık, data.agırlıkIncreasePerLevel);
-        }
-        
+        float currentHiz = isNewGame ? data.temelHızlanma : PlayerSelectionData.player1FinalHız;
+        float currentFren = isNewGame ? data.temelFren : PlayerSelectionData.player1FinalFren;
+        float currentNitro = isNewGame ? data.temelNitro : PlayerSelectionData.player1FinalNitro;
+        float currentYol = isNewGame ? data.temelYoltutus : PlayerSelectionData.player1FinalYoltutus;
+        float currentAgir = isNewGame ? data.temelAgırlık : PlayerSelectionData.player1FinalAgırlık;
+
+        // Güvenlik: Veri hatası varsa fabrika ayarlarına dön
+        if (!isNewGame && currentHiz < 1f) currentHiz = data.temelHızlanma;
+
+        // Verileri Bar Yöneticilerine Gönder (CarStatsData'daki limitleri kullanarak)
+        if(CheckIndex(0)) gelistirmeler[0].OzellikDegerleriniAyarla(currentHiz, CarStatsData.MinHiz, CarStatsData.MaxHiz);
+        if(CheckIndex(1)) gelistirmeler[1].OzellikDegerleriniAyarla(currentFren, CarStatsData.MinFren, CarStatsData.MaxFren);
+        if(CheckIndex(2)) gelistirmeler[2].OzellikDegerleriniAyarla(currentNitro, CarStatsData.MinNitro, CarStatsData.MaxNitro);
+        if(CheckIndex(3)) gelistirmeler[3].OzellikDegerleriniAyarla(currentYol, CarStatsData.MinYol, CarStatsData.MaxYol);
+        if(CheckIndex(4)) gelistirmeler[4].OzellikDegerleriniAyarla(currentAgir, CarStatsData.MinAgir, CarStatsData.MaxAgir);
         
         GuncellePuanUI();
     }
     
-    public void KaydedilecekDegerleriAyarla(bool isP1)
-    {
-        // HIZ (Index 0)
-        if (gelistirmeler.Length > 0 && gelistirmeler[0] != null)
-        {
-            float finalSpeed = gelistirmeler[0].GuncelDegeriGetir();
-            if (isP1)
-            {
-                PlayerSelectionData.player1FinalHız = finalSpeed;
-            }
-            else
-            {
-                PlayerSelectionData.player2FinalHız = finalSpeed;
-            }
-        }
-        
-        if (gelistirmeler.Length > 1 && gelistirmeler[1] != null)
-        {
-            float finalBrake = gelistirmeler[1].GuncelDegeriGetir();
-            if (isP1)
-            {
-                PlayerSelectionData.player1FinalFren = finalBrake;
-            }
-            else
-            {
-                PlayerSelectionData.player2FinalFren = finalBrake;
-            }
-        }
-        
-        if (gelistirmeler.Length > 2 && gelistirmeler[2] != null)
-        {
-            float finalNitro = gelistirmeler[2].GuncelDegeriGetir();
-            if (isP1)
-            {
-                PlayerSelectionData.player1FinalNitro = finalNitro;
-            }
-            else
-            {
-                PlayerSelectionData.player2FinalNitro = finalNitro;
-            }
-        }
-        
-        if (gelistirmeler.Length > 3 && gelistirmeler[3] != null)
-        {
-            float finalYoltutus = gelistirmeler[3].GuncelDegeriGetir();
-            if (isP1)
-            {
-                PlayerSelectionData.player1FinalYoltutus = finalYoltutus;
-            }
-            else
-            {
-                PlayerSelectionData.player2FinalYoltutus = finalYoltutus;
-            }
-        }
-        
-        if (gelistirmeler.Length > 4 && gelistirmeler[4] != null)
-        {
-            float finalAgırlık = gelistirmeler[4].GuncelDegeriGetir();
-            if (isP1)
-            {
-                PlayerSelectionData.player1FinalAgırlık = finalAgırlık;
-            }
-            else
-            {
-                PlayerSelectionData.player2FinalAgırlık = finalAgırlık;
-            }
-        }
-        
-        
-    }
-    
-    
-    
-    private void GuncellePuanUI()
-    {
-        int kalanPuan = toplamPuanHavuzu - kullanilanPuan;
-        if (kalanPuanText != null)
-        {
-            kalanPuanText.text = "Kalan Puan: " + kalanPuan.ToString();
-        }
-        else
-        {
-            Debug.Log("Kalan Puan: " + kalanPuan);
-        }
-    }
+    // --- DİĞER FONKSİYONLAR (AYNEN KALIYOR) ---
     
     public void PuanDagitmayaCalis(int gelistirmeIndexi)
     {
-        int kalanPuan = toplamPuanHavuzu - kullanilanPuan;
+        // Puan hesabında bir değişiklik yok, mantık aynı.
+        int kalan = toplamPuanHavuzu - kullanilanPuan;
         
-        if (kalanPuan >= BolmePuanDegerı && gelistirmeIndexi >= 0 && gelistirmeIndexi < gelistirmeler.Length)
+        if (kalan >= 1 && CheckIndex(gelistirmeIndexi))
         {
             int harcanan = gelistirmeler[gelistirmeIndexi].SeviyeArttirma();
-            
             if (harcanan > 0)
             {
                 kullanilanPuan += harcanan; 
                 GuncellePuanUI();
             }
         }
-        else if (kalanPuan < BolmePuanDegerı)
-        {
-            Debug.Log("Yeterli puan yok!");
-        }
     }
     
     public void PuanGeriAlmayaCalis(int gelistirmeIndexi)
     {
-        if (gelistirmeIndexi >= 0 && gelistirmeIndexi < gelistirmeler.Length)
+        // DİKKAT: Burada oyuncu önceki bölümde kazandığı özellikleri de geri alıp
+        // bu bölümdeki puana katabilir. Eğer bunu istemiyorsan (Lock sistemi) ekstra kod gerekir.
+        // Şimdilik serbest bırakıyoruz.
+        if (CheckIndex(gelistirmeIndexi))
         {
-            int geriAlinan = gelistirmeler[gelistirmeIndexi].SeviyeAzaltma(); 
-            
-            if (geriAlinan < 0) 
+            int iade = gelistirmeler[gelistirmeIndexi].SeviyeAzaltma(); 
+            if (iade < 0) 
             {
-                kullanilanPuan += geriAlinan;
+                kullanilanPuan += iade;
                 GuncellePuanUI();
             }
         }
+    }
+    
+    public void KaydedilecekDegerleriAyarla(bool isP1)
+    {
+        // Son oluşan değerleri (Eski Güç + Yeni Eklenenler) kaydet
+        if(CheckIndex(0)) SetVal(isP1, 0, ref PlayerSelectionData.player1FinalHız, ref PlayerSelectionData.player2FinalHız);
+        if(CheckIndex(1)) SetVal(isP1, 1, ref PlayerSelectionData.player1FinalFren, ref PlayerSelectionData.player2FinalFren);
+        if(CheckIndex(2)) SetVal(isP1, 2, ref PlayerSelectionData.player1FinalNitro, ref PlayerSelectionData.player2FinalNitro);
+        if(CheckIndex(3)) SetVal(isP1, 3, ref PlayerSelectionData.player1FinalYoltutus, ref PlayerSelectionData.player2FinalYoltutus);
+        if(CheckIndex(4)) SetVal(isP1, 4, ref PlayerSelectionData.player1FinalAgırlık, ref PlayerSelectionData.player2FinalAgırlık);
+        
+        // Not: Artık "Kalan Puanı" kaydetmiyoruz çünkü her tur yeni puan veriyoruz.
+    }
+
+    private void SetVal(bool isP1, int idx, ref float p1, ref float p2)
+    {
+        float val = gelistirmeler[idx].GuncelDegeriGetir();
+        if (isP1) p1 = val; else p2 = val;
+    }
+
+    private void GuncellePuanUI()
+    {
+        int kalan = toplamPuanHavuzu - kullanilanPuan;
+        if (kalanPuanText != null) kalanPuanText.text = "Kalan Puan: " + kalan;
+    }
+    
+    private bool CheckIndex(int i)
+    {
+        return (gelistirmeler != null && i >= 0 && i < gelistirmeler.Length && gelistirmeler[i] != null);
     }
 }

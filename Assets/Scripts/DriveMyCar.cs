@@ -9,7 +9,7 @@ public class DriveMyCar : MonoBehaviour
     [SerializeField] private Rigidbody2D tireBackRb;
     [SerializeField] private Rigidbody2D tireFrontRb;
     [SerializeField] private Rigidbody2D carRb;
-    [SerializeField] private float carRotationSpeed = 100f;
+    public float carRotationSpeed = 100f;
     [SerializeField] public float speed = 150f;
     [SerializeField] private float currentSpeed;
 
@@ -19,7 +19,7 @@ public class DriveMyCar : MonoBehaviour
     [SerializeField] private float maxNitro = 100f;
     [SerializeField] private float nitroDrainRate = 30f;
     public float nitroRechargeRate = 15f; //yunus degisti bu satiri public yapti
-    [SerializeField] private float nitroBoost = 300f;
+    public float nitroBoost = 300f;
     private float currentNitro;
 
     [Header("Nitro Particle")]

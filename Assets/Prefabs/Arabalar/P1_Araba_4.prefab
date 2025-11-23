@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8710855484972036283}
   - component: {fileID: 2314322088475728179}
   - component: {fileID: 6856415967177621107}
-  - component: {fileID: 7025727560783354878}
+  - component: {fileID: 146111780652766929}
   m_Layer: 6
   m_Name: P1_Araba_4
   m_TagString: Player
@@ -332,7 +332,7 @@ MonoBehaviour:
     m_ActionName: 'Move/P2_PowerUp[/XInputControllerWindows/leftShoulder,/DualShock4GamepadHID/leftShoulder,/XInputControllerWindows1/leftShoulder,/DualShock4GamepadHID1/leftShoulder]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7025727560783354878}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CarPowerUpHandler, Assembly-CSharp
         m_MethodName: OnUsePowerUp
         m_Mode: 0
@@ -410,7 +410,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 9.082325, y: 4.399708}
   m_EdgeRadius: 0
---- !u!114 &7025727560783354878
+--- !u!114 &146111780652766929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -419,9 +419,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1757032386294281471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a9b67a334f47042abdfcaf044d31b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a6a8974bd5eead48b65d3539c5bd209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayer1: 1
+  carRb: {fileID: 4785012203611556096}
 --- !u!1 &4966445874996842621
 GameObject:
   m_ObjectHideFlags: 0

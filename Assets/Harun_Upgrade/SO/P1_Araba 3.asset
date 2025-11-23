@@ -13,13 +13,8 @@ MonoBehaviour:
   m_Name: P1_Araba 3
   m_EditorClassIdentifier: 
   carIndex: 2
-  "temelH\u0131zlanma": 0
-  temelFren: 0
-  temelNitro: 0
-  temelYoltutus: 0
-  "temelAg\u0131rl\u0131k": 0
-  "h\u0131zlanmaIncreasePerLevel": 2
-  frenIncreasePerLevel: 1.5
-  nitroIncreasePerLevel: 0.5
-  yoltutusIncreasePerLevel: 0.5
-  "ag\u0131rl\u0131kIncreasePerLevel": 0.5
+  "temelH\u0131zlanma": 8.4
+  temelFren: 12.9
+  temelNitro: 37.8
+  temelYoltutus: 0.81
+  "temelAg\u0131rl\u0131k": 1192

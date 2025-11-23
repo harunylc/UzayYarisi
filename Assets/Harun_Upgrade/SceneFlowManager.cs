@@ -6,12 +6,9 @@ public class SceneFlowManager : MonoBehaviour
 {
     public static SceneFlowManager Instance;
 
-    
     public List<SceneData> AllSceneDataList;
     
-   
     public string NextLevelSceneName { get; private set; } 
-   
     public string CurrentSceneName { get; private set; }
     
     public List<string> scenes = new List<string> { "Dünya", "Mars", "Merkür", "Satürn", "Neptün" };
@@ -60,7 +57,6 @@ public class SceneFlowManager : MonoBehaviour
         PrepareForUpgradeScene();
     }
 
-  
     public void LevelCompleted()
     {
         if (remainingScenes.Count > 0)
@@ -78,6 +74,12 @@ public class SceneFlowManager : MonoBehaviour
         if (remainingScenes.Count > 0)
         {
             NextLevelSceneName = remainingScenes[0]; 
+            
+            int playedCount = scenes.Count - remainingScenes.Count;
+            PlayerSelectionData.currentMapIndex = playedCount;
+            
+            Debug.Log("Sahne Hazırlanıyor. Tur Indexi: " + playedCount);
+            // --------------------------
         }
         else
         {
@@ -91,6 +93,8 @@ public class SceneFlowManager : MonoBehaviour
     {
         remainingScenes = new List<string>(scenes);
         ShuffleList(remainingScenes);
+        
+        PlayerSelectionData.currentMapIndex = 0;
     }
 
     public void LoadUpgradeScene()
@@ -108,7 +112,7 @@ public class SceneFlowManager : MonoBehaviour
         if (remainingScenes.Count > 0)
         {
             string nextLevel = remainingScenes[0];
-            remainingScenes.RemoveAt(0); // Leveli listeden çıkar
+            remainingScenes.RemoveAt(0); 
 
             LoadSceneWithFade(nextLevel);
         }

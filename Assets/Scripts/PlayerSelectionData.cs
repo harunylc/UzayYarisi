@@ -1,6 +1,8 @@
 // PlayerSelectionData.cs
 public static class PlayerSelectionData
 {
+    public static int currentMapIndex = 0;
+    
     // Seçilen araba görsellerinin indeksi (Zaten kullaniyordunuz)
     public static int player1CarIndex = 0;
     public static int player2CarIndex = 0;
