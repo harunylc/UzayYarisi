@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="39766e00-7e4a-4971-90d1-8a829fd985b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UzayYarisi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/CarPowerUpHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/CarPowerUpHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/RandomPowerUpGiver.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PU_Scripts/RandomPowerUpGiver.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Dünya.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Mars.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Merkür.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GezegenSahneleri/Merkür.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/GameRoundManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_Scripts/GameRoundManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +125,7 @@
       <workItem from="1763754487404" duration="8985000" />
       <workItem from="1763843470854" duration="3000" />
       <workItem from="1763843477188" duration="7000" />
+      <workItem from="1763974964723" duration="1001000" />
     </task>
     <servers />
   </component>
