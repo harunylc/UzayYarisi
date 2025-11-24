@@ -105,9 +105,7 @@ public class GameRoundManager : MonoBehaviour
             roundFinished = false;
             gameOver = false;
             
-            //<<<<<<<<
             CarSelectionLocker.UnlockSelections();
-            //>>>>>>>>
         }
     }
 }
