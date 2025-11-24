@@ -519,8 +519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469,
-    type: 3}
+  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1005,8 +1004,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469,
-    type: 3}
+  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1203,8 +1201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5712889281540891245, guid: b2ef1396e034ae84ba73d30f67e737bd,
-    type: 3}
+  m_Sprite: {fileID: -5712889281540891245, guid: b2ef1396e034ae84ba73d30f67e737bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1442,8 +1439,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5712889281540891245, guid: b2ef1396e034ae84ba73d30f67e737bd,
-    type: 3}
+  m_Sprite: {fileID: -5712889281540891245, guid: b2ef1396e034ae84ba73d30f67e737bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1852,8 +1848,7 @@ MonoBehaviour:
   settingsPanel: {fileID: 418751540}
   howToPlayPanel: {fileID: 1429740086}
   creatersPanel: {fileID: 1935219349}
-  cancelAction: {fileID: -8888174083905515789, guid: c8cc634fa1f3a0141a54b510ed5d6b2d,
-    type: 3}
+  cancelAction: {fileID: -8888174083905515789, guid: c8cc634fa1f3a0141a54b510ed5d6b2d, type: 3}
   firstMainMenuButton: {fileID: 288252183}
   firstSettingsButton: {fileID: 820606208}
   firstHowToPlayButton: {fileID: 1111427192}
@@ -1988,8 +1983,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469,
-    type: 3}
+  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2744,8 +2738,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1319224796088813746, guid: c00940f65513b9d4587e70dc2f525753,
-    type: 3}
+  m_Sprite: {fileID: 1319224796088813746, guid: c00940f65513b9d4587e70dc2f525753, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3474,8 +3467,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -9207038084213507459, guid: 22322bede6d10c34281c7ae3013a13e0,
-    type: 3}
+  m_Sprite: {fileID: -9207038084213507459, guid: 22322bede6d10c34281c7ae3013a13e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3559,25 +3551,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AllSceneDataList:
   - SceneName: "D\xFCnya"
-    SceneImage: {fileID: 454614866027014211, guid: f880cfc6aa9f96f4ea3e668d49eafecd,
-      type: 3}
-    SceneTitleText: "S\u0131radaki gezegen D\xDCNYA"
+    SceneImage: {fileID: -9111797289184757960, guid: e2f41a42c94552447965e353e37c6b94, type: 3}
+    SceneTitleText: "D\xFCnya: Y\xFCzeydeki yer\xE7ekimi 10 birim S\xFCrt\xFCnme
+      10 birimdir."
   - SceneName: Mars
-    SceneImage: {fileID: -6504906825103280502, guid: 82ed4016247b01d48a9e3e7c3b8e6be5,
-      type: 3}
-    SceneTitleText: "S\u0131radaki gezegen MARS"
+    SceneImage: {fileID: 4606306687636866995, guid: 71aab582f1354f145a60392c3ed410b9, type: 3}
+    SceneTitleText: "Mars: Y\xFCzeydeki yer\xE7ekimi 4 birim S\xFCrt\xFCnme 6 birimdir."
   - SceneName: "Merk\xFCr"
-    SceneImage: {fileID: -8674555962246303903, guid: d9f26add55a190e44b9d2cd0fb5aa969,
-      type: 3}
-    SceneTitleText: "S\u0131radaki gezegen MERK\xDCR"
+    SceneImage: {fileID: 5357407988136867814, guid: c134c2c31bd49be4ebdcbfa04e3d4084, type: 3}
+    SceneTitleText: "Merk\xFCr: Y\xFCzeydeki yer\xE7ekimi 7 birim S\xFCrt\xFCnme
+      7 birimdir"
   - SceneName: "Nept\xFCn"
-    SceneImage: {fileID: -1584517703161132729, guid: 6823ed16c29c6c746bff4f6998a382d8,
-      type: 3}
-    SceneTitleText: "S\u0131radaki gezegen NEPT\xDCN"
+    SceneImage: {fileID: -6069734528421435513, guid: 60c73f8b29b0bd646b72b3dc612e419f, type: 3}
+    SceneTitleText: "Nept\xFCn: Y\xFCzeydeki yer\xE7ekimi 13 birim S\xFCrt\xFCnme
+      6 birimdir."
   - SceneName: "Sat\xFCrn"
-    SceneImage: {fileID: -676705488414979569, guid: 541e020ace70d924db35a25b7b30c288,
-      type: 3}
-    SceneTitleText: "S\u0131radaki gezegen SAT\xDCRN"
+    SceneImage: {fileID: -3280518744667018907, guid: 2fb1e245ac71b1f48921db30d80f2bce, type: 3}
+    SceneTitleText: "Sat\xFCrn: Y\xFCzeydeki yer\xE7ekimi 15 birim S\xFCrt\xFCnme
+      3 birimdir."
   scenes:
   - "D\xFCnya"
   - Mars
@@ -4110,8 +4101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469,
-    type: 3}
+  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4286,8 +4276,8 @@ MonoBehaviour:
     doldu\u011Funda bo\u015Fluk tu\u015Funa basarak h\u0131z\n patlamas\u0131 yapabilirsin.\r\n-Her
     turda s\xFCre azal\u0131r, bu y\xFCzden rotan\u0131 dikkatli se\xE7!\r\n-\xC7arp\u0131\u015Fmalarda
     h\u0131z kaybedersin ve s\xFCre d\xFC\u015Fer.\r\n-Yar\u0131\u015F\u0131 tamamlad\u0131\u011F\u0131nda
-    puana g\xF6re seviye atlayabilir\n ya da yeniden deneyebilirsin.\r\n-Unutma, h\u0131z
-    kadar zamanlama da engeller i\xE7in \xE7ok\n \xF6nemli."
+    puana g\xF6re seviye atlayabilir\n ya da yeniden deneyebilirsin.\r\n-Unutma,
+    h\u0131z kadar zamanlama da engeller i\xE7in \xE7ok\n \xF6nemli."
 --- !u!222 &1205320608
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4411,8 +4401,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469,
-    type: 3}
+  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4911,8 +4900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: c8cc634fa1f3a0141a54b510ed5d6b2d,
-    type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: c8cc634fa1f3a0141a54b510ed5d6b2d, type: 3}
   m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -4946,15 +4934,11 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: c8cc634fa1f3a0141a54b510ed5d6b2d,
-    type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: c8cc634fa1f3a0141a54b510ed5d6b2d, type: 3}
   m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: 7385526495267181430, guid: c8cc634fa1f3a0141a54b510ed5d6b2d,
-    type: 3}
-  m_SubmitAction: {fileID: 4346298989584378514, guid: c8cc634fa1f3a0141a54b510ed5d6b2d,
-    type: 3}
-  m_CancelAction: {fileID: -8888174083905515789, guid: c8cc634fa1f3a0141a54b510ed5d6b2d,
-    type: 3}
+  m_MoveAction: {fileID: 7385526495267181430, guid: c8cc634fa1f3a0141a54b510ed5d6b2d, type: 3}
+  m_SubmitAction: {fileID: 4346298989584378514, guid: c8cc634fa1f3a0141a54b510ed5d6b2d, type: 3}
+  m_CancelAction: {fileID: -8888174083905515789, guid: c8cc634fa1f3a0141a54b510ed5d6b2d, type: 3}
   m_LeftClickAction: {fileID: 0}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
@@ -5038,8 +5022,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5712889281540891245, guid: b2ef1396e034ae84ba73d30f67e737bd,
-    type: 3}
+  m_Sprite: {fileID: -5712889281540891245, guid: b2ef1396e034ae84ba73d30f67e737bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5829,8 +5812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469,
-    type: 3}
+  m_Sprite: {fileID: 4379617718315093240, guid: b9870b657806515488d586e81cef9469, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6064,8 +6046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5712889281540891245, guid: b2ef1396e034ae84ba73d30f67e737bd,
-    type: 3}
+  m_Sprite: {fileID: -5712889281540891245, guid: b2ef1396e034ae84ba73d30f67e737bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6492,12 +6473,9 @@ MonoBehaviour:
   musicSlider: {fileID: 2086557461}
   sfxSlider: {fileID: 820606210}
   _masterVolume: 1
-  _soundsCollectionSo: {fileID: 11400000, guid: 74b4b363a673c2f478e4852fa56de7a0,
-    type: 2}
-  _sfxMixerGroup: {fileID: 5448966016370154739, guid: 172c82bb7be8ea746a4490727f5940d9,
-    type: 2}
-  _musicMixerGroup: {fileID: 3733268936262437222, guid: 172c82bb7be8ea746a4490727f5940d9,
-    type: 2}
+  _soundsCollectionSo: {fileID: 11400000, guid: 74b4b363a673c2f478e4852fa56de7a0, type: 2}
+  _sfxMixerGroup: {fileID: 5448966016370154739, guid: 172c82bb7be8ea746a4490727f5940d9, type: 2}
+  _musicMixerGroup: {fileID: 3733268936262437222, guid: 172c82bb7be8ea746a4490727f5940d9, type: 2}
 --- !u!1 &2450938667623035400
 GameObject:
   m_ObjectHideFlags: 0
