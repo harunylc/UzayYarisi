@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ekran karartma power up_0: -2350148588087983437
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
