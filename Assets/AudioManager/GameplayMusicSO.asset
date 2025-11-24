@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GameplayMusicSO
   m_EditorClassIdentifier: 
   AudioType: 1
-  Clip: {fileID: 8300000, guid: 0920aeabcf85f9e4ab15117409df0baf, type: 3}
+  Clip: {fileID: 8300000, guid: a307d9f59422ca8448b894e34739f615, type: 3}
   Loop: 1
   RandomizePitch: 0
   RandomPitchRangeModifier: 0.1

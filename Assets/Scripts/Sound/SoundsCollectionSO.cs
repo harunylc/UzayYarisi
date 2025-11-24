@@ -11,5 +11,17 @@ public class SoundsCollectionSO : ScriptableObject
     
     [Header("Music")] 
     public SoundSO[] Music;
+    
+    [Header("Car SFX")]
+    public SoundSO[] CarSounds;
+    
+    [Header("Win SFX")]
+    public SoundSO WinSound;
+    
+    [Header("Explosion SFX")]
+    public SoundSO Explosion;
+    
+    [Header("Alerts")]
+    public SoundSO[] WarningSounds;
 
 }

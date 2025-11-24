@@ -38,6 +38,8 @@ public class QTE2_Zor : MonoBehaviour
     private bool QTETrigger = false;
     private bool QTECompleted = false;
     private bool dikenSpawned = false;
+    private bool isAlerting = false;
+
 
     void Start()
     {
@@ -67,6 +69,18 @@ public class QTE2_Zor : MonoBehaviour
             if (attentionImage != null)
             {
                 attentionImage.SetActive(playerInArea);
+            }
+            if (playerInArea && !isAlerting) 
+            {
+                if (AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.PlayWarningSound(2); 
+                }
+                isAlerting = true;
+            }
+            else if (!playerInArea && isAlerting) 
+            {
+                isAlerting = false;
             }
         }
 
@@ -227,6 +241,11 @@ public class QTE2_Zor : MonoBehaviour
         if (player == null)
         {
             return;
+        }
+        
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayExplosion();
         }
 
         if (dikenPrefab != null)

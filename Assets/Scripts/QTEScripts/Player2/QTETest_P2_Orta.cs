@@ -36,6 +36,8 @@ public class QTETest_P2_Orta : MonoBehaviour
     private bool QTETrigger = false;
     private bool QTECompleted = false;
     private bool meteorSpawned = false;
+    private bool isAlerting = false;
+
 
     private void Start()
     {
@@ -64,7 +66,22 @@ public class QTETest_P2_Orta : MonoBehaviour
         {
             bool playerInArea = Physics2D.OverlapBox(raycastPosition, raycastSize, 0f, playerLayer);
             if (attentionImage != null)
+            {
                 attentionImage.SetActive(playerInArea);
+            }
+            
+            if (playerInArea && !isAlerting) 
+            {
+                if (AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.PlayWarningSound(1); 
+                }
+                isAlerting = true;
+            }
+            else if (!playerInArea && isAlerting) 
+            {
+                isAlerting = false;
+            }
         }
 
         if (countdownActive && countdownSlider != null)
@@ -223,6 +240,11 @@ public class MeteorFollow2_Orta : MonoBehaviour
             {
                 Destroy(gameObject);
                 return;
+            }
+            
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayExplosion();
             }
 
             // Patlama

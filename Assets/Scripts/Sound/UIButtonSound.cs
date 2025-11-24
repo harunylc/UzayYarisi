@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuButtonSounds : MonoBehaviour
+public class UIButtonSound : MonoBehaviour
 {
     [SerializeField] private SoundSO buttonClickSO;
 

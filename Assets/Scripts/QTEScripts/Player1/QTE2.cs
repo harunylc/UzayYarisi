@@ -38,6 +38,7 @@ public class QTE2 : MonoBehaviour
     private bool QTETrigger = false;
     private bool QTECompleted = false;
     private bool dikenSpawned = false;
+    private bool isAlerting = false;
 
     void Start()
     {
@@ -67,6 +68,19 @@ public class QTE2 : MonoBehaviour
             if (attentionImage != null)
             {
                 attentionImage.SetActive(playerInArea);
+            }
+            
+            if (playerInArea && !isAlerting) 
+            {
+                if (AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.PlayWarningSound(0); 
+                }
+                isAlerting = true;
+            }
+            else if (!playerInArea && isAlerting) 
+            {
+                isAlerting = false;
             }
         }
 
@@ -229,6 +243,11 @@ public class QTE2 : MonoBehaviour
             return;
         }
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayExplosion();
+        }
+        
         if (dikenPrefab != null)
         {
             Vector3 spawnPos = player.position;
