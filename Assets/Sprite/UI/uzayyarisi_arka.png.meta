@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0bfea986e4aa55f4dace3f0d19f98c35
+guid: 3ad84d62e49c3b748bae3ff042868090
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4259703420514016688
-    second: kalkan power up_0
+      213: 4508956074541974244
+    second: uzayyarisi_arka_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,30 +109,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: kalkan power up_0
+      name: uzayyarisi_arka_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 228
-        height: 228
+        x: 27
+        y: 54
+        width: 1482
+        height: 916
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0bd114c21b18d1b30800000000000000
-      internalID: 4259703420514016688
+      spriteID: 4e20aea09a7039e30800000000000000
+      internalID: 4508956074541974244
       vertices: []
       indices: 
       edges: []
@@ -160,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      kalkan power up_0: 4259703420514016688
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
