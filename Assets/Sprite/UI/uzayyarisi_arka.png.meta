@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c84a444c0e4a21240b8570642f179be4
+guid: 3ad84d62e49c3b748bae3ff042868090
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6686200242898993523
-    second: "d\xFCnya bayra\u011F\u0131_0"
+      213: 4508956074541974244
+    second: uzayyarisi_arka_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "d\xFCnya bayra\u011F\u0131_0"
+      name: uzayyarisi_arka_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 23
-        width: 953
-        height: 1547
+        x: 27
+        y: 54
+        width: 1482
+        height: 916
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d8effd8dd48d533a0800000000000000
-      internalID: -6686200242898993523
+      spriteID: 4e20aea09a7039e30800000000000000
+      internalID: 4508956074541974244
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "d\xFCnya bayra\u011F\u0131_0": -6686200242898993523
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
