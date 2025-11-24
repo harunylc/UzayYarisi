@@ -22,3 +22,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 815cb56213f9b464b92e0688d1566eb2, type: 2}
   WinSound: {fileID: 11400000, guid: bd2b3176316ff304f9ef10684e6e66b1, type: 2}
   Explosion: {fileID: 11400000, guid: bff2a4ac167a3e448ab9947b078bf899, type: 2}
+  WarningSounds:
+  - {fileID: 11400000, guid: 18e70e39a37d50f43bddaa3f9c8202e5, type: 2}
+  - {fileID: 11400000, guid: 727e85d9d1ce3e64b9cd4a1d8b5e15fc, type: 2}
+  - {fileID: 11400000, guid: 2cd7e117fc69104419459c0680775422, type: 2}
