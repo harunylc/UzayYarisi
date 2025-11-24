@@ -9,6 +9,11 @@ public class FlagManager : MonoBehaviour
             return;
         }
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlayWinSound();
+        }
+
         if (other.CompareTag("Player"))
         {
             GameRoundManager.Instance.PlayerReachedFlag(1);

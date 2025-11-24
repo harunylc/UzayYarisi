@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72e7f41190bd57949845f013a8bcb3fd, type: 3}
-  m_Name: GameplayMusicSO
+  m_Name: WinSoundSO
   m_EditorClassIdentifier: 
-  AudioType: 1
-  Clip: {fileID: 8300000, guid: a307d9f59422ca8448b894e34739f615, type: 3}
-  Loop: 1
+  AudioType: 0
+  Clip: {fileID: 8300000, guid: 53b6dbd6279ebcc42bce33a9f3a7eba7, type: 3}
+  Loop: 0
   RandomizePitch: 0
   RandomPitchRangeModifier: 0.1
   Volume: 1

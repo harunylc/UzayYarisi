@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CarBrakeSO
   m_EditorClassIdentifier: 
   AudioType: 0
-  Clip: {fileID: 0}
-  Loop: 0
+  Clip: {fileID: 8300000, guid: 53b6dbd6279ebcc42bce33a9f3a7eba7, type: 3}
+  Loop: 1
   RandomizePitch: 0
   RandomPitchRangeModifier: 0.1
   Volume: 1

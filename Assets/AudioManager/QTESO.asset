@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: QTESO
   m_EditorClassIdentifier: 
   AudioType: 0
-  Clip: {fileID: 0}
-  Loop: 0
+  Clip: {fileID: 8300000, guid: e59ecebff414e5d428e849bb4bee8644, type: 3}
+  Loop: 1
   RandomizePitch: 0
   RandomPitchRangeModifier: 0.1
   Volume: 1

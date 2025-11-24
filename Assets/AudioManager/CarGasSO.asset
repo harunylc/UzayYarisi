@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: CarGasSO
   m_EditorClassIdentifier: 
   AudioType: 0
-  Clip: {fileID: 0}
-  Loop: 0
+  Clip: {fileID: 8300000, guid: c6d1daa0666a6cc48987e2886666c73a, type: 3}
+  Loop: 1
   RandomizePitch: 0
   RandomPitchRangeModifier: 0.1
   Volume: 1

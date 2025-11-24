@@ -35,6 +35,10 @@ public class DriveMyCar : MonoBehaviour
     
     [Header("Trigger Swap System")]
     private bool swapTriggers = false;
+    
+    [Header("Car Sound")]
+    private AudioSource currentGasSound;
+    private AudioSource currentBrakeSound;
 
     private float moveInput;
     private bool isGrounded;
@@ -73,6 +77,46 @@ public class DriveMyCar : MonoBehaviour
             input *= -1f;
 
         moveInput = input;
+        
+        if (AudioManager.Instance == null) return;
+
+        // Ölü bölge (Deadzone): Input 0.1'den küçükse ses çalmasın (titreşimi önler)
+        float deadZone = 0.1f;
+
+        // DURUM A: İLERİ GİDİYORUZ (Gaz Sesi Çalmalı)
+        if (input > deadZone) 
+        {
+            // Önce Fren sesi varsa sustur (Aniden ileri basarsa karışmasın)
+            StopBrakeSound();
+
+            // Gaz sesi çalmıyorsa başlat
+            if (currentGasSound == null)
+            {
+                // Array[0] -> GAZ
+                SoundSO gasSO = AudioManager.Instance.SoundsCollection.CarSounds[0];
+                currentGasSound = AudioManager.Instance.SoundToPlay(gasSO);
+            }
+        }
+        // DURUM B: GERİ GİDİYORUZ (Fren/Geri Sesi Çalmalı)
+        else if (input < -deadZone)
+        {
+            // Önce Gaz sesi varsa sustur
+            StopGasSound();
+
+            // Fren sesi çalmıyorsa başlat
+            if (currentBrakeSound == null)
+            {
+                // Array[1] -> FREN
+                SoundSO brakeSO = AudioManager.Instance.SoundsCollection.CarSounds[1];
+                currentBrakeSound = AudioManager.Instance.SoundToPlay(brakeSO);
+            }
+        }
+        // DURUM C: DURUYORUZ (Hiçbir şeye basılmıyor)
+        else
+        {
+            StopGasSound();
+            StopBrakeSound();
+        }
     }
 
     public void SetReverseControls(bool state)
@@ -170,5 +214,25 @@ public class DriveMyCar : MonoBehaviour
     public void OnPowerUp()
     {
         PowerUpManager.Instance.UsePowerUp_P1();
+    }
+    
+    private void StopGasSound()
+    {
+        if (currentGasSound != null)
+        {
+            currentGasSound.Stop();
+            Destroy(currentGasSound.gameObject);
+            currentGasSound = null;
+        }
+    }
+
+    private void StopBrakeSound()
+    {
+        if (currentBrakeSound != null)
+        {
+            currentBrakeSound.Stop();
+            Destroy(currentBrakeSound.gameObject);
+            currentBrakeSound = null;
+        }
     }
 }
