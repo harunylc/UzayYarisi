@@ -86,11 +86,4 @@ public class Fade_Manager : MonoBehaviour
             canvasGroup.blocksRaycasts = false;
         }
     }
-
-    // public IEnumerator FadeOutThen(System.Action afterFade)
-    // {
-    //     yield return StartCoroutine(FadeOut());
-    //     if (afterFade != null)
-    //         afterFade.Invoke();
-    // }
 }

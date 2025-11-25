@@ -115,7 +115,6 @@ public class SceneFlowManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Tüm Leveller Tamamlandı! Ana Menü'ye dönülüyor.");
             LoadMainMenu();
         }
     }
