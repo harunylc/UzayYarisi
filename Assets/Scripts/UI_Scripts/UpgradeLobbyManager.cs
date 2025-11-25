@@ -71,15 +71,6 @@ public class UpgradeLobbyManager : MonoBehaviour
             if (leftButtonP2) leftButtonP2.onClick.AddListener(() => ChangeCar(-1, 2));
             if (rightButtonP2) rightButtonP2.onClick.AddListener(() => ChangeCar(1, 2));
         }
-        //>>>>>>>>>>>>>>>>>>>
-        
-        /*
-        if (leftButtonP1) leftButtonP1.onClick.AddListener(() => ChangeCar(-1, 1));
-        if (rightButtonP1) rightButtonP1.onClick.AddListener(() => ChangeCar(1, 1));
-        
-        if (leftButtonP2) leftButtonP2.onClick.AddListener(() => ChangeCar(-1, 2));
-        if (rightButtonP2) rightButtonP2.onClick.AddListener(() => ChangeCar(1, 2));
-       */
         
         if (readyButtonP1) readyButtonP1.onClick.AddListener(() => PlayerReady(1));
         if (readyButtonP2) readyButtonP2.onClick.AddListener(() => PlayerReady(2));
@@ -230,7 +221,8 @@ public class UpgradeLobbyManager : MonoBehaviour
         
         if (player == 1)
         {
-            if (carSpritesP1 == null || carSpritesP1.Length == 0 || carImageP1 == null) { SetP1Interactable(false); return; }
+            if (carSpritesP1 == null || carSpritesP1.Length == 0 || carImageP1 == null) 
+            { SetP1Interactable(false); return; }
             carIndexP1 = Wrap(carIndexP1, carSpritesP1.Length);
             UpdateCarImage(1);
             SetP1Interactable(true);
@@ -238,7 +230,8 @@ public class UpgradeLobbyManager : MonoBehaviour
         }
         else
         {
-            if (carSpritesP2 == null || carSpritesP2.Length == 0 || carImageP2 == null) { SetP2Interactable(false); return; }
+            if (carSpritesP2 == null || carSpritesP2.Length == 0 || carImageP2 == null) 
+            { SetP2Interactable(false); return; }
             carIndexP2 = Wrap(carIndexP2, carSpritesP2.Length);
             UpdateCarImage(2);
             SetP2Interactable(true);
@@ -248,15 +241,11 @@ public class UpgradeLobbyManager : MonoBehaviour
     
     private void SetP1Interactable(bool on)
     {
-        // if (leftButtonP1) leftButtonP1.interactable = on;
-        // if (rightButtonP1) rightButtonP1.interactable = on;
         if (readyButtonP1) readyButtonP1.interactable = on;
     }
 
     private void SetP2Interactable(bool on)
     {
-        // if (leftButtonP2) leftButtonP2.interactable = on;
-        // if (rightButtonP2) rightButtonP2.interactable = on;
         if (readyButtonP2) readyButtonP2.interactable = on;
     }
 

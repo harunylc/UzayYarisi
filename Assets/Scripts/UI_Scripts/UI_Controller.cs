@@ -98,7 +98,6 @@ public class UI_Controller : MonoBehaviour
         }
         else
         {
-            // Acil durum için eski kod
             Fade_Manager.Instance.StartFadeOutAndLoadScene(sceneName);
         }
     }
@@ -106,6 +105,5 @@ public class UI_Controller : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit");
     }
 }

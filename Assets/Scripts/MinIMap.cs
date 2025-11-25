@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MiniMap : MonoBehaviour
+public class MinIMap : MonoBehaviour
 {
     [Header("Oyun Dünyası Referansları")]
     public Transform flag;
