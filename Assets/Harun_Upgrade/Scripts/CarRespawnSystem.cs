@@ -2,82 +2,46 @@ using UnityEngine;
 
 public class CarRespawnSystem : MonoBehaviour
 {
-    
-    public bool enableUpsideDownCheck = true; 
-    public float timeToWaitBeforeRespawn = 3f; 
-    public float upsideDownThreshold = 0.3f;
-    public bool enableFallCheck = true;
-    public float minHeightY = -10f;
-
     private Vector3 lastCheckpointPos;
     private Quaternion lastCheckpointRot;
-    private Rigidbody rb;
-    private float timer = 0f;
+    
+    // DEĞİŞİKLİK: 3D Rigidbody yerine 2D kullanıyoruz
+    private Rigidbody2D rb;
 
     void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
-    {
-        if (enableUpsideDownCheck)
-        {
-            HandleUpsideDownLogic();
-        }
-
-        if (enableFallCheck)
-        {
-            if (transform.position.y < minHeightY)
-            {
-                Respawn(); 
-            }
-        }
-    }
-    
-    private void HandleUpsideDownLogic()
-    {
-        if (transform.up.y < upsideDownThreshold)
-        {
-            if (rb.linearVelocity.magnitude < 1f)
-            {
-                timer += Time.deltaTime;
-            }
-        }
-        else
-        {
-            timer = 0f;
-        }
-        if (timer >= timeToWaitBeforeRespawn)
-        {
-            Respawn();
-        }
-    }
-
+    // İlk doğduğu anı kaydetmek için (SpawnManager'dan çağrılır)
     public void SetInitialSpawnPoint(Transform spawnPoint)
     {
         lastCheckpointPos = spawnPoint.position;
         lastCheckpointRot = spawnPoint.rotation;
     }
 
+    // Checkpoint'ten geçince çağrılacak metod (İleride kullanırsın)
     public void UpdateCheckpoint(Transform newCheckpoint)
     {
         lastCheckpointPos = newCheckpoint.position;
         lastCheckpointRot = newCheckpoint.rotation;
-        timer = 0f; 
+        Debug.Log("Checkpoint Kaydedildi!");
     }
+
+    // Aracı en son noktaya ışınla
     public void Respawn()
     {
-        Debug.Log($"{gameObject.name} Respawn oluyor...");
-
+        // 1. Konumu sıfırla
         transform.position = lastCheckpointPos;
         transform.rotation = lastCheckpointRot;
 
+        // 2. Fiziği (Hızı) sıfırla ki doğunca fırlamasın
         if (rb != null)
         {
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            rb.linearVelocity = Vector2.zero;       // 2D Hız sıfırlama
+            rb.angularVelocity = 0f;          // 2D Dönüş hızı sıfırlama
         }
-        timer = 0f; 
+        
+        Debug.Log("Araç Respawn Oldu!");
     }
 }
