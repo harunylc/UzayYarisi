@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using System.Collections.Generic; // List kullanmak için gerekli
+using System.Collections.Generic; 
 
 public class PointManager : MonoBehaviour
 {
