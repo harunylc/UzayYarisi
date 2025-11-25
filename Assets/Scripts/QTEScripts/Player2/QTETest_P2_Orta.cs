@@ -238,7 +238,8 @@ public class MeteorFollow2_Orta : MonoBehaviour
             // Shield varsa meteor yok olur ama oyuncuya zarar gelmez
             if(root.GetComponentInChildren<Shield>() != null)
             {
-                Destroy(gameObject);
+                carSystem.Respawn();
+                
                 return;
             }
             
@@ -253,9 +254,15 @@ public class MeteorFollow2_Orta : MonoBehaviour
                 GameObject explosion = Instantiate(explosionPrefab, root.position, Quaternion.identity);
                 Destroy(explosion, 3f);
             }
-
-            Destroy(root.gameObject); // oyuncu yok olur
+// oyuncu yok olur
             Destroy(gameObject);      // meteor yok olur
+        }CarRespawnSystem caRSystem = other.GetComponentInParent<CarRespawnSystem>();
+        carSystem = caRSystem;
+        if (carSystem != null)
+        {
+            Debug.Log("Araba tuzağa düştü!");
+            carSystem.Respawn();
         }
     }
+    public CarRespawnSystem carSystem;
 }

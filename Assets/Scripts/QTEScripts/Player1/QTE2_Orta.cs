@@ -121,8 +121,11 @@ public class QTE2_Orta : MonoBehaviour
         }
     }
 
+    public CarRespawnSystem carSystem;
     void OnTriggerEnter2D(Collider2D other)
     {
+        CarRespawnSystem caRSystem = other.GetComponentInParent<CarRespawnSystem>();
+        carSystem=caRSystem;
         if (QTETrigger || QTECompleted)
         {
             return;
@@ -217,6 +220,11 @@ public class QTE2_Orta : MonoBehaviour
         {
             SpawnDikenAndExplode();
         }
+        if (carSystem != null)
+        {
+            Debug.Log("Araba tuzağa düştü!");
+            carSystem.Respawn();
+        }
     }
 
     bool PlayerHasShield(Transform playerTransform)
@@ -262,7 +270,8 @@ public class QTE2_Orta : MonoBehaviour
             Destroy(explosion, 3f);
         }
 
-        Destroy(player.gameObject);
+        carSystem.Respawn();
+
     }
 
     void OnDrawGizmosSelected()

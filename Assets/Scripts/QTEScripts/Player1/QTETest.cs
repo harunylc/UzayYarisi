@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 
 public class QTETest : MonoBehaviour
 {
+   
+    
     [Header("QTE Buttons")]
     public GameObject AImage, BImage, XImage, YImage;
 
@@ -119,7 +121,6 @@ public class QTETest : MonoBehaviour
                 NextKeys();
         }
     }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (QTECompleted) return;
@@ -230,7 +231,7 @@ public class MeteorFollow : MonoBehaviour
         Vector3 dir = (target.position - transform.position).normalized;
         transform.position += dir * speed * Time.deltaTime;
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         Transform root = other.transform.root;
@@ -238,7 +239,8 @@ public class MeteorFollow : MonoBehaviour
         {
             if(root.GetComponentInChildren<Shield>() != null)
             {
-                Destroy(gameObject);
+                carSystem.Respawn();
+
                 return;
             }
             
@@ -253,8 +255,18 @@ public class MeteorFollow : MonoBehaviour
                 Destroy(explosion, 3f);
             }
 
-            Destroy(root.gameObject);
+            carSystem.Respawn();
+
             Destroy(gameObject);
         }
+        CarRespawnSystem caRSystem = other.GetComponentInParent<CarRespawnSystem>();
+        carSystem = caRSystem;
+        
+        if (carSystem != null)
+        {
+            Debug.Log("Araba tuzağa düştü!");
+            carSystem.Respawn();
+        }
     }
+    public CarRespawnSystem carSystem;
 }

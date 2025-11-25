@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class QTE2_P2_Orta : MonoBehaviour
 {
+    public CarRespawnSystem carSystem;
     [Header("QTE Buttons")]
     public GameObject AImage, BImage, XImage, YImage;
 
@@ -152,6 +153,8 @@ public class QTE2_P2_Orta : MonoBehaviour
 
             dikenSpawned = false;
         }
+        CarRespawnSystem caRSystem = other.GetComponentInParent<CarRespawnSystem>();
+        carSystem = caRSystem;
     }
 
     void ShowCurrentKeys()
@@ -218,6 +221,11 @@ public class QTE2_P2_Orta : MonoBehaviour
         {
             SpawnDikenAndExplode();
         }
+
+        if (carSystem != null)
+        {
+            carSystem.Respawn();
+        }
     }
 
 // Oyuncuda shield olup olmadığını kontrol eden yardımcı fonksiyon
@@ -264,8 +272,9 @@ public class QTE2_P2_Orta : MonoBehaviour
             GameObject explosion = Instantiate(explosionPrefab, player.position, Quaternion.identity);
             Destroy(explosion, 3f);
         }
+                carSystem.Respawn();
+        
 
-        Destroy(player.gameObject);
     }
 
     void OnDrawGizmosSelected()

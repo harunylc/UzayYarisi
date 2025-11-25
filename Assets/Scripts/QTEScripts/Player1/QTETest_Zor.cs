@@ -196,6 +196,7 @@ public class QTETest_Zor : MonoBehaviour
             return;
 
         SpawnMeteor();
+        
     }
 
     private void SpawnMeteor()
@@ -235,12 +236,12 @@ public class MeteorFollow_Zor : MonoBehaviour
         Transform root = other.transform.root;
         if (root.CompareTag("Player"))
         {
-            if(root.GetComponentInChildren<Shield>() != null)
+            if (root.GetComponentInChildren<Shield>() != null)
             {
-                Destroy(gameObject);
+                carSystem.Respawn();
                 return;
             }
-            
+
             if (AudioManager.Instance != null)
             {
                 AudioManager.Instance.PlayExplosion();
@@ -252,8 +253,16 @@ public class MeteorFollow_Zor : MonoBehaviour
                 Destroy(explosion, 3f);
             }
 
-            Destroy(root.gameObject);
+            carSystem.Respawn();
             Destroy(gameObject);
+            CarRespawnSystem caRSystem = other.GetComponentInParent<CarRespawnSystem>();
+            carSystem = caRSystem;
+            if (carSystem != null)
+            {
+                Debug.Log("Araba tuzağa düştü!");
+                carSystem.Respawn();
+            }
         }
     }
+    public CarRespawnSystem carSystem;
 }

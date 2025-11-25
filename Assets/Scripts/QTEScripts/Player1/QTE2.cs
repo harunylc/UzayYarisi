@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class QTE2 : MonoBehaviour
 {
+
     [Header("QTE Buttons")]
     public GameObject AImage, BImage, XImage, YImage;
 
@@ -42,6 +43,7 @@ public class QTE2 : MonoBehaviour
 
     void Start()
     {
+        
         events = new GameObject[] { AImage, BImage, XImage, YImage };
         HideAllKeys();
 
@@ -120,8 +122,11 @@ public class QTE2 : MonoBehaviour
         }
     }
 
+    public CarRespawnSystem carSystem;
     void OnTriggerEnter2D(Collider2D other)
     {
+        CarRespawnSystem caRSystem = other.GetComponentInParent<CarRespawnSystem>();
+        carSystem = caRSystem;
         if (QTETrigger || QTECompleted)
         {
             return;
@@ -216,6 +221,11 @@ public class QTE2 : MonoBehaviour
         {
             SpawnDikenAndExplode();
         }
+        if (carSystem != null)
+        {
+            Debug.Log("Araba tuzağa düştü!");
+            carSystem.Respawn();
+        }
     }
 
     bool PlayerHasShield(Transform playerTransform)
@@ -261,7 +271,8 @@ public class QTE2 : MonoBehaviour
             Destroy(explosion, 3f);
         }
 
-        Destroy(player.gameObject);
+        carSystem.Respawn();
+
     }
 
     void OnDrawGizmosSelected()

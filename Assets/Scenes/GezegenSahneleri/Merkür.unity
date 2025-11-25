@@ -12222,6 +12222,7 @@ MonoBehaviour:
   dikenPrefab: {fileID: 3875109204548350410, guid: a55ca9ece3988f548a653732d725cb1c, type: 3}
   zeminY: -30.3
   explosionPrefab: {fileID: 1151762418944616568, guid: 11e327687d514483887f8a7d5e11ae6b, type: 3}
+  carSystem: {fileID: 0}
 --- !u!1 &496011881
 GameObject:
   m_ObjectHideFlags: 0
@@ -24305,6 +24306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94bb69b62ce62c40bc07263c2ca774d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carSystem: {fileID: 0}
   AImage: {fileID: 2058111293}
   BImage: {fileID: 66258956}
   XImage: {fileID: 1345390957}
@@ -30380,6 +30382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f3401f0d1646a74ab64007ba86714d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  carSystem: {fileID: 0}
   AImage: {fileID: 2058111293}
   BImage: {fileID: 66258956}
   XImage: {fileID: 1345390957}
@@ -32901,7 +32904,7 @@ Transform:
   m_GameObject: {fileID: 1524574136}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1943.7, y: -26.8, z: 0}
+  m_LocalPosition: {x: 1351.4, y: -26.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44739,6 +44742,7 @@ MonoBehaviour:
   dikenPrefab: {fileID: 3875109204548350410, guid: a55ca9ece3988f548a653732d725cb1c, type: 3}
   zeminY: -30.3
   explosionPrefab: {fileID: 1151762418944616568, guid: 11e327687d514483887f8a7d5e11ae6b, type: 3}
+  carSystem: {fileID: 0}
 --- !u!1 &1994148346
 GameObject:
   m_ObjectHideFlags: 0

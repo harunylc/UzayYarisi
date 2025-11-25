@@ -198,6 +198,7 @@ public class QTETest_Orta : MonoBehaviour
             return;
 
         SpawnMeteor();
+        
     }
 
     private void SpawnMeteor()
@@ -239,7 +240,7 @@ public class MeteorFollow_Orta : MonoBehaviour
         {
             if(root.GetComponentInChildren<Shield>() != null)
             {
-                Destroy(gameObject);
+                carSystem.Respawn();
                 return;
             }
             
@@ -254,8 +255,17 @@ public class MeteorFollow_Orta : MonoBehaviour
                 Destroy(explosion, 3f);
             }
 
-            Destroy(root.gameObject);
+            carSystem.Respawn();
+
             Destroy(gameObject);
         }
+        CarRespawnSystem caRSystem = other.GetComponentInParent<CarRespawnSystem>();
+        carSystem=caRSystem;
+        if (carSystem != null)
+        {
+            Debug.Log("Araba tuzağa düştü!");
+            carSystem.Respawn();
+        }
     }
+    public CarRespawnSystem carSystem;
 }
