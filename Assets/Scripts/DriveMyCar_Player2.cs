@@ -2,12 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class DriveMyCar_Player2 : MonoBehaviour
 {
+    [Header("Tekerlek Ayarları")]
+    // Element 0: ARKA, Element 1: ÖN
+    public List<Rigidbody2D> drivingWheels = new List<Rigidbody2D>();
+
     [Header("Car Settings")]
-    [SerializeField] private Rigidbody2D tireBackRb;
-    [SerializeField] private Rigidbody2D tireFrontRb;
     [SerializeField] private Rigidbody2D carRb;
     public float carRotationSpeed = 100f;
     [SerializeField] public float speed = 150f;
@@ -25,8 +28,7 @@ public class DriveMyCar_Player2 : MonoBehaviour
     [Header("Nitro Particle")]
     [SerializeField] private ParticleSystem nitroParticle;
 
-    [Header("Ground Check")]
-    [SerializeField] public TireGrounded tireGrounded;
+    // GroundCheck listesi SİLİNDİ.
 
     [Header("Raycast Settings")]
     [SerializeField] private LayerMask groundLayer;
@@ -41,7 +43,7 @@ public class DriveMyCar_Player2 : MonoBehaviour
     private AudioSource currentBrakeSound;
 
     private float moveInput;
-    private bool isGrounded;
+    // isGrounded SİLİNDİ.
     
     private bool controlsInverted = false;
 
@@ -68,11 +70,8 @@ public class DriveMyCar_Player2 : MonoBehaviour
     {
         float input = context.ReadValue<float>();
 
-        if (controlsInverted)
-            input = -input;
-
-        if (swapTriggers)
-            input *= -1f;
+        if (controlsInverted) input = -input;
+        if (swapTriggers) input *= -1f;
 
         moveInput = -input;
         
@@ -80,31 +79,24 @@ public class DriveMyCar_Player2 : MonoBehaviour
 
         float deadZone = 0.1f;
 
-        // DURUM A: Input POZİTİF ise (R2 - Gaz)
         if (-input > deadZone)
         {
-            StopBrakeSound(); // Fren varsa sustur
-
+            StopBrakeSound(); 
             if (currentGasSound == null)
             {
-                // Array[0] -> GAZ Sesi
                 SoundSO gasSO = AudioManager.Instance.SoundsCollection.CarSounds[0];
                 currentGasSound = AudioManager.Instance.SoundToPlay(gasSO);
             }
         }
-        // DURUM B: Input NEGATİF ise (L2 - Fren/Geri)
         else if (-input < -deadZone)
         {
-            StopGasSound(); // Gaz varsa sustur
-
+            StopGasSound(); 
             if (currentBrakeSound == null)
             {
-                // Array[1] -> FREN Sesi
                 SoundSO brakeSO = AudioManager.Instance.SoundsCollection.CarSounds[1];
                 currentBrakeSound = AudioManager.Instance.SoundToPlay(brakeSO);
             }
         }
-        // DURUM C: Input SIFIR ise (Elimizi çektik)
         else
         {
             StopGasSound();
@@ -119,14 +111,8 @@ public class DriveMyCar_Player2 : MonoBehaviour
 
     public void OnNitro(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            TryActivateNitro(true);
-        }
-        else if (context.canceled)
-        {
-            TryActivateNitro(false);
-        }
+        if (context.performed) TryActivateNitro(true);
+        else if (context.canceled) TryActivateNitro(false);
     }
     
     public void InvertControls(bool state)
@@ -150,11 +136,7 @@ public class DriveMyCar_Player2 : MonoBehaviour
             hasScoredForFlip = false;
         }
 
-        if (tireGrounded != null)
-        {
-            isGrounded = tireGrounded.tireGrounded;
-        }
-
+        // --- NITRO ---
         bool canUseNitro = nitroActive && currentNitro > 0f && moveInput > 0f;
 
         if (canUseNitro)
@@ -169,42 +151,40 @@ public class DriveMyCar_Player2 : MonoBehaviour
         }
 
         currentNitro = Mathf.Clamp(currentNitro, 0f, maxNitro);
-        if (nitroSlider != null)
+        if (nitroSlider != null) nitroSlider.value = currentNitro;
+
+        if (currentNitro <= 0f && nitroActive) TryActivateNitro(false);
+
+        // --- MOTOR GÜCÜ (AKILLI ÇEKİŞ SİSTEMİ) ---
+        for (int i = 0; i < drivingWheels.Count; i++)
         {
-            nitroSlider.value = currentNitro;
+            if (drivingWheels[i] != null)
+            {
+                float powerMultiplier = 1.0f;
+                // Eğer 2 Tekerlek varsa (Standart)
+                if (drivingWheels.Count == 2)
+                {
+                    if (i == 1) powerMultiplier = 1.2f; // Ön Teker
+                    if (i == 0) powerMultiplier = 0.8f; // Arka Teker
+                }
+                drivingWheels[i].AddTorque(moveInput * currentSpeed * powerMultiplier, ForceMode2D.Force);
+            }
         }
 
-        if (currentNitro <= 0f && nitroActive)
-        {
-            TryActivateNitro(false);
-        }
-
-        tireFrontRb.AddTorque(moveInput * currentSpeed, ForceMode2D.Force);
-        tireBackRb.AddTorque(moveInput * currentSpeed, ForceMode2D.Force);
-
-        float currentRotation = isGrounded ? carRotationSpeed / 5f : carRotationSpeed;
-        carRb.AddTorque(moveInput * currentRotation, ForceMode2D.Force);
+        // --- ROTASYON ---
+        carRb.AddTorque(moveInput * carRotationSpeed, ForceMode2D.Force);
     }
 
     private void TryActivateNitro(bool active)
     {
-        if (active && currentNitro <= 0f)
-        {
-            return;
-        }
+        if (active && currentNitro <= 0f) return;
 
         nitroActive = active;
 
         if (nitroParticle != null)
         {
-            if (active && currentNitro > 0f)
-            {
-                nitroParticle.Play();
-            }
-            else
-            {
-                nitroParticle.Stop();
-            }
+            if (active && currentNitro > 0f) nitroParticle.Play();
+            else nitroParticle.Stop();
         }
     }
     

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5329381682729855241}
   - component: {fileID: 3983322860862141374}
   - component: {fileID: 8417310481312180923}
-  - component: {fileID: 4169383517982607422}
   m_Layer: 6
   m_Name: Back_T
   m_TagString: Untagged
@@ -102,7 +101,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 80
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -153,19 +152,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.815
---- !u!114 &4169383517982607422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3736927224802500985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93663836a6d3e3d47866d2ecb2520020, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tireGrounded: 0
 --- !u!1 &6182641569517387883
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +435,7 @@ GameObject:
   - component: {fileID: 8192295332228712552}
   - component: {fileID: 8848758188409977746}
   - component: {fileID: -5199675857538607972}
+  - component: {fileID: 1368200324124525482}
   m_Layer: 6
   m_Name: P1_Araba_1
   m_TagString: Player
@@ -488,9 +475,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 2
+  m_Mass: 1500
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 3
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 8314f7d2822ae7c42bee2d3ef17a055d, type: 2}
   m_IncludeLayers:
@@ -522,7 +509,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.3
-    m_Frequency: 3.5
+    m_Frequency: 3
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -547,7 +534,7 @@ WheelJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_Suspension:
     m_DampingRatio: 0.3
-    m_Frequency: 3.5
+    m_Frequency: 8
     m_Angle: 90
   m_UseMotor: 0
   m_Motor:
@@ -565,8 +552,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4184840d786d4684c888572291a70f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tireBackRb: {fileID: 3983322860862141374}
-  tireFrontRb: {fileID: 132708895890310253}
+  drivingWheels:
+  - {fileID: 3983322860862141374}
+  - {fileID: 132708895890310253}
   carRb: {fileID: 5784379935108884646}
   carRotationSpeed: 100
   speed: 150
@@ -577,7 +565,6 @@ MonoBehaviour:
   nitroRechargeRate: 15
   nitroBoost: 300
   nitroParticle: {fileID: 7209976690711806192}
-  tireGrounded: {fileID: 4169383517982607422}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -805,6 +792,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64be4230e9cf76e4086adc2d26de4652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1368200324124525482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6191543987659910002}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13f5cdf4d1998c4d8da48179a3011ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerOfMassOffset: {x: 2, y: -1}
 --- !u!1 &6603275237221534706
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +906,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 80
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1

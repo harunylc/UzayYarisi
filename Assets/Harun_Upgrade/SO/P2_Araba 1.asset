@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: P2_Araba 1
   m_EditorClassIdentifier: 
   carIndex: 0
-  "temelH\u0131zlanma": 9200
-  temelFren: 45
-  temelNitro: 5400
-  temelYoltutus: 4000
-  "temelAg\u0131rl\u0131k": 1750
+  "temelH\u0131zlanma": 25000
+  temelFren: 65
+  temelNitro: 9000
+  temelYoltutus: 5400
+  "temelAg\u0131rl\u0131k": 1600

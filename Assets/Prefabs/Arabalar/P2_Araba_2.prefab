@@ -455,7 +455,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 2
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 3
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 8314f7d2822ae7c42bee2d3ef17a055d, type: 2}
   m_IncludeLayers:
@@ -711,8 +711,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1448c7878e0d12140b8dbd680e5464fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tireBackRb: {fileID: 2909500186585251233}
-  tireFrontRb: {fileID: 8569269650456275485}
+  drivingWheels:
+  - {fileID: 2909500186585251233}
+  - {fileID: 8569269650456275485}
   carRb: {fileID: 4944457212998044246}
   carRotationSpeed: 100
   speed: 150
@@ -723,7 +724,6 @@ MonoBehaviour:
   nitroRechargeRate: 15
   nitroBoost: 300
   nitroParticle: {fileID: 5744985580970015128}
-  tireGrounded: {fileID: 7616613501626529922}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
