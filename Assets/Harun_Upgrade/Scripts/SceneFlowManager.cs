@@ -77,9 +77,6 @@ public class SceneFlowManager : MonoBehaviour
             
             int playedCount = scenes.Count - remainingScenes.Count;
             PlayerSelectionData.currentMapIndex = playedCount;
-            
-            Debug.Log("Sahne Hazırlanıyor. Tur Indexi: " + playedCount);
-            // --------------------------
         }
         else
         {

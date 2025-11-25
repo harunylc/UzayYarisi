@@ -7,13 +7,11 @@ using System.Collections.Generic;
 public class DriveMyCar : MonoBehaviour
 {
     [Header("Tekerlek Ayarları")]
-    // Buraya tekerlek Rigidbody'lerini sürükle.
-    // ÖNEMLİ: Sıralama şöyledir -> Element 0: ARKA Teker, Element 1: ÖN Teker
     public List<Rigidbody2D> drivingWheels = new List<Rigidbody2D>(); 
 
     [Header("Car Settings")]
     [SerializeField] private Rigidbody2D carRb;
-    public float carRotationSpeed = 100f; // Şahlanmayı önlemek için bunu makul seviyede tut
+    public float carRotationSpeed = 100f;
     [SerializeField] public float speed = 150f;
     [SerializeField] private float currentSpeed;
 
@@ -29,8 +27,6 @@ public class DriveMyCar : MonoBehaviour
     [Header("Nitro Particle")]
     [SerializeField] private ParticleSystem nitroParticle;
 
-    // GroundCheck listesi SİLİNDİ.
-
     [Header("Raycast Settings (Sadece Skor/Nitro İçin)")]
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float rayLength = 45f;
@@ -44,7 +40,6 @@ public class DriveMyCar : MonoBehaviour
     private AudioSource currentBrakeSound;
 
     private float moveInput;
-    // isGrounded değişkeni SİLİNDİ.
     
     private bool controlsInverted = false;
 
@@ -152,30 +147,25 @@ public class DriveMyCar : MonoBehaviour
         if (nitroSlider != null) nitroSlider.value = currentNitro;
 
         if (currentNitro <= 0f && nitroActive) TryActivateNitro(false);
-
-
-        // --- MOTOR GÜCÜ (AKILLI ÇEKİŞ SİSTEMİ) ---
-        // Ön tekerlek arabayı çeksin, arka tekerlek hafif itsin. Bu şahlanmayı önler.
+        
+        
+        
         for (int i = 0; i < drivingWheels.Count; i++)
         {
             if (drivingWheels[i] != null)
             {
                 float powerMultiplier = 1.0f;
 
-                // Eğer liste boyutu 2 ise (Standart Araba)
-                if (drivingWheels.Count == 2)
+                if (drivingWheels.Count >= 2)
                 {
-                    if (i == 1) powerMultiplier = 1.2f; // Ön Tekerlek (Daha Güçlü)
-                    if (i == 0) powerMultiplier = 0.8f; // Arka Tekerlek (Daha Zayıf)
+                    if (i == 1) powerMultiplier = 1.2f;
+                    if (i == 0) powerMultiplier = 0.8f; 
                 }
                 
                 drivingWheels[i].AddTorque(-moveInput * currentSpeed * powerMultiplier, ForceMode2D.Force);
             }
         }
 
-        // --- ROTASYON ---
-        // GroundCheck olmadığı için her zaman çalışır.
-        // Şahlanmayı önlemek için Inspector'da Rigidbody -> Angular Drag değerini artır (3-5 yap).
         carRb.AddTorque(moveInput * carRotationSpeed, ForceMode2D.Force);
     }
 

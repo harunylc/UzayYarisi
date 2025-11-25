@@ -17,8 +17,6 @@ public class CarStatsData : ScriptableObject
 
     public const float MinAgir = 1200f;   public const float MaxAgir = 2000f;
     
-    [Header("Temel Özellikler")]
-    [Tooltip("Aracın başlangıç hızı. Min-Max değerleri koddan ayarlanır.")]
     
     [Range(MinHiz, MaxHiz)] 
     public float temelHızlanma; 
